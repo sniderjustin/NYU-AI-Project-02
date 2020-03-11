@@ -2,7 +2,7 @@
 
 # Run experiments: the submission for each exp will be created in "/submissions"
 # python naive_baseline.py --scenario="ni" --sub_dir="ni"
-python naive_baseline.py --scenario="multi-task-nc" --sub_dir="multi-task-nc"
+python naive_baseline.py --scenario="multi-task-nc" --sub_dir="multi-task-nc" --epochs=1
 # python naive_baseline.py --scenario="nic" --sub_dir="nic"
 
 # create zip file to submit to codalab: please not that the directories should have the names below

@@ -25,16 +25,16 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import absolute_import
 
-import argparse
-import os
-import time
-import copy
-from core50.dataset import CORE50
-import torch
-import numpy as np
-from utils.train_test import train_net, test_multitask, preprocess_imgs
-import torchvision.models as models
-from utils.common import create_code_snapshot
+import argparse  #  The argparse module also automatically generates help and usage messages, and issues errors when users give the program invalid arguments.
+import os  # Usefull for file system and os manipulation
+import time  #  for tracking time it takes to complete work 
+import copy  #  provides for shallow and deep copy opperations 
+from core50.dataset import CORE50  #  Imports the custom module for dealing with the core50 dataset
+import torch  #  Imports the torch library 
+import numpy as np  # imports the numpy library 
+from utils.train_test import train_net, test_multitask, preprocess_imgs  #  custom utils in the util module inside the sub utils folder
+import torchvision.models as models  #  provides access to pytorch compatable datasets
+from utils.common import create_code_snapshot  #  custom utils in the util module inside the sub utils folder
 
 
 def main(args):
@@ -47,20 +47,30 @@ def main(args):
 
     # Create the dataset object for example with the "ni, multi-task-nc, or nic tracks"
     # and assuming the core50 location in ./core50/data/
+    # ???review CORE50 to see if there is a way to shorten dataset and runtime for testing
+    # Original call to dataset. Takes a long time. 
+    # dataset = CORE50(root='core50/data/', scenario=args.scenario,
+    #                  preload=args.preload_data)
+    # 
+    # custom call to CORE50 
+    # using train=True uses training set and allows more control over batches and other stuff.
     dataset = CORE50(root='core50/data/', scenario=args.scenario,
-                     preload=args.preload_data)
+                    train=True, preload=args.preload_data)
 
     # Get the validation set
     print("Recovering validation set...")
-    full_valdidset = dataset.get_full_valid_set()
+    # default full validation set 
+    # full_valdidset = dataset.get_full_valid_set()
+    # reduced validation set 
+    full_valdidset = dataset.get_full_valid_set(reduced=True)
 
     # model
     if args.classifier == 'ResNet18':
-        classifier = models.resnet18(pretrained=True)
-        classifier.fc = torch.nn.Linear(512, args.n_classes)
+        classifier = models.resnet18(pretrained=True)  # classifier is a pretrained model 
+        classifier.fc = torch.nn.Linear(512, args.n_classes)  # in features: 512 # out features: set below -> args.n_classes = 50  #  Applies a linear transformation to the incoming data
 
-    opt = torch.optim.SGD(classifier.parameters(), lr=args.lr)
-    criterion = torch.nn.CrossEntropyLoss()
+    opt = torch.optim.SGD(classifier.parameters(), lr=args.lr)  # Implements stochastic gradient descent
+    criterion = torch.nn.CrossEntropyLoss()  # This criterion combines nn.LogSoftmax() and nn.NLLLoss() in one single class.
 
     # vars to update over time
     valid_acc = []
@@ -72,25 +82,32 @@ def main(args):
     for i, train_batch in enumerate(dataset):
         train_x, train_y, t = train_batch
 
+        # Print current batch number 
         print("----------- batch {0} -------------".format(i))
+        # Print current batch shape
         print("x shape: {0}, y shape: {1}"
               .format(train_x.shape, train_y.shape))
+        # print task label type
         print("Task Label: ", t)
 
+        # utils.train_net: a custom function to train neural network. returns stats. 
         _, _, stats = train_net(
             opt, classifier, criterion, args.batch_size, train_x, train_y, t,
             args.epochs, preproc=preprocess_imgs
         )
+
+        # if multi-task-nc: make deep copy in list heads (aka nn brains)
         if args.scenario == "multi-task-nc":
             heads.append(copy.deepcopy(classifier.fc))
-
         ext_mem_sz += stats['disk']
         ram_usage += stats['ram']
 
+        # test all nn models in list heads for performance. return stats for each.
         stats, _ = test_multitask(
             classifier, full_valdidset, args.batch_size, preproc=preprocess_imgs, multi_heads=heads
         )
 
+        # print new stats on performance 
         valid_acc += stats['acc']
         print("------------------------------------------")
         print("Avg. acc: {}".format(stats['acc']))
@@ -103,6 +120,7 @@ def main(args):
         os.makedirs(sub_dir)
 
     # copy code
+    # custom function in utils folder to deal with possible file path issues 
     create_code_snapshot(".", sub_dir + "/code_snapshot")
 
     # generating metadata.txt: with all the data used for the CLScore
@@ -115,6 +133,7 @@ def main(args):
         ]:
             wf.write(str(obj) + "\n")
 
+    # run final full test 
     # test_preds.txt: with a list of labels separated by "\n"
     print("Final inference on test set...")
     full_testset = dataset.get_full_test_set()
@@ -128,10 +147,11 @@ def main(args):
 
     print("Experiment completed.")
 
-
+#  Code Starts running here
 if __name__ == "__main__":
     parser = argparse.ArgumentParser('CVPR Continual Learning Challenge')
 
+    # Setup module to recieve arguments
     # General
     parser.add_argument('--scenario', type=str, default="multi-task-nc",
                         choices=['ni', 'multi-task-nc', 'nic'])
@@ -143,10 +163,13 @@ if __name__ == "__main__":
                         choices=['ResNet18'])
 
     # Optimization
+    # --lr: Set Learning rate 
     parser.add_argument('--lr', type=float, default=0.01,
                         help='learning rate')
+    # --batch_size: set batch size 
     parser.add_argument('--batch_size', type=int, default=32,
                         help='batch_size')
+    # --epochs: 
     parser.add_argument('--epochs', type=int, default=1,
                         help='number of epochs')
 

@@ -336,6 +336,7 @@ class CORE50(object):
         return x
 
 
+# start here 
 if __name__ == "__main__":
 
     # Create the dataset object for example with the "multi-task-nc"
@@ -357,4 +358,5 @@ if __name__ == "__main__":
               .format(x.shape, y.shape))
 
         # use the data
+        # ???Is the a good place to start developing a solution??? Or is /naive_baseline.py better??? 
         pass
