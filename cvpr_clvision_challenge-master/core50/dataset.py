@@ -82,7 +82,7 @@ class CORE50(object):
             if os.path.exists(bin_path):
                 with open(bin_path, 'rb') as f:
                     self.x = np.fromfile(f, dtype=np.uint8) \
-                        .reshape(164866, 128, 128, 3)
+                        .reshape(164866, 128, 128, 3)  # Making numpy array from file ?? maybe shorten array here? 
 
             else:
                 with open(os.path.join(root, 'core50_imgs.npz'), 'rb') as f:
@@ -93,7 +93,7 @@ class CORE50(object):
 
         print("Loading paths...")
         with open(os.path.join(root, 'paths.pkl'), 'rb') as f:
-            self.paths = pkl.load(f)
+            self.paths = pkl.load(f)  #  pkl paths are loaded here ?? maybe shorten array here?
 
         print("Loading LUP...")
         with open(os.path.join(root, 'LUP.pkl'), 'rb') as f:

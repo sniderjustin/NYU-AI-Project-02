@@ -52,10 +52,10 @@ def main(args):
     # dataset = CORE50(root='core50/data/', scenario=args.scenario,
     #                  preload=args.preload_data)
     # 
-    # custom call to CORE50 
+    # custom call to create CORE50 custom object
     # using train=True uses training set and allows more control over batches and other stuff.
     dataset = CORE50(root='core50/data/', scenario=args.scenario,
-                    train=True, preload=args.preload_data)
+                    preload=args.preload_data)
 
     # Get the validation set
     print("Recovering validation set...")
