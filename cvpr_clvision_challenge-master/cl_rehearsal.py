@@ -34,7 +34,7 @@ import torch  #  Imports the torch library
 import numpy as np  # imports the numpy library 
 from utils.train_test import train_net, test_multitask, preprocess_imgs  #  custom utils in the util module inside the sub utils folder
 import torchvision.models as models  #  provides access to pytorch compatable datasets
-from utils.common import create_code_snapshot  #  custom utils in the util module inside the sub utils folder
+from utils.common import create_code_snapshot, shuffle_in_unison  #  custom utils in the util module inside the sub utils folder
 
 
 def main(args):
@@ -86,11 +86,35 @@ def main(args):
         train_x, train_y, t = train_batch
 
         # Start modification
-        # add if i == 0: to hold first training data in all_x and all_y  
-        # add else: append to all_x and all_y
-        # set train_x = all_x
-        # set train_y = all_y
-        # shuffle train_x and train_y in unison
+
+        # run batch 0 and 1. Then break. 
+        if i == 2: break
+
+        # shuffle new data
+        train_x, train_y = shuffle_in_unison((train_x, train_y), seed=0)
+
+        if i == 0: 
+            # this is the first round
+            # store data for later 
+            all_x = train_x
+            all_y = train_y 
+        else: 
+            # this is not the first round
+            # create hybrid training set old and new data
+            # shuffle old data
+            all_x, all_y = shuffle_in_unison((all_x, all_y), seed=0)
+
+            # append half of old and half of new data
+            all_x = np.append(all_x[0:train_x.shape[0]//2], train_x[0:train_x.shape[0]//2], axis=0)
+            all_y = np.append(all_y[0:train_x.shape[0]//2], train_y[0:train_x.shape[0]//2])
+
+            # shuffle combined data and save for later
+            all_x, all_y = shuffle_in_unison((all_x, all_y), seed=0)
+
+            # set current variables to be used for training
+            train_x = all_x
+            train_y = all_y
+
         # rest of code after this should be the same
         # End modification
 
