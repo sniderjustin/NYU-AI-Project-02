@@ -104,9 +104,9 @@ def main(args):
             # shuffle old data
             all_x, all_y = shuffle_in_unison((all_x, all_y), seed=0)
 
-            # append half of old and half of new data
-            all_x = np.append(all_x[0:train_x.shape[0]//2], train_x[0:train_x.shape[0]//2], axis=0)
-            all_y = np.append(all_y[0:train_x.shape[0]//2], train_y[0:train_x.shape[0]//2])
+            # append half of old and all of new data
+            all_x = np.append(all_x[0:all_x.shape[0]//2], train_x, axis=0)
+            all_y = np.append(all_y[0:all_y.shape[0]//2], train_y)
 
             # shuffle combined data and save for later
             all_x, all_y = shuffle_in_unison((all_x, all_y), seed=0)
