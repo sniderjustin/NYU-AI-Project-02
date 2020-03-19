@@ -96,8 +96,8 @@ def main(args):
         if i == 0: 
             # this is the first round
             # store data for later 
-            all_x = train_x[0:all_x.shape[0]//2]
-            all_y = train_y[0:all_y.shape[0]//2] 
+            all_x = train_x[0:train_x.shape[0]//2]
+            all_y = train_y[0:train_y.shape[0]//2] 
         else: 
             # this is not the first round
             # create hybrid training set old and new data
@@ -114,13 +114,13 @@ def main(args):
             train_x, train_y = shuffle_in_unison((train_x, train_y), seed=0)
 
             # append half of old and all of new data 
-            # all_x = np.append(all_x[0:all_x.shape[0]//2], train_x, axis=0)
-            # all_y = np.append(all_y[0:all_y.shape[0]//2], train_y)
             temp_x, temp_y = shuffle_in_unison((temp_x, temp_y), seed=0)
             keep_old = (all_x.shape[0] // (i + 1)) * i
-            keep_new = train_x.shape[0] // (i + 1)
+            keep_new = temp_x.shape[0] // (i + 1)
             all_x = np.append(all_x[0:keep_old], temp_x[0:keep_new], axis=0)
             all_y = np.append(all_y[0:keep_old], temp_y[0:keep_new])
+            del temp_x
+            del temp_y
 
         # rest of code after this should be the same
         # End modification
