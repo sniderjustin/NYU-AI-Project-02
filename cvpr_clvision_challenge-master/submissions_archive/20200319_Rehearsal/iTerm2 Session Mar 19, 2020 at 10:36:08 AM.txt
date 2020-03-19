@@ -1,0 +1,492 @@
+Last login: Wed Mar 18 17:07:17 on ttys000 
+-bash: /usr/local/bin/virtualenvwrapper.sh: No such file or directory 
+ 
+The default interactive shell is now zsh. 
+To update your account to use zsh, please run `chsh -s /bin/zsh`. 
+For more details, please visit https://support.apple.com/kb/HT208050. 
+(base) Justins-Macbookpro:~ justinsnider$ ls 
+Applications 
+Applications (Parallels) 
+BlockApplication_2019_11_27_10_21_09.txt 
+BlockApplication_2019_11_27_12_19_18.txt 
+Creative Cloud Files 
+Desktop 
+Documents 
+Downloads 
+Google Drive 
+IdeaProjects 
+Library 
+MessageReply_2019_12_10_18_38_49.txt 
+Movies 
+Music 
+Pictures 
+PostViewed_2019_11_27_09_44_47.txt 
+Public 
+PycharmProjects 
+Sites 
+User_2019_12_10_18_01_16.txt 
+_git 
+a.out 
+anaconda3 
+basic_animation.mp4 
+dwhelper 
+git-completion.bash 
+hs_err_pid2683.log 
+java_error_in_pycharm_1373.log 
+jsnider@pratt.edu Creative Cloud Files (enterprise) 
+opt 
+untitled.md 
+zsh 
+(base) Justins-Macbookpro:~ justinsnider$ cd /Users/justinsnider/Documents/GitHub/NYU/AI/Project02/NYU-AI-Project-02/cvpr_clvision_challenge-master  
+(base) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ ls 
+LICENSE			create_submission.sh	submission.zip 
+README.md		environment.yml		submissions 
+cl_ext_mem		fetch_data_and_setup.sh	submissions_archive 
+cl_rehearsal.py		logs			utils 
+core50			naive_baseline.py 
+(base) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ create_submission.sh 
+-bash: create_submission.sh: command not found 
+(base) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ bash create_submission.sh 
+Traceback (most recent call last): 
+  File "cl_rehearsal.py", line 33, in <module> 
+    import torch  #  Imports the torch library  
+ModuleNotFoundError: No module named 'torch' 
+updating: multi-task-nc/ (stored 0%) 
+updating: multi-task-nc/metadata.txt (deflated 27%) 
+updating: multi-task-nc/code_snapshot/ (stored 0%) 
+updating: multi-task-nc/code_snapshot/naive_baseline.py (deflated 64%) 
+updating: multi-task-nc/code_snapshot/train_test.py (deflated 68%) 
+updating: multi-task-nc/code_snapshot/dataset.py (deflated 72%) 
+updating: multi-task-nc/code_snapshot/common.py (deflated 65%) 
+updating: multi-task-nc/test_preds.txt (deflated 86%) 
+  adding: multi-task-nc/.DS_Store (deflated 94%) 
+  adding: multi-task-nc/metadata_with_labels.txt (deflated 36%) 
+  adding: multi-task-nc/log/ (stored 0%) 
+  adding: multi-task-nc/log/20200312_NaiveGivenSolution.txt (deflated 84%) 
+  adding: multi-task-nc/Files_from_online_scoring/ (stored 0%) 
+  adding: multi-task-nc/Files_from_online_scoring/stdout.txt (stored 0%) 
+  adding: multi-task-nc/Files_from_online_scoring/submission.zip (stored 0%) 
+  adding: multi-task-nc/Files_from_online_scoring/output_file.zip (stored 0%) 
+  adding: multi-task-nc/Files_from_online_scoring/output_file/ (stored 0%) 
+  adding: multi-task-nc/Files_from_online_scoring/output_file/scores.txt (deflated 71%) 
+  adding: multi-task-nc/Files_from_online_scoring/output_file/metadata (deflated 12%) 
+  adding: multi-task-nc/Files_from_online_scoring/stderr.txt (deflated 15%) 
+(base) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ source activate clvision-challenge 
+(clvision-challenge) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ python3 cl_rehearsal.py --scenario="multi-task-nc" --sub_dir="multi-task-nc" --epochs=1 --preload=True 
+Namespace(batch_size=32, classifier='ResNet18', cuda=False, device='cpu', epochs=1, input_size=[3, 128, 128], lr=0.01, n_classes=50, preload_data=True, scenario='multi-task-nc', sub_dir='multi-task-nc') 
+ 
+Loading data... 
+Loading paths... 
+Loading LUP... 
+Loading labels... 
+preparing CL benchmark... 
+Recovering validation set... 
+----------- batch 0 ------------- 
+x shape: (23980, 128, 128, 3), y shape: (23980,) 
+Task Label:  0 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.135366, running train acc: 0.031 
+==>>> it: 100, avg. loss: 0.000069, running train acc: 0.848 
+==>>> it: 200, avg. loss: 0.000004, running train acc: 0.915 
+==>>> it: 300, avg. loss: 0.000002, running train acc: 0.941 
+==>>> it: 400, avg. loss: 0.000001, running train acc: 0.954 
+==>>> it: 500, avg. loss: 0.000004, running train acc: 0.963 
+==>>> it: 600, avg. loss: 0.000001, running train acc: 0.969 
+==>>> it: 700, avg. loss: 0.000000, running train acc: 0.973 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.949 
+TEST Acc. Task 1==>>> acc: 0.000 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.1054320987654321] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.1054320987654321] 
+------------------------------------------ 
+----------- batch 1 ------------- 
+x shape: (11992, 128, 128, 3), y shape: (11992,) 
+Task Label:  1 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.131367, running train acc: 0.562 
+==>>> it: 100, avg. loss: 0.000097, running train acc: 0.687 
+==>>> it: 200, avg. loss: 0.000025, running train acc: 0.828 
+==>>> it: 300, avg. loss: 0.000009, running train acc: 0.879 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.942 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.867 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.20098765432098764] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.20098765432098764] 
+------------------------------------------ 
+Training Time: 111.07583849827448m 
+Final inference on test set... 
+TEST Acc. Task 0==>>> acc: 0.000 
+TEST Acc. Task 1==>>> acc: 0.000 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.0] 
+------------------------------------------ 
+Experiment completed. 
+(clvision-challenge) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ sudo python3 cl_rehearsal.py --scenario="multi-task-nc" --sub_dir="multi-task-nc" --epochs=1 --preload=True 
+Password: 
+Namespace(batch_size=32, classifier='ResNet18', cuda=False, device='cpu', epochs=1, input_size=[3, 128, 128], lr=0.01, n_classes=50, preload_data=True, scenario='multi-task-nc', sub_dir='multi-task-nc') 
+ 
+Loading data... 
+Loading paths... 
+Loading LUP... 
+Loading labels... 
+preparing CL benchmark... 
+Recovering validation set... 
+Traceback (most recent call last): 
+  File "cl_rehearsal.py", line 230, in <module> 
+    main(args) 
+  File "cl_rehearsal.py", line 99, in main 
+    all_x = train_x[0:all_x.shape[0]//2] 
+UnboundLocalError: local variable 'all_x' referenced before assignment 
+(clvision-challenge) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ sudo python3 cl_rehearsal.py --scenario="multi-task-nc" --sub_dir="multi-task-nc" --epochs=1 --preload=True 
+Password: 
+Namespace(batch_size=32, classifier='ResNet18', cuda=False, device='cpu', epochs=1, input_size=[3, 128, 128], lr=0.01, n_classes=50, preload_data=True, scenario='multi-task-nc', sub_dir='multi-task-nc') 
+ 
+Loading data... 
+Loading paths... 
+Loading LUP... 
+Loading labels... 
+preparing CL benchmark... 
+Recovering validation set... 
+----------- batch 0 ------------- 
+x shape: (23980, 128, 128, 3), y shape: (23980,) 
+Task Label:  0 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.139552, running train acc: 0.031 
+==>>> it: 100, avg. loss: 0.000059, running train acc: 0.847 
+==>>> it: 200, avg. loss: 0.000005, running train acc: 0.914 
+==>>> it: 300, avg. loss: 0.000002, running train acc: 0.940 
+==>>> it: 400, avg. loss: 0.000002, running train acc: 0.954 
+==>>> it: 500, avg. loss: 0.000003, running train acc: 0.963 
+==>>> it: 600, avg. loss: 0.000001, running train acc: 0.969 
+==>>> it: 700, avg. loss: 0.000001, running train acc: 0.973 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.953 
+TEST Acc. Task 1==>>> acc: 0.000 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.10592592592592592] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.10592592592592592] 
+------------------------------------------ 
+----------- batch 1 ------------- 
+x shape: (23983, 128, 128, 3), y shape: (23983,) 
+Task Label:  1 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.106323, running train acc: 0.594 
+==>>> it: 100, avg. loss: 0.000088, running train acc: 0.688 
+==>>> it: 200, avg. loss: 0.000025, running train acc: 0.827 
+==>>> it: 300, avg. loss: 0.000004, running train acc: 0.881 
+==>>> it: 400, avg. loss: 0.000006, running train acc: 0.909 
+==>>> it: 500, avg. loss: 0.000004, running train acc: 0.925 
+==>>> it: 600, avg. loss: 0.000008, running train acc: 0.937 
+==>>> it: 700, avg. loss: 0.000005, running train acc: 0.945 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.931 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.884 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.2017283950617284] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.2017283950617284] 
+------------------------------------------ 
+----------- batch 2 ------------- 
+x shape: (23981, 128, 128, 3), y shape: (23981,) 
+Task Label:  2 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.136080, running train acc: 0.500 
+==>>> it: 100, avg. loss: 0.000271, running train acc: 0.593 
+==>>> it: 200, avg. loss: 0.000021, running train acc: 0.760 
+==>>> it: 300, avg. loss: 0.000017, running train acc: 0.833 
+==>>> it: 400, avg. loss: 0.000018, running train acc: 0.870 
+==>>> it: 500, avg. loss: 0.000004, running train acc: 0.893 
+==>>> it: 600, avg. loss: 0.000003, running train acc: 0.910 
+==>>> it: 700, avg. loss: 0.000005, running train acc: 0.921 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.918 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.840 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.818 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.28617283950617284] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.28617283950617284] 
+------------------------------------------ 
+----------- batch 3 ------------- 
+x shape: (23983, 128, 128, 3), y shape: (23983,) 
+Task Label:  3 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.093921, running train acc: 0.594 
+==>>> it: 100, avg. loss: 0.000246, running train acc: 0.653 
+==>>> it: 200, avg. loss: 0.000038, running train acc: 0.798 
+==>>> it: 300, avg. loss: 0.000025, running train acc: 0.856 
+==>>> it: 400, avg. loss: 0.000015, running train acc: 0.888 
+==>>> it: 500, avg. loss: 0.000010, running train acc: 0.907 
+==>>> it: 600, avg. loss: 0.000004, running train acc: 0.921 
+==>>> it: 700, avg. loss: 0.000011, running train acc: 0.931 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.909 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.804 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.836 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.871 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.38] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.38] 
+------------------------------------------ 
+----------- batch 4 ------------- 
+x shape: (23978, 128, 128, 3), y shape: (23978,) 
+Task Label:  4 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.104336, running train acc: 0.562 
+==>>> it: 100, avg. loss: 0.000444, running train acc: 0.568 
+==>>> it: 200, avg. loss: 0.000052, running train acc: 0.736 
+==>>> it: 300, avg. loss: 0.000021, running train acc: 0.809 
+==>>> it: 400, avg. loss: 0.000016, running train acc: 0.849 
+==>>> it: 500, avg. loss: 0.000021, running train acc: 0.874 
+==>>> it: 600, avg. loss: 0.000006, running train acc: 0.892 
+==>>> it: 700, avg. loss: 0.000004, running train acc: 0.905 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.882 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.791 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.667 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.836 
+Using head:  4 
+TEST Acc. Task 4==>>> acc: 0.836 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.445679012345679] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.445679012345679] 
+------------------------------------------ 
+----------- batch 5 ------------- 
+x shape: (23964, 128, 128, 3), y shape: (23964,) 
+Task Label:  5 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.107989, running train acc: 0.531 
+==>>> it: 100, avg. loss: 0.000278, running train acc: 0.653 
+==>>> it: 200, avg. loss: 0.000092, running train acc: 0.786 
+==>>> it: 300, avg. loss: 0.000023, running train acc: 0.838 
+==>>> it: 400, avg. loss: 0.000012, running train acc: 0.868 
+==>>> it: 500, avg. loss: 0.000010, running train acc: 0.889 
+==>>> it: 600, avg. loss: 0.000007, running train acc: 0.902 
+==>>> it: 700, avg. loss: 0.000007, running train acc: 0.913 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.824 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.791 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.667 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.804 
+Using head:  4 
+TEST Acc. Task 4==>>> acc: 0.729 
+Using head:  5 
+TEST Acc. Task 5==>>> acc: 0.782 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.5108641975308641] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.5108641975308641] 
+------------------------------------------ 
+----------- batch 6 ------------- 
+x shape: (23971, 128, 128, 3), y shape: (23971,) 
+Task Label:  6 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.132436, running train acc: 0.438 
+==>>> it: 100, avg. loss: 0.000265, running train acc: 0.692 
+==>>> it: 200, avg. loss: 0.000056, running train acc: 0.812 
+==>>> it: 300, avg. loss: 0.000022, running train acc: 0.858 
+==>>> it: 400, avg. loss: 0.000013, running train acc: 0.885 
+==>>> it: 500, avg. loss: 0.000010, running train acc: 0.901 
+==>>> it: 600, avg. loss: 0.000007, running train acc: 0.913 
+==>>> it: 700, avg. loss: 0.000008, running train acc: 0.922 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.820 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.796 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.627 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.804 
+Using head:  4 
+TEST Acc. Task 4==>>> acc: 0.693 
+Using head:  5 
+TEST Acc. Task 5==>>> acc: 0.662 
+Using head:  6 
+TEST Acc. Task 6==>>> acc: 0.787 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.5765432098765432] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.5765432098765432] 
+------------------------------------------ 
+----------- batch 7 ------------- 
+x shape: (23965, 128, 128, 3), y shape: (23965,) 
+Task Label:  7 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.085754, running train acc: 0.562 
+==>>> it: 100, avg. loss: 0.000154, running train acc: 0.720 
+==>>> it: 200, avg. loss: 0.000033, running train acc: 0.848 
+==>>> it: 300, avg. loss: 0.000013, running train acc: 0.892 
+==>>> it: 400, avg. loss: 0.000018, running train acc: 0.915 
+==>>> it: 500, avg. loss: 0.000006, running train acc: 0.930 
+==>>> it: 600, avg. loss: 0.000006, running train acc: 0.940 
+==>>> it: 700, avg. loss: 0.000006, running train acc: 0.947 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.824 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.729 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.671 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.809 
+Using head:  4 
+TEST Acc. Task 4==>>> acc: 0.764 
+Using head:  5 
+TEST Acc. Task 5==>>> acc: 0.729 
+Using head:  6 
+TEST Acc. Task 6==>>> acc: 0.689 
+Using head:  7 
+TEST Acc. Task 7==>>> acc: 0.911 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.6807407407407408] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.6807407407407408] 
+------------------------------------------ 
+----------- batch 8 ------------- 
+x shape: (23970, 128, 128, 3), y shape: (23970,) 
+Task Label:  8 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.138684, running train acc: 0.438 
+==>>> it: 100, avg. loss: 0.000188, running train acc: 0.717 
+==>>> it: 200, avg. loss: 0.000052, running train acc: 0.842 
+==>>> it: 300, avg. loss: 0.000020, running train acc: 0.887 
+==>>> it: 400, avg. loss: 0.000012, running train acc: 0.912 
+==>>> it: 500, avg. loss: 0.000005, running train acc: 0.927 
+==>>> it: 600, avg. loss: 0.000004, running train acc: 0.938 
+==>>> it: 700, avg. loss: 0.000006, running train acc: 0.945 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.811 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.751 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.684 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.818 
+Using head:  4 
+TEST Acc. Task 4==>>> acc: 0.764 
+Using head:  5 
+TEST Acc. Task 5==>>> acc: 0.653 
+Using head:  6 
+TEST Acc. Task 6==>>> acc: 0.680 
+Using head:  7 
+TEST Acc. Task 7==>>> acc: 0.849 
+Using head:  8 
+TEST Acc. Task 8==>>> acc: 0.876 
+------------------------------------------ 
+Avg. acc: [0.7651851851851852] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.7651851851851852] 
+------------------------------------------ 
+Training Time: 678.9700129826864m 
+Final inference on test set... 
+TEST Acc. Task 0==>>> acc: 0.000 
+TEST Acc. Task 1==>>> acc: 0.000 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.0] 
+------------------------------------------ 
+Experiment completed. 
+(clvision-challenge) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$  
