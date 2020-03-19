@@ -2,3 +2,4 @@
 
 # exclude data
 **/data/
+**/sketch/
