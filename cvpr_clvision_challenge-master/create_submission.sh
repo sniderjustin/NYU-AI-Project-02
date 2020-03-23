@@ -6,6 +6,9 @@ python cl_rehearsal.py --scenario="multi-task-nc" --sub_dir="multi-task-nc" --ep
 # python naive_baseline.py --scenario="multi-task-nc" --sub_dir="multi-task-nc" --epochs=1 --preload=True
 # python naive_baseline.py --scenario="nic" --sub_dir="nic"
 
+# Using both Rehearsal and EWC
+# python cl_combined.py --scenario="multi-task-nc" --sub_dir="multi-task-nc" --epochs=1 --preload=True
+
 # create zip file to submit to codalab: please not that the directories should have the names below
 # depending on the challenge category you want to submit too (at least one)
 # cd submissions && zip -r ../submission.zip ./ni ./multi-task-nc ./nic

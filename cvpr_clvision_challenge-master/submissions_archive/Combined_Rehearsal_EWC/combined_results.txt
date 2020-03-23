@@ -1,0 +1,330 @@
+jasonwoo@jasons-MacBook-Pro-4:~/Downloads/cl_vision[1]$ sh create_submission.sh 
+Namespace(batch_size=32, classifier='ResNet18', cuda=False, device='cpu', epochs=1, input_size=[3, 128, 128], lr=0.01, n_classes=50, preload_data=True, scenario='multi-task-nc', sub_dir='multi-task-nc')
+
+Loading data...
+Loading paths...
+Loading LUP...
+Loading labels...
+preparing CL benchmark...
+Recovering validation set...
+----------- batch 0 -------------
+x shape: (23980, 128, 128, 3), y shape: (23980,)
+Task Label:  0
+training ep:  0
+==>>> it: 0, avg. loss: 0.132800, running train acc: 0.000
+==>>> it: 100, avg. loss: 0.000054, running train acc: 0.854
+==>>> it: 200, avg. loss: 0.000003, running train acc: 0.918
+==>>> it: 300, avg. loss: 0.000005, running train acc: 0.943
+==>>> it: 400, avg. loss: 0.000002, running train acc: 0.956
+==>>> it: 500, avg. loss: 0.000005, running train acc: 0.964
+==>>> it: 600, avg. loss: 0.000001, running train acc: 0.970
+==>>> it: 700, avg. loss: 0.000001, running train acc: 0.974
+Updating Fisher values and old parameters
+Using head:  0
+TEST Acc. Task 0==>>> acc: 0.951
+TEST Acc. Task 1==>>> acc: 0.000
+TEST Acc. Task 2==>>> acc: 0.000
+TEST Acc. Task 3==>>> acc: 0.000
+TEST Acc. Task 4==>>> acc: 0.000
+TEST Acc. Task 5==>>> acc: 0.000
+TEST Acc. Task 6==>>> acc: 0.000
+TEST Acc. Task 7==>>> acc: 0.000
+TEST Acc. Task 8==>>> acc: 0.000
+------------------------------------------
+Avg. acc: [0.10567901234567902]
+------------------------------------------
+classifier reset...
+------------------------------------------
+Avg. acc: [0.10567901234567902]
+------------------------------------------
+----------- batch 1 -------------
+x shape: (23983, 128, 128, 3), y shape: (23983,)
+Task Label:  1
+training ep:  0
+==>>> it: 0, avg. loss: 0.107297, running train acc: 0.594
+==>>> it: 100, avg. loss: 0.000092, running train acc: 0.698
+==>>> it: 200, avg. loss: 0.000023, running train acc: 0.833
+==>>> it: 300, avg. loss: 0.000005, running train acc: 0.884
+==>>> it: 400, avg. loss: 0.000007, running train acc: 0.911
+==>>> it: 500, avg. loss: 0.000006, running train acc: 0.927
+==>>> it: 600, avg. loss: 0.000006, running train acc: 0.938
+==>>> it: 700, avg. loss: 0.000005, running train acc: 0.946
+Updating Fisher values and old parameters
+Using head:  0
+TEST Acc. Task 0==>>> acc: 0.962
+Using head:  1
+TEST Acc. Task 1==>>> acc: 0.916
+TEST Acc. Task 2==>>> acc: 0.000
+TEST Acc. Task 3==>>> acc: 0.000
+TEST Acc. Task 4==>>> acc: 0.000
+TEST Acc. Task 5==>>> acc: 0.000
+TEST Acc. Task 6==>>> acc: 0.000
+TEST Acc. Task 7==>>> acc: 0.000
+TEST Acc. Task 8==>>> acc: 0.000
+------------------------------------------
+Avg. acc: [0.20864197530864198]
+------------------------------------------
+classifier reset...
+------------------------------------------
+Avg. acc: [0.20864197530864198]
+------------------------------------------
+----------- batch 2 -------------
+x shape: (23981, 128, 128, 3), y shape: (23981,)
+Task Label:  2
+training ep:  0
+==>>> it: 0, avg. loss: 0.138416, running train acc: 0.500
+==>>> it: 100, avg. loss: 0.000223, running train acc: 0.639
+==>>> it: 200, avg. loss: 0.000024, running train acc: 0.792
+==>>> it: 300, avg. loss: 0.000016, running train acc: 0.854
+==>>> it: 400, avg. loss: 0.000013, running train acc: 0.885
+==>>> it: 500, avg. loss: 0.000005, running train acc: 0.906
+==>>> it: 600, avg. loss: 0.000003, running train acc: 0.920
+==>>> it: 700, avg. loss: 0.000003, running train acc: 0.930
+Updating Fisher values and old parameters
+
+Using head:  0
+TEST Acc. Task 0==>>> acc: 0.931
+Using head:  1
+TEST Acc. Task 1==>>> acc: 0.902
+Using head:  2
+TEST Acc. Task 2==>>> acc: 0.791
+TEST Acc. Task 3==>>> acc: 0.000
+TEST Acc. Task 4==>>> acc: 0.000
+TEST Acc. Task 5==>>> acc: 0.000
+TEST Acc. Task 6==>>> acc: 0.000
+TEST Acc. Task 7==>>> acc: 0.000
+TEST Acc. Task 8==>>> acc: 0.000
+------------------------------------------
+Avg. acc: [0.29160493827160494]
+------------------------------------------
+classifier reset...
+------------------------------------------
+Avg. acc: [0.29160493827160494]
+------------------------------------------
+----------- batch 3 -------------
+x shape: (23983, 128, 128, 3), y shape: (23983,)
+Task Label:  3
+training ep:  0
+==>>> it: 0, avg. loss: 0.091555, running train acc: 0.594
+==>>> it: 100, avg. loss: 0.000276, running train acc: 0.636
+==>>> it: 200, avg. loss: 0.000045, running train acc: 0.789
+==>>> it: 300, avg. loss: 0.000024, running train acc: 0.850
+==>>> it: 400, avg. loss: 0.000014, running train acc: 0.883
+==>>> it: 500, avg. loss: 0.000018, running train acc: 0.903
+==>>> it: 600, avg. loss: 0.000004, running train acc: 0.917
+==>>> it: 700, avg. loss: 0.000007, running train acc: 0.928
+Updating Fisher values and old parameters
+Using head:  0
+TEST Acc. Task 0==>>> acc: 0.911
+Using head:  1
+TEST Acc. Task 1==>>> acc: 0.862
+Using head:  2
+TEST Acc. Task 2==>>> acc: 0.787
+Using head:  3
+TEST Acc. Task 3==>>> acc: 0.858
+TEST Acc. Task 4==>>> acc: 0.000
+TEST Acc. Task 5==>>> acc: 0.000
+TEST Acc. Task 6==>>> acc: 0.000
+TEST Acc. Task 7==>>> acc: 0.000
+TEST Acc. Task 8==>>> acc: 0.000
+------------------------------------------
+Avg. acc: [0.3797530864197531]
+------------------------------------------
+classifier reset...
+------------------------------------------
+Avg. acc: [0.3797530864197531]
+------------------------------------------
+----------- batch 4 -------------
+x shape: (23978, 128, 128, 3), y shape: (23978,)
+Task Label:  4
+training ep:  0
+==>>> it: 0, avg. loss: 0.106657, running train acc: 0.562
+==>>> it: 100, avg. loss: 0.000399, running train acc: 0.601
+==>>> it: 200, avg. loss: 0.000045, running train acc: 0.754
+==>>> it: 300, avg. loss: 0.000019, running train acc: 0.820
+==>>> it: 400, avg. loss: 0.000014, running train acc: 0.857
+==>>> it: 500, avg. loss: 0.000022, running train acc: 0.881
+==>>> it: 600, avg. loss: 0.000007, running train acc: 0.898
+==>>> it: 700, avg. loss: 0.000003, running train acc: 0.911
+Updating Fisher values and old parameters
+Using head:  0
+TEST Acc. Task 0==>>> acc: 0.900
+Using head:  1
+TEST Acc. Task 1==>>> acc: 0.844
+Using head:  2
+TEST Acc. Task 2==>>> acc: 0.702
+Using head:  3
+TEST Acc. Task 3==>>> acc: 0.849
+Using head:  4
+TEST Acc. Task 4==>>> acc: 0.822
+TEST Acc. Task 5==>>> acc: 0.000
+TEST Acc. Task 6==>>> acc: 0.000
+TEST Acc. Task 7==>>> acc: 0.000
+TEST Acc. Task 8==>>> acc: 0.000
+------------------------------------------
+Avg. acc: [0.45753086419753086]
+------------------------------------------
+classifier reset...
+------------------------------------------
+Avg. acc: [0.45753086419753086]
+------------------------------------------
+----------- batch 5 -------------
+x shape: (23964, 128, 128, 3), y shape: (23964,)
+Task Label:  5
+training ep:  0
+==>>> it: 0, avg. loss: 0.106785, running train acc: 0.531
+==>>> it: 100, avg. loss: 0.000290, running train acc: 0.654
+==>>> it: 200, avg. loss: 0.000106, running train acc: 0.792
+==>>> it: 300, avg. loss: 0.000022, running train acc: 0.843
+==>>> it: 400, avg. loss: 0.000013, running train acc: 0.873
+==>>> it: 500, avg. loss: 0.000014, running train acc: 0.892
+==>>> it: 600, avg. loss: 0.000008, running train acc: 0.905
+==>>> it: 700, avg. loss: 0.000007, running train acc: 0.916
+Updating Fisher values and old parameters
+Using head:  0
+TEST Acc. Task 0==>>> acc: 0.871
+Using head:  1
+TEST Acc. Task 1==>>> acc: 0.862
+Using head:  2
+TEST Acc. Task 2==>>> acc: 0.658
+Using head:  3
+TEST Acc. Task 3==>>> acc: 0.844
+Using head:  4
+TEST Acc. Task 4==>>> acc: 0.711
+Using head:  5
+TEST Acc. Task 5==>>> acc: 0.782
+TEST Acc. Task 6==>>> acc: 0.000
+TEST Acc. Task 7==>>> acc: 0.000
+TEST Acc. Task 8==>>> acc: 0.000
+------------------------------------------
+Avg. acc: [0.5254320987654322]
+------------------------------------------
+classifier reset...
+------------------------------------------
+Avg. acc: [0.5254320987654322]
+------------------------------------------
+----------- batch 6 -------------
+x shape: (23971, 128, 128, 3), y shape: (23971,)
+Task Label:  6
+training ep:  0
+==>>> it: 0, avg. loss: 0.127537, running train acc: 0.500
+==>>> it: 100, avg. loss: 0.000275, running train acc: 0.678
+==>>> it: 200, avg. loss: 0.000060, running train acc: 0.803
+==>>> it: 300, avg. loss: 0.000025, running train acc: 0.852
+==>>> it: 400, avg. loss: 0.000015, running train acc: 0.880
+==>>> it: 500, avg. loss: 0.000015, running train acc: 0.899
+==>>> it: 600, avg. loss: 0.000010, running train acc: 0.910
+==>>> it: 700, avg. loss: 0.000007, running train acc: 0.920
+Updating Fisher values and old parameters
+Using head:  0
+TEST Acc. Task 0==>>> acc: 0.847
+Using head:  1
+TEST Acc. Task 1==>>> acc: 0.813
+Using head:  2
+TEST Acc. Task 2==>>> acc: 0.702
+Using head:  3
+TEST Acc. Task 3==>>> acc: 0.840
+Using head:  4
+TEST Acc. Task 4==>>> acc: 0.720
+Using head:  5
+TEST Acc. Task 5==>>> acc: 0.662
+Using head:  6
+TEST Acc. Task 6==>>> acc: 0.836
+TEST Acc. Task 7==>>> acc: 0.000
+TEST Acc. Task 8==>>> acc: 0.000
+------------------------------------------
+Avg. acc: [0.6022222222222222]
+------------------------------------------
+classifier reset...
+------------------------------------------
+Avg. acc: [0.6022222222222222]
+------------------------------------------
+----------- batch 7 -------------
+x shape: (23965, 128, 128, 3), y shape: (23965,)
+Task Label:  7
+training ep:  0
+==>>> it: 0, avg. loss: 0.084231, running train acc: 0.594
+==>>> it: 100, avg. loss: 0.000149, running train acc: 0.694
+==>>> it: 200, avg. loss: 0.000034, running train acc: 0.835
+==>>> it: 300, avg. loss: 0.000015, running train acc: 0.884
+==>>> it: 400, avg. loss: 0.000012, running train acc: 0.910
+==>>> it: 500, avg. loss: 0.000006, running train acc: 0.926
+==>>> it: 600, avg. loss: 0.000006, running train acc: 0.936
+==>>> it: 700, avg. loss: 0.000006, running train acc: 0.945
+Updating Fisher values and old parameters
+Using head:  0
+TEST Acc. Task 0==>>> acc: 0.844
+Using head:  1
+TEST Acc. Task 1==>>> acc: 0.800
+Using head:  2
+TEST Acc. Task 2==>>> acc: 0.671
+Using head:  3
+TEST Acc. Task 3==>>> acc: 0.818
+Using head:  4
+TEST Acc. Task 4==>>> acc: 0.738
+Using head:  5
+TEST Acc. Task 5==>>> acc: 0.667
+Using head:  6
+TEST Acc. Task 6==>>> acc: 0.707
+Using head:  7
+TEST Acc. Task 7==>>> acc: 0.933
+TEST Acc. Task 8==>>> acc: 0.000
+------------------------------------------
+Avg. acc: [0.6864197530864197]
+------------------------------------------
+classifier reset...
+------------------------------------------
+Avg. acc: [0.6864197530864197]
+------------------------------------------
+----------- batch 8 -------------
+x shape: (23970, 128, 128, 3), y shape: (23970,)
+Task Label:  8
+training ep:  0
+==>>> it: 0, avg. loss: 0.132096, running train acc: 0.438
+==>>> it: 100, avg. loss: 0.000177, running train acc: 0.739
+==>>> it: 200, avg. loss: 0.000050, running train acc: 0.853
+==>>> it: 300, avg. loss: 0.000016, running train acc: 0.895
+==>>> it: 400, avg. loss: 0.000014, running train acc: 0.919
+==>>> it: 500, avg. loss: 0.000006, running train acc: 0.932
+==>>> it: 600, avg. loss: 0.000004, running train acc: 0.942
+==>>> it: 700, avg. loss: 0.000008, running train acc: 0.949
+Updating Fisher values and old parameters
+Using head:  0
+TEST Acc. Task 0==>>> acc: 0.840
+Using head:  1
+TEST Acc. Task 1==>>> acc: 0.796
+Using head:  2
+TEST Acc. Task 2==>>> acc: 0.658
+Using head:  3
+TEST Acc. Task 3==>>> acc: 0.800
+Using head:  4
+TEST Acc. Task 4==>>> acc: 0.738
+Using head:  5
+TEST Acc. Task 5==>>> acc: 0.698
+Using head:  6
+TEST Acc. Task 6==>>> acc: 0.707
+Using head:  7
+TEST Acc. Task 7==>>> acc: 0.844
+Using head:  8
+TEST Acc. Task 8==>>> acc: 0.893
+------------------------------------------
+Avg. acc: [0.7748148148148148]
+------------------------------------------
+classifier reset...
+------------------------------------------
+Avg. acc: [0.7748148148148148]
+------------------------------------------
+Training Time: 594.84268780152m
+Final inference on test set...
+TEST Acc. Task 0==>>> acc: 0.000
+TEST Acc. Task 1==>>> acc: 0.000
+TEST Acc. Task 2==>>> acc: 0.000
+TEST Acc. Task 3==>>> acc: 0.000
+TEST Acc. Task 4==>>> acc: 0.000
+TEST Acc. Task 5==>>> acc: 0.000
+TEST Acc. Task 6==>>> acc: 0.000
+TEST Acc. Task 7==>>> acc: 0.000
+TEST Acc. Task 8==>>> acc: 0.000
+------------------------------------------
+Avg. acc: [0.0]
+------------------------------------------
