@@ -79,7 +79,7 @@ def main(args):
     heads = []
 
     # Start Modification
-    ewc_lambda = 0.4  # should this be higher? closer to 400? that is what was used in other examples. What does a higher penalty do? what does a lower penatly do? 
+    ewc_lambda = 0.4  # should this be higher? closer to 400 or 0.4? that is what was used in other examples. What does a higher penalty do? what does a lower penatly do? 
     # variable dictionary to hold fisher values
     fisher_dict = {}  
     # variable dictionary to hold previous optimized weight values
@@ -93,9 +93,9 @@ def main(args):
         # Start Modifiction
 
         # Make train_x and train_y smaller for testing here
-        limit_size = True  # make true to limit training size # make false to allow full training set
+        limit_size = False  # make true to limit training size # make false to allow full training set
         if limit_size:
-            train_size = 200
+            train_size = 1000
             train_x = train_x[0:train_size]
             train_y = train_y[0:train_size]
 
@@ -115,6 +115,12 @@ def main(args):
             args.epochs, preproc=preprocess_imgs
         )
 
+        # if multi-task-nc: make deep copy in list heads (aka nn brains)
+        if args.scenario == "multi-task-nc":
+            heads.append(copy.deepcopy(classifier.fc))
+        ext_mem_sz += stats['disk']
+        ram_usage += stats['ram']
+
         # Start Modifiction
         # Calculate the Fisher matrix values given new completed task
         on_task_update(
@@ -122,12 +128,6 @@ def main(args):
             args.batch_size, preproc=preprocess_imgs
         )  # training complete # compute fisher matrix values
         # End Modification
-
-        # if multi-task-nc: make deep copy in list heads (aka nn brains)
-        if args.scenario == "multi-task-nc":
-            heads.append(copy.deepcopy(classifier.fc))
-        ext_mem_sz += stats['disk']
-        ram_usage += stats['ram']
 
         # test all nn models in list heads for performance. return stats for each.
         stats, _ = test_multitask(
