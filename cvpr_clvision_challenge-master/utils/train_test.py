@@ -328,14 +328,14 @@ def train_net_ewc(optimizer, model, criterion, mb_size, x, y, t, fisher_dict, op
             ave_loss += loss.item()
 
             # Start Modification
-
-            # Add EWC Penalty
-            if t != 0:
-                # use EWC
-                for name, param in model.named_parameters(): # for each weight 
-                    fisher = fisher_dict[name]  # get the fisher value for the given task and weight
-                    optpar = optpar_dict[name]  # get the parameter optimized value for the given task and weight
-                    loss += (fisher * (optpar - param).pow(2)).sum() * ewc_lambda  # loss is accumulator # add penalty for current task and weight
+            if it > 0:
+                # Add EWC Penalty
+                for task in range(t):  # for each task
+                    # use EWC
+                    for name, param in model.named_parameters(): # for each weight 
+                        fisher = fisher_dict[task][name]  # get the fisher value for the given task and weight
+                        optpar = optpar_dict[task][name]  # get the parameter optimized value for the given task and weight
+                        loss += (fisher * (optpar - param).pow(2)).sum() * ewc_lambda  # loss is accumulator # add penalty for current task and weight
 
             # End Modification
 
@@ -368,8 +368,8 @@ def on_task_update(t, x, y, fisher_dict, optpar_dict, model, optimizer, criterio
 
     OUTPUT: 
         The new values are added to the fisher and optpar dictionaries. 
-        fisher_dict[task_id]  
-        optpar_dict[task_id] 
+        fisher_dict[t]  
+        optpar_dict[t] 
 
     """
     cur_ep = 0
@@ -382,13 +382,8 @@ def on_task_update(t, x, y, fisher_dict, optpar_dict, model, optimizer, criterio
         [x, y], mb_size
     )
 
-    # shuffle_in_unison(
-    #     [train_x, train_y], 0, in_place=True
-    # )
-
     model = maybe_cuda(model, use_cuda=use_cuda)
     acc = None
-    ave_loss = 0
 
     train_x = torch.from_numpy(train_x).type(torch.FloatTensor)
     train_y = torch.from_numpy(train_y).type(torch.LongTensor)
@@ -416,21 +411,24 @@ def on_task_update(t, x, y, fisher_dict, optpar_dict, model, optimizer, criterio
         correct_cnt += (pred_label == y_mb).sum()
 
         loss = criterion(logits, y_mb)
-        ave_loss += loss.item()
         loss.backward()
 
-        # Update optpar_dict and fisher_dict for EWC
-        for name, param in model.named_parameters():  # for every parameter save two values 
-            optpar = param.data.clone()  # save optimized gradient value for current task i and current gradient location j
-            fisher = param.grad.data.clone().pow(2)  # save fisher value for current task i and current gradient location j 
-            if t == 0:  # first task. Just save weights and fisher values for next round
-                optpar_dict[name] = optpar
-                fisher_dict[name] = fisher
-            else:
-                optpar_dict[name] = optpar  # save weights for next round
-                fisher_dict[name] = (((fisher_dict[name]/(t+1))*t) + (fisher / (t+1)))  # average together old and new fisher values. save for use on next training round. 
+    fisher_dict[t] = {}  
+    optpar_dict[t] = {}
 
-
+    # Update optpar_dict and fisher_dict for EWC
+    for name, param in model.named_parameters():  # for every parameter save two values 
+        # optpar = param.data.clone()  # save optimized gradient value for current task i and current gradient location j
+        # fisher = param.grad.data.clone().pow(2)  # save fisher value for current task i and current gradient location j 
+        # if t == 0:  # first task. Just save weights and fisher values for next round
+        #     optpar_dict[name] = optpar
+        #     fisher_dict[name] = fisher
+        # else:
+        #     optpar_dict[name] = optpar  # save weights for next round
+        #     fisher_dict[name] = torch.clamp((((fisher_dict[name]) + (fisher))/(2)), max=fisher_max)  # average together old and new fisher values. save for use on next training round. 
+        #     # fisher_dict[name] = (((fisher_dict[name]/(t+1))*t) + (fisher / (t+1)))  # average together old and new fisher values. save for use on next training round.
+        optpar_dict[t][name] = param.data.clone()
+        fisher_dict[t][name] = param.grad.data.clone().pow(2)
 # End Modification        
 
 

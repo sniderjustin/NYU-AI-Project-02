@@ -79,7 +79,8 @@ def main(args):
     heads = []
 
     # Start Modification
-    ewc_lambda = 0.4  # should this be higher? closer to 400 or 0.4? that is what was used in other examples. What does a higher penalty do? what does a lower penatly do? 
+    ewc_lambda = 0.1  # should this be higher? closer to 0.01 or 0.4 or 0.8? that is what was used in other examples. What does a higher penalty do? what does a lower penatly do? 
+    # fisher_max = 0.0001
     # variable dictionary to hold fisher values
     fisher_dict = {}  
     # variable dictionary to hold previous optimized weight values
@@ -93,9 +94,9 @@ def main(args):
         # Start Modifiction
 
         # Make train_x and train_y smaller for testing here
-        limit_size = False  # make true to limit training size # make false to allow full training set
+        limit_size = True  # make true to limit training size # make false to allow full training set
         if limit_size:
-            train_size = 1000
+            train_size = 11900
             train_x = train_x[0:train_size]
             train_y = train_y[0:train_size]
 
@@ -124,7 +125,7 @@ def main(args):
         # Start Modifiction
         # Calculate the Fisher matrix values given new completed task
         on_task_update(
-            t, train_x, train_y, fisher_dict, optpar_dict, classifier, opt, criterion, 
+            t, train_x, train_y, fisher_dict, optpar_dict, classifier, opt, criterion,
             args.batch_size, preproc=preprocess_imgs
         )  # training complete # compute fisher matrix values
         # End Modification

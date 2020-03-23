@@ -1,0 +1,165 @@
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.019753086419753086] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.019753086419753086] 
+------------------------------------------ 
+----------- batch 1 ------------- 
+x shape: (1000, 128, 128, 3), y shape: (1000,) 
+Task Label:  1 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.225733, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.260 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.027 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.03185185185185185] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.03185185185185185] 
+------------------------------------------ 
+----------- batch 2 ------------- 
+x shape: (1000, 128, 128, 3), y shape: (1000,) 
+Task Label:  2 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.217029, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.204 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.022 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+^CTraceback (most recent call last): 
+  File "cl_ewc.py", line 215, in <module> 
+    main(args) 
+  File "cl_ewc.py", line 134, in main 
+    stats, _ = test_multitask( 
+  File "/Users/justinsnider/Documents/GitHub/NYU/AI/Project02/NYU-AI-Project-02/cvpr_clvision_challenge-master/utils/train_test.py", line 225, in test_multitask 
+    logits = model(x_mb) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/nn/modules/module.py", line 532, in __call__ 
+    result = self.forward(*input, **kwargs) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torchvision/models/resnet.py", line 216, in forward 
+    return self._forward_impl(x) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torchvision/models/resnet.py", line 199, in _forward_impl 
+    x = self.conv1(x) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/nn/modules/module.py", line 532, in __call__ 
+    result = self.forward(*input, **kwargs) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 345, in forward 
+    return self.conv2d_forward(input, self.weight) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 341, in conv2d_forward 
+    return F.conv2d(input, weight, self.bias, self.stride, 
+KeyboardInterrupt 
+ 
+(clvision-custom) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ clear 
+(clvision-custom) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ python cl_ewc.py --scenario="multi-task-nc" --sub_dir="multi-task-nc" --epochs=1 --preload=True 
+Namespace(batch_size=32, classifier='ResNet18', cuda=False, device='cpu', epochs=1, input_size=[3, 128, 128], lr=0.01, n_classes=50, preload_data=True, scenario='multi-task-nc', sub_dir='multi-task-nc') 
+ 
+Loading data... 
+Loading paths... 
+Loading LUP... 
+Loading labels... 
+preparing CL benchmark... 
+Recovering validation set... 
+----------- batch 0 ------------- 
+x shape: (1000, 128, 128, 3), y shape: (1000,) 
+Task Label:  0 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.142538, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.207 
+TEST Acc. Task 1==>>> acc: 0.000 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.022962962962962963] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.022962962962962963] 
+------------------------------------------ 
+----------- batch 1 ------------- 
+x shape: (1000, 128, 128, 3), y shape: (1000,) 
+Task Label:  1 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.211566, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.213 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.018 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.025679012345679014] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.025679012345679014] 
+------------------------------------------ 
+----------- batch 2 ------------- 
+x shape: (1000, 128, 128, 3), y shape: (1000,) 
+Task Label:  2 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.207473, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.187 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.044 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.018 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+^CTraceback (most recent call last): 
+  File "cl_ewc.py", line 215, in <module> 
+    main(args) 
+  File "cl_ewc.py", line 134, in main 
+    stats, _ = test_multitask( 
+  File "/Users/justinsnider/Documents/GitHub/NYU/AI/Project02/NYU-AI-Project-02/cvpr_clvision_challenge-master/utils/train_test.py", line 225, in test_multitask 
+    logits = model(x_mb) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/nn/modules/module.py", line 532, in __call__ 
+    result = self.forward(*input, **kwargs) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torchvision/models/resnet.py", line 216, in forward 
+    return self._forward_impl(x) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torchvision/models/resnet.py", line 199, in _forward_impl 
+    x = self.conv1(x) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/nn/modules/module.py", line 532, in __call__ 
+    result = self.forward(*input, **kwargs) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 345, in forward 
+    return self.conv2d_forward(input, self.weight) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 341, in conv2d_forward 
+    return F.conv2d(input, weight, self.bias, self.stride, 
+KeyboardInterrupt 
+ 
+(clvision-custom) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$  
