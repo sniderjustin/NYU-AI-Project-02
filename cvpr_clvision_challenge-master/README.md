@@ -1,5 +1,3 @@
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
-
 # NYU // AI // Project 02 // Continuous Learning
 This repository and project was developed for the CS-GY-6613 Artificial Intelligence class at NYU. The class professor is [Pantelis Monogioudis]( https://github.com/pantelis). The Teacher’s Assistants are [Shalaka Sane]( https://github.com/Shalaka07) and [Zhihao Zhang](https://github.com/zzyrd). They have our deep graditude for all guidance they offered in the development of the project. 
 
@@ -119,6 +117,9 @@ EWC is a regularization strategy in which the loss function is defined as:
 $$
 L(\theta)=L_B(\theta)+\sum_i \frac{\lambda}{2} F_i (\theta_i-\theta^*_{A,i})^2
 $$
+
+<img src="https://render.githubusercontent.com/render/math?math= L(\theta)=L_B(\theta)+\sum_i \frac{\lambda}{2} F_i (\theta_i-\theta^*_{A,i})^2">
+
 [https://www.pnas.org/content/pnas/114/13/3521.full.pdf](https://www.pnas.org/content/pnas/114/13/3521.full.pdf)
 
 
