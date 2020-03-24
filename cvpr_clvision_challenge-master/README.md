@@ -51,8 +51,6 @@ Store a dictionary of fisher matrix values and optimum weights for every unique 
 
 **Finding the EWC penalty using unique Fisher values and optimum weights from all tasks:**
 
-  
-
 ```python
 # Add EWC Penalty
 for task in range(t): # for each task
@@ -61,14 +59,47 @@ for task in range(t): # for each task
 	fisher = fisher_dict[task][name] # get the fisher value for the given task and weight
 	optpar = optpar_dict[task][name] # get the parameter optimized value for the given task and weight
 	loss += (fisher * (optpar - param).pow(2)).sum() * ewc_lambda # loss is accumulator # add penalty for current task and weight
+```
+
+**Storing unique set of optimum weights and fisher values for each task:**
+
+```python
+# Update optpar_dict and fisher_dict for EWC
+for name, param in model.named_parameters(): # for every parameter save two values
+	optpar_dict[t][name] = param.data.clone()
+	fisher_dict[t][name] = param.grad.data.clone().pow(2)
+
+```
+
+### EWC Implementation 02
+
+Store a single dictionary of fisher matrix values, the current optimum weights, and the previous cumulative optimum weights. This strategy does not tend to find the best compromise of weights between tasks when compared with the first implementation. However, it can still limit catastrophic forgetting. We also get a faster and more efficient implementation.
+
+**Finding the EWC penalty from the single copy of weights and Fisher values:**
 
   
+
+```python
+
+# Add EWC Penalty
+
+if t != 0:
+
+# use EWC
+
+for name, param in model.named_parameters(): # for each weight
+
+fisher = fisher_dict[name] # get the fisher value for the given task and weight
+
+optpar = optpar_dict[name] # get the parameter optimized value for the given task and weight
+
+loss += (fisher * (optpar - param).pow(2)).sum() * ewc_lambda # loss is accumulator # add penalty for current task and weight
 
 ```
 
   
 
-**Storing unique set of optimum weights and fisher values for each task:**
+**Updating single copy of Fisher values and weights:**
 
   
 
@@ -78,16 +109,18 @@ for task in range(t): # for each task
 
 for name, param in model.named_parameters(): # for every parameter save two values
 
-optpar_dict[t][name] = param.data.clone()
+optpar = param.data.clone() # save optimized gradient value for current task i and current gradient location j
 
-fisher_dict[t][name] = param.grad.data.clone().pow(2)
+fisher = param.grad.data.clone().pow(2) # save fisher value for current task i and current gradient location j
 
+if t == 0: # first task. Just save weights and fisher values for next round
+optpar_dict[name] = optpar
+fisher_dict[name] = fisher
+else:
+optpar_dict[name] = optpar # save weights for next round
+fisher_dict[name] = (((fisher_dict[name]/(t+1))*t) + (fisher / (t+1))) # average together old and new fisher values. save for use on next training round.
 ```
-
-### EWC Implementation 02
-
-Store a single dictionary of fisher matrix values, the current optimum weights, and the previous cumulative optimum weights. This strategy does not tend to find the best compromise of weights between tasks when compared with the first implementation. However, it can still limit catastrophic forgetting. We also get a faster and more efficient implementation.
-
+... performance graphics ...
 
 ## Hybrid Rehearsal with Elastic Weight Consolidation
 
@@ -154,9 +187,9 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2MDIzNjc1MCwtNjEyNDg1OTY0LC0xMD
-Y2NTYzMCwtMTYxOTM2MDg2Nyw2OTAwNzM4NjYsMTE0MzgzMDc3
-MiwtODQ4MzE0MDQxLDIxMzA5MDc1MCwtMTgxOTA5MTU2MCwtMz
-E0NTk0NzM1LDQ2NjkyODU4MCwtODkxMzY3MTk5LDE3MzI4MDEw
-MzUsMzE3MDYxMDc5LDExNTA3ODc0NiwtMTA5NDUxNjQzXX0=
+eyJoaXN0b3J5IjpbLTEzMTMxMzQxNjMsLTYxMjQ4NTk2NCwtMT
+A2NjU2MzAsLTE2MTkzNjA4NjcsNjkwMDczODY2LDExNDM4MzA3
+NzIsLTg0ODMxNDA0MSwyMTMwOTA3NTAsLTE4MTkwOTE1NjAsLT
+MxNDU5NDczNSw0NjY5Mjg1ODAsLTg5MTM2NzE5OSwxNzMyODAx
+MDM1LDMxNzA2MTA3OSwxMTUwNzg3NDYsLTEwOTQ1MTY0M119
 -->
