@@ -17,12 +17,12 @@ Continual learning is a set of techniques used to solve/mitigate catastrophic fo
 Multi-incremental-tasks are tasks that alogoritms are trained in which the labels in each task are dijoint. 𝑦1∩𝑦2=∅ , 𝑦1∩𝑦2=∅, and so on. An example of a mulit-incremental-task is splitting the MNIST data set into five isolated tasks, where each class has two labels. Class 1 = [1,2], Class 2 = [3,4], so on. 
 
 
-...Single-Incremental-Task description here...
+...Single-Incremental-Task description here...  
 In Single-Icremental-Tasks the labels in each task are not dijoint. In other words, each training batch can have overlapping classes. This is more similar to natural learning. When we humans learn new object, we compare that object to the whole set of objects we already know, which is essentially single-incremental learning. 
 
 It is important to note, that single-incremental-task learning is more diffiucult that multi-incremental-task learning. 
 
- ...New Classes Description here... 
+ ...New Classes Description here...   
  • New Classes (NC): new training patterns belonging to different classes become available in
 subsequent batches. This coincides with class-incremental learning.
 
@@ -33,7 +33,14 @@ https://arxiv.org/pdf/1806.08568.pdf
 
 For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io/core50/). The dataset is designed specifically designing and assessing Continual Learning strategies.  
 
-... Dataset description and details here... 
+... Dataset description and details here...  
+NEED TO EDIT JUST Copied/Pasted  
+
+Continual/Lifelong learning (CL) of high-dimensional data streams is a challenging research problem far from being solved. In fact, fully retraining models each time new data becomes available is infeasible, due to computational and storage issues, while naïve continual learning strategies have been shown to suffer from catastrophic forgetting. Moreover, even in the context of real-world object recognition applications (e.g. robotics), where continual learning is crucial, very few datasets and benchmarks are available to evaluate and compare emerging techniques.
+
+In this page we provide a new dataset and benchmark CORe50, specifically designed for assessing Continual Learning techniques in an Object Recognition context, along with a few baseline approaches for three different continual learning scenarios. Futhermore, we recently extended CORe50 to support object detection and segmentation.
+
+https://vlomonaco.github.io/core50/index.html#intro
 
 ... code ... 
 
