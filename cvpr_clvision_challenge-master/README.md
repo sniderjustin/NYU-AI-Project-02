@@ -102,12 +102,12 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 * [CORe50 Dataset](https://vlomonaco.github.io/core50/)
 	* The dataset we use. 
 * [CVPR clvision challenge](https://github.com/vlomonaco/cvpr_clvision_challenge)
-	* The starting point for the code we developed. This includes the the loader for the CORe50 Dataset. Also, included is 
+	* The starting point for the code we developed. This includes the the loader for the CORe50 Dataset. Also, included is the Naive approach to continual learning that we use a baseline benchmark. 
 
 ... list colab continual learning example GitHub link...
 
 ... list link to competition with starter kit used as foundation for project... 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5NTg1MjcwNCwzMTcwNjEwNzksMTE1MD
+eyJoaXN0b3J5IjpbMTczMjgwMTAzNSwzMTcwNjEwNzksMTE1MD
 c4NzQ2LC0xMDk0NTE2NDNdfQ==
 -->
