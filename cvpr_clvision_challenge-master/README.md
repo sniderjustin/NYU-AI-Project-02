@@ -11,10 +11,23 @@ This project implements a series of continuous learning strategies using the COR
 ## Continual Learning
 
 ... Describe Continual learning descrion here ...
+Continual learning is a set of techniques used to solve/mitigate catastrophic forgetting, in which algorithms learn one task, but cannot adapt and learn new tasks without forgetting the old task. In this project we focus on two CL techniques, rehearsal and elastic weight consolidation (EWC). 
+
+...Multi-Incremental-Task description here...
+Multi-incremental-tasks are tasks that alogoritms are trained in which the labels in each task are dijoint. 𝑦1∩𝑦2=∅ , 𝑦1∩𝑦2=∅, and so on. An example of a mulit-incremental-task is splitting the MNIST data set into five isolated tasks, where each class has two labels. Class 1 = [1,2], Class 2 = [3,4], so on. 
+
 
 ...Single-Incremental-Task description here...
+In Single-Icremental-Tasks the labels in each task are not dijoint. In other words, each training batch can have overlapping classes. This is more similar to natural learning. When we humans learn new object, we compare that object to the whole set of objects we already know, which is essentially single-incremental learning. 
+
+It is important to note, that single-incremental-task learning is more diffiucult that multi-incremental-task learning. 
 
  ...New Classes Description here... 
+ • New Classes (NC): new training patterns belonging to different classes become available in
+subsequent batches. This coincides with class-incremental learning.
+
+https://arxiv.org/pdf/1806.08568.pdf
+ 
 
 ## CORe50 Dataset
 
@@ -87,6 +100,10 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 ## Bibliography
 
 ... list papers with links here...
+https://vlomonaco.github.io/core50/benchmarks.html#ref
+https://arxiv.org/pdf/1612.00796.pdf
+https://arxiv.org/pdf/1806.08568.pdf
+https://arxiv.org/pdf/1611.07725.pdf
 
 ... list websites and resources here... 
 
