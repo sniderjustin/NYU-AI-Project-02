@@ -105,9 +105,9 @@ Code Used As a Starting Point:
 * [CVPR clvision challenge](https://github.com/vlomonaco/cvpr_clvision_challenge)
 	* The starting point for the code we developed. This includes the the loader for the CORe50 Dataset. Also, included is the Naive approach to continual learning that we use a baseline benchmark. 
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
-	* Provided a model for the implimentation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implimentation. 
+	* Provided a model for the implimentation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2Njk1NDIyOCwtODkxMzY3MTk5LDE3Mz
+eyJoaXN0b3J5IjpbMTkxMTcyNzM0NCwtODkxMzY3MTk5LDE3Mz
 I4MDEwMzUsMzE3MDYxMDc5LDExNTA3ODc0NiwtMTA5NDUxNjQz
 XX0=
 -->
