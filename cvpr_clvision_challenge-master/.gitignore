@@ -107,3 +107,6 @@ venv.bak/
 
 # exclude data
 **/data/
+
+# exclude .DS_store
+.DS_Store
