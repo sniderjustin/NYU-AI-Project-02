@@ -22,7 +22,7 @@ Single-Incremental-Tasks (SIT) is the challenge to take on different tasks. New 
 
 For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io/core50/). The dataset is designed specifically designing and assessing Continual Learning strategies, also called Lifelong Learning strategies.  
 
-![core50classes](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/classes.gif)
+![core50_classes](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/classes.gif)
 
 ... Dataset description and details here... 
 
@@ -111,8 +111,9 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjkwMDczODY2LDExNDM4MzA3NzIsLTg0OD
-MxNDA0MSwyMTMwOTA3NTAsLTE4MTkwOTE1NjAsLTMxNDU5NDcz
-NSw0NjY5Mjg1ODAsLTg5MTM2NzE5OSwxNzMyODAxMDM1LDMxNz
-A2MTA3OSwxMTUwNzg3NDYsLTEwOTQ1MTY0M119
+eyJoaXN0b3J5IjpbLTE2MTkzNjA4NjcsNjkwMDczODY2LDExND
+M4MzA3NzIsLTg0ODMxNDA0MSwyMTMwOTA3NTAsLTE4MTkwOTE1
+NjAsLTMxNDU5NDczNSw0NjY5Mjg1ODAsLTg5MTM2NzE5OSwxNz
+MyODAxMDM1LDMxNzA2MTA3OSwxMTUwNzg3NDYsLTEwOTQ1MTY0
+M119
 -->
