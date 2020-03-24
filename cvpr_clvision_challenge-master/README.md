@@ -90,11 +90,11 @@ Research Papers Referenced and Used:
 	* This paper describes Coninual Learning, Single-Incremental-Task, New Classes problem, and catastrophic forgetting. They have a great description of the Naive, Rehearsal, and Elastic Weight Consolidation approach to solving Continal Learning. 
 2. [Overcoming catastrophic forgetting in neural networks](https://arxiv.org/abs/1612.00796)
 	* This is the first paper to propose the Elastic Weight Consolidation approach to solving Continual Learning. 
-* [Compete to Compute](https://papers.nips.cc/paper/5059-compete-to-compute)
+3. [Compete to Compute](https://papers.nips.cc/paper/5059-compete-to-compute)
 	* This paper describes how the order of your training data matters. 
-* [CORe50: a New Dataset and Benchmark for Continuous Object Recognition](http://proceedings.mlr.press/v78/lomonaco17a/lomonaco17a.pdf)
+4. [CORe50: a New Dataset and Benchmark for Continuous Object Recognition](http://proceedings.mlr.press/v78/lomonaco17a/lomonaco17a.pdf)
 	* This paper describes the CORe50 dataset. In addition, the authors used the dataset to test several Continual Learning methods and compare their benchmarks. 
-* [Memory Efficient Experience Replay for Streaming Learning](https://arxiv.org/abs/1809.05922)
+5. [Memory Efficient Experience Replay for Streaming Learning](https://arxiv.org/abs/1809.05922)
 
 
 Datasets Used:  
@@ -107,7 +107,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implimentation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implimentation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTk4NTA1Njk0LC04OTEzNjcxOTksMTczMj
-gwMTAzNSwzMTcwNjEwNzksMTE1MDc4NzQ2LC0xMDk0NTE2NDNd
-fQ==
+eyJoaXN0b3J5IjpbMTc2Njk1NDIyOCwtODkxMzY3MTk5LDE3Mz
+I4MDEwMzUsMzE3MDYxMDc5LDExNTA3ODc0NiwtMTA5NDUxNjQz
+XX0=
 -->
