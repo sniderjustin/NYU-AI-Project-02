@@ -96,7 +96,7 @@ Modifications to the provided naive_baseline.py
             # append half of old and all of new data 
             temp_x, temp_y = shuffle_in_unison((temp_x, temp_y), seed=0)
             keep_old = (all_x.shape[0] // (i + 1)) * i
-            keep_new = temp_x.shape[0] // (i + 1)
+            keep_new = temp_x.shape[0] / q/ (i + 1)
             all_x = np.append(all_x[0:keep_old], temp_x[0:keep_new], axis=0)
             all_y = np.append(all_y[0:keep_old], temp_y[0:keep_new])
             del temp_x
@@ -113,12 +113,9 @@ Modifications to the provided naive_baseline.py
 [https://vlomonaco.github.io/core50/strategies.html](https://vlomonaco.github.io/core50/strategies.html)
 
 **Elastic Weight Consolidation** 
-EWC is a regularization strategy in which the loss function is defined as: 
-$$
-L(\theta)=L_B(\theta)+\sum_i \frac{\lambda}{2} F_i (\theta_i-\theta^*_{A,i})^2
-$$
+EWC is a regularization strategy in which the loss function is defined as:  
+<img src="https://render.githubusercontent.com/render/math?math=L(\theta)=L_B(\theta)+\sum_i \frac{\lambda}{2} F_i (\theta_i-\theta^*_{A,i})^2">
 
-<img src="https://render.githubusercontent.com/render/math?math=(L(\theta)=L_B(\theta)+\sum_i \frac{\lambda}{2} F_i (\theta_i-\theta^*_{A,i})^2)">
 
 [https://www.pnas.org/content/pnas/114/13/3521.full.pdf](https://www.pnas.org/content/pnas/114/13/3521.full.pdf)
 
