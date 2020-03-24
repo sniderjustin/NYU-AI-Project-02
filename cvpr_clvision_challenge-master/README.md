@@ -10,7 +10,11 @@ This project implements a series of continuous learning strategies using the COR
 
 ## Continual Learning
 
-... Describe Continual learning description here ...
+The recognition of object class types through sensor data such as pixels has important application. Machine Learning algorithms have shown themselves very capable at learning individual task. The more focused the higher the performance. However, for a more generalized artificial intelligence agent to be affective it will need to learn many tasks, not just one.
+
+Continual Learning is an area of artificial intelligence research focused on the challenge of learning multiple task.
+
+There are several impediments to continual learning. Beyond the general limitations of computer hardware, we find that machine learning networks suffer from a problem called Catastrophic Forgetting.
 
 ...Single-Incremental-Task description here...
 
@@ -107,7 +111,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxNDU5NDczNSw0NjY5Mjg1ODAsLTg5MT
-M2NzE5OSwxNzMyODAxMDM1LDMxNzA2MTA3OSwxMTUwNzg3NDYs
-LTEwOTQ1MTY0M119
+eyJoaXN0b3J5IjpbLTE4MTkwOTE1NjAsLTMxNDU5NDczNSw0Nj
+Y5Mjg1ODAsLTg5MTM2NzE5OSwxNzMyODAxMDM1LDMxNzA2MTA3
+OSwxMTUwNzg3NDYsLTEwOTQ1MTY0M119
 -->
