@@ -20,7 +20,7 @@ Single-Incremental-Tasks (SIT) is the challenge to take on different tasks. New 
 
 ## CORe50 Dataset
 
-For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io/core50/). The dataset is designed specifically designing and assessing Continual Learning strategies, .  
+For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io/core50/). The dataset is designed specifically designing and assessing Continual Learning strategies, also called Lifelong Learning strategies.  
 
 ... Dataset description and details here... 
 
@@ -109,8 +109,8 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzkwMTQ3ODkwLDIxMzA5MDc1MCwtMTgxOT
-A5MTU2MCwtMzE0NTk0NzM1LDQ2NjkyODU4MCwtODkxMzY3MTk5
-LDE3MzI4MDEwMzUsMzE3MDYxMDc5LDExNTA3ODc0NiwtMTA5ND
-UxNjQzXX0=
+eyJoaXN0b3J5IjpbLTg0ODMxNDA0MSwyMTMwOTA3NTAsLTE4MT
+kwOTE1NjAsLTMxNDU5NDczNSw0NjY5Mjg1ODAsLTg5MTM2NzE5
+OSwxNzMyODAxMDM1LDMxNzA2MTA3OSwxMTUwNzg3NDYsLTEwOT
+Q1MTY0M119
 -->
