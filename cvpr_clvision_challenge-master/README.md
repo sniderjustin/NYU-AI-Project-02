@@ -49,7 +49,40 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 
 Store a dictionary of fisher matrix values and optimum weights for every unique task. More effective at finding weights that work for multiple tasks. However, this requires more memory for every task to store the fisher values and the optimum weights. In addition, we take a hit for the additional time to incorporate all the weights and fisher values into our penalty.
 
-    enter code here
+**Finding the EWC penalty using unique Fisher values and optimum weights from all tasks:**
+
+  
+
+```python
+# Add EWC Penalty
+for task in range(t): # for each task
+	# use EWC
+	for name, param in model.named_parameters(): # for each weight
+	fisher = fisher_dict[task][name] # get the fisher value for the given task and weight
+	optpar = optpar_dict[task][name] # get the parameter optimized value for the given task and weight
+	loss += (fisher * (optpar - param).pow(2)).sum() * ewc_lambda # loss is accumulator # add penalty for current task and weight
+
+  
+
+```
+
+  
+
+**Storing unique set of optimum weights and fisher values for each task:**
+
+  
+
+```python
+
+# Update optpar_dict and fisher_dict for EWC
+
+for name, param in model.named_parameters(): # for every parameter save two values
+
+optpar_dict[t][name] = param.data.clone()
+
+fisher_dict[t][name] = param.grad.data.clone().pow(2)
+
+```
 
 ### EWC Implementation 02
 
@@ -121,9 +154,9 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MT
-kzNjA4NjcsNjkwMDczODY2LDExNDM4MzA3NzIsLTg0ODMxNDA0
-MSwyMTMwOTA3NTAsLTE4MTkwOTE1NjAsLTMxNDU5NDczNSw0Nj
-Y5Mjg1ODAsLTg5MTM2NzE5OSwxNzMyODAxMDM1LDMxNzA2MTA3
-OSwxMTUwNzg3NDYsLTEwOTQ1MTY0M119
+eyJoaXN0b3J5IjpbMTQ2MDIzNjc1MCwtNjEyNDg1OTY0LC0xMD
+Y2NTYzMCwtMTYxOTM2MDg2Nyw2OTAwNzM4NjYsMTE0MzgzMDc3
+MiwtODQ4MzE0MDQxLDIxMzA5MDc1MCwtMTgxOTA5MTU2MCwtMz
+E0NTk0NzM1LDQ2NjkyODU4MCwtODkxMzY3MTk5LDE3MzI4MDEw
+MzUsMzE3MDYxMDc5LDExNTA3ODc0NiwtMTA5NDUxNjQzXX0=
 -->
