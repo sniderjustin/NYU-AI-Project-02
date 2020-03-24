@@ -104,12 +104,12 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 * [CVPR clvision challenge](https://github.com/vlomonaco/cvpr_clvision_challenge)
 	* The starting point for the code we developed. This includes the the loader for the CORe50 Dataset. Also, included is the Naive approach to continual learning that we use a baseline benchmark. 
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
-	* Provided a model for t
+	* Provided a model for the implimentation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implimentation. 
 
 ... list colab continual learning example GitHub link...
 
 ... list link to competition with starter kit used as foundation for project... 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzMzMTE5NzUsMTczMjgwMTAzNSwzMT
-cwNjEwNzksMTE1MDc4NzQ2LC0xMDk0NTE2NDNdfQ==
+eyJoaXN0b3J5IjpbNjQ5MDQ5ODU1LDE3MzI4MDEwMzUsMzE3MD
+YxMDc5LDExNTA3ODc0NiwtMTA5NDUxNjQzXX0=
 -->
