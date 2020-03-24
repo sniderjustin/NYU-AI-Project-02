@@ -10,7 +10,7 @@ This project implements a series of continuous learning strategies using the COR
 
 ## Continual Learning
 
-... Describe Continual learning descrion here ...
+... Describe Continual learning description here ...
 
 ...Single-Incremental-Task description here...
 
@@ -107,7 +107,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY2OTI4NTgwLC04OTEzNjcxOTksMTczMj
-gwMTAzNSwzMTcwNjEwNzksMTE1MDc4NzQ2LC0xMDk0NTE2NDNd
-fQ==
+eyJoaXN0b3J5IjpbLTMxNDU5NDczNSw0NjY5Mjg1ODAsLTg5MT
+M2NzE5OSwxNzMyODAxMDM1LDMxNzA2MTA3OSwxMTUwNzg3NDYs
+LTEwOTQ1MTY0M119
 -->
