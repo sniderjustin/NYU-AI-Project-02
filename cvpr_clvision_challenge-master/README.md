@@ -87,7 +87,7 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 
 Research Papers Referenced and Used:
 1. [Continuous Learning in Single-Incremental-Task Scenarios](https://arxiv.org/abs/1806.08568)
-	* This paper describes Coninual Learning, Single-Incremental-Task, New Classes problem, and catastrophic forgetting. They have a great description of the Naive, Rehearsal, and Elastic Weight Consolidation approach to solving Continal Learning. 
+	* This paper describes Continual Learning, Single-Incremental-Task, New Classes problem, and catastrophic forgetting. They have a great description of the Naive, Rehearsal, and Elastic Weight Consolidation approach to solving Continual Learning. 
 2. [Overcoming catastrophic forgetting in neural networks](https://arxiv.org/abs/1612.00796)
 	* This is the first paper to propose the Elastic Weight Consolidation approach to solving Continual Learning. 
 3. [Compete to Compute](https://papers.nips.cc/paper/5059-compete-to-compute)
@@ -103,11 +103,11 @@ Datasets Used:
 
 Code Used As a Starting Point: 
 * [CVPR clvision challenge](https://github.com/vlomonaco/cvpr_clvision_challenge)
-	* The starting point for the code we developed. This includes the the loader for the CORe50 Dataset. Also, included is the Naive approach to continual learning that we use a baseline benchmark. 
+	* The starting point for the code we developed. This includes the loader for the CORe50 Dataset. Also, included is the Naive approach to continual learning that we use a baseline benchmark. 
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
-	* Provided a model for the implimentation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
+	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMTcyNzM0NCwtODkxMzY3MTk5LDE3Mz
-I4MDEwMzUsMzE3MDYxMDc5LDExNTA3ODc0NiwtMTA5NDUxNjQz
-XX0=
+eyJoaXN0b3J5IjpbNDY2OTI4NTgwLC04OTEzNjcxOTksMTczMj
+gwMTAzNSwzMTcwNjEwNzksMTE1MDc4NzQ2LC0xMDk0NTE2NDNd
+fQ==
 -->
