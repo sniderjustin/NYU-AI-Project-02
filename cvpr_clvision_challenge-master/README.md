@@ -49,7 +49,7 @@ Store a dictionary of fisher matrix values and optimum weights for every unique 
 
 
 ### EWC Implimentation 02
-Store a single dictionary of fisher matrix values, the current optimum weights, and the previous cumulative optimum weights. This strategy does not tend to find the best comprimise of weights between tasks 
+Store a single dictionary of fisher matrix values, the current optimum weights, and the previous cumulative optimum weights. This strategy does not tend to find the best comprimise of weights between tasks when compared with the first implimentation. However, it can still limit catastrophic forgetting. We also get a faster and more efficient
 
 
 ## Hybrid Rehearsal with Elastic Weight Consolidation
@@ -117,9 +117,9 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDMxOTU0MDksLTEwNjY1NjMwLC0xNj
-E5MzYwODY3LDY5MDA3Mzg2NiwxMTQzODMwNzcyLC04NDgzMTQw
-NDEsMjEzMDkwNzUwLC0xODE5MDkxNTYwLC0zMTQ1OTQ3MzUsND
-Y2OTI4NTgwLC04OTEzNjcxOTksMTczMjgwMTAzNSwzMTcwNjEw
-NzksMTE1MDc4NzQ2LC0xMDk0NTE2NDNdfQ==
+eyJoaXN0b3J5IjpbODE1NTI0OTgzLC0xMDY2NTYzMCwtMTYxOT
+M2MDg2Nyw2OTAwNzM4NjYsMTE0MzgzMDc3MiwtODQ4MzE0MDQx
+LDIxMzA5MDc1MCwtMTgxOTA5MTU2MCwtMzE0NTk0NzM1LDQ2Nj
+kyODU4MCwtODkxMzY3MTk5LDE3MzI4MDEwMzUsMzE3MDYxMDc5
+LDExNTA3ODc0NiwtMTA5NDUxNjQzXX0=
 -->
