@@ -93,3 +93,8 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 ... list colab continual learning example GitHub link...
 
 ... list link to competition with starter kit used as foundation for project... 
+
+Teeest
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE4MTYwNDEwMDldfQ==
+-->
