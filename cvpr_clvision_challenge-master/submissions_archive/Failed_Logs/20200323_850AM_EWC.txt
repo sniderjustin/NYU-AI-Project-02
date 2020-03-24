@@ -1,0 +1,112 @@
+
+  File "cl_ewc.py", line 113, in main 
+    # utils.train_net: a custom function to train neural network. returns stats.  
+  File "/Users/justinsnider/Documents/GitHub/NYU/AI/Project02/NYU-AI-Project-02/cvpr_clvision_challenge-master/utils/train_test.py", line 342, in train_net_ewc 
+    loss.backward() 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/autograd/__init__.py", line 97, in backward 
+    Variable._execution_engine.run_backward( 
+KeyboardInterrupt 
+ 
+(clvision-custom) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ python cl_ewc.py --scenario="multi-task-nc" --sub_dir="multi-task-nc" --epochs=1 --preload=True 
+Namespace(batch_size=32, classifier='ResNet18', cuda=False, device='cpu', epochs=1, input_size=[3, 128, 128], lr=0.01, n_classes=50, preload_data=True, scenario='multi-task-nc', sub_dir='multi-task-nc') 
+ 
+Loading data... 
+Loading paths... 
+Loading LUP... 
+Loading labels... 
+preparing CL benchmark... 
+Recovering validation set... 
+----------- batch 0 ------------- 
+x shape: (1000, 128, 128, 3), y shape: (1000,) 
+Task Label:  0 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.122478, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.211 
+TEST Acc. Task 1==>>> acc: 0.000 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.02345679012345679] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.02345679012345679] 
+------------------------------------------ 
+----------- batch 1 ------------- 
+x shape: (1000, 128, 128, 3), y shape: (1000,) 
+Task Label:  1 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.211934, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.193 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.053 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.027407407407407408] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.027407407407407408] 
+------------------------------------------ 
+----------- batch 2 ------------- 
+x shape: (1000, 128, 128, 3), y shape: (1000,) 
+Task Label:  2 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.209427, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.233 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.049 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.022 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.033827160493827155] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.033827160493827155] 
+------------------------------------------ 
+----------- batch 3 ------------- 
+x shape: (1000, 128, 128, 3), y shape: (1000,) 
+Task Label:  3 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.202997, running train acc: 0.000 
+Updating Fisher values and old parameters 
+^CTraceback (most recent call last): 
+  File "cl_ewc.py", line 215, in <module> 
+    main(args) 
+  File "cl_ewc.py", line 127, in main 
+    on_task_update( 
+  File "/Users/justinsnider/Documents/GitHub/NYU/AI/Project02/NYU-AI-Project-02/cvpr_clvision_challenge-master/utils/train_test.py", line 416, in on_task_update 
+    loss.backward() 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/tensor.py", line 195, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/autograd/__init__.py", line 97, in backward 
+    Variable._execution_engine.run_backward( 
+KeyboardInterrupt 
+ 
+(clvision-custom) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$  
