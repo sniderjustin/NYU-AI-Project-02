@@ -16,9 +16,7 @@ Continual Learning is an area of artificial intelligence research focused on the
 
 There are several impediments to continual learning. Beyond the general limitations of computer hardware, we find that machine learning networks suffer from a problem called Catastrophic Forgetting.
 
-...Single-Incremental-Task description here...
-
- ...New Classes Description here... 
+Single-Incremental-Tasks (SIT) is the challenge to take on different tasks. New Classes (NC) is a subcategory of SIT. For a New Classes we challenge the algorithm to learn disjoint tasks. For example our goal might be to identify if the class present in a given image.
 
 ## CORe50 Dataset
 
@@ -111,7 +109,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTkwOTE1NjAsLTMxNDU5NDczNSw0Nj
-Y5Mjg1ODAsLTg5MTM2NzE5OSwxNzMyODAxMDM1LDMxNzA2MTA3
-OSwxMTUwNzg3NDYsLTEwOTQ1MTY0M119
+eyJoaXN0b3J5IjpbMjEzMDkwNzUwLC0xODE5MDkxNTYwLC0zMT
+Q1OTQ3MzUsNDY2OTI4NTgwLC04OTEzNjcxOTksMTczMjgwMTAz
+NSwzMTcwNjEwNzksMTE1MDc4NzQ2LC0xMDk0NTE2NDNdfQ==
 -->
