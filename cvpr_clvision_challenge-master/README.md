@@ -86,7 +86,7 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 
 ## Bibliography
 
-... list papers with links here...
+Research Papers Referenced and Used:
 * [Continuous Learning in Single-Incremental-Task Scenarios](https://arxiv.org/abs/1806.08568)
 	* This paper describes Coninual Learning, Single-Incremental-Task, New Classes problem, and catastrophic forgetting. They have a great description of the Naive, Rehearsal, and Elastic Weight Consolidation approach to solving Continal Learning. 
 * [Overcoming catastrophic forgetting in neural networks](https://arxiv.org/abs/1612.00796)
@@ -96,20 +96,19 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 * [CORe50: a New Dataset and Benchmark for Continuous Object Recognition](http://proceedings.mlr.press/v78/lomonaco17a/lomonaco17a.pdf)
 	* This paper describes the CORe50 dataset. In addition, the authors used the dataset to test several Continual Learning methods and compare their benchmarks. 
 * [Memory Efficient Experience Replay for Streaming Learning](https://arxiv.org/abs/1809.05922)
-* 
 
-... list websites and resources here... 
+
+Datasets Used:  
 * [CORe50 Dataset](https://vlomonaco.github.io/core50/)
 	* The dataset we use. 
+
+Code Used As a Starting Point: 
 * [CVPR clvision challenge](https://github.com/vlomonaco/cvpr_clvision_challenge)
 	* The starting point for the code we developed. This includes the the loader for the CORe50 Dataset. Also, included is the Naive approach to continual learning that we use a baseline benchmark. 
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implimentation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implimentation. 
 
-... list colab continual learning example GitHub link...
-
-... list link to competition with starter kit used as foundation for project... 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ5MDQ5ODU1LDE3MzI4MDEwMzUsMzE3MD
-YxMDc5LDExNTA3ODc0NiwtMTA5NDUxNjQzXX0=
+eyJoaXN0b3J5IjpbMTU5Mzc1MzM3MSwxNzMyODAxMDM1LDMxNz
+A2MTA3OSwxMTUwNzg3NDYsLTEwOTQ1MTY0M119
 -->
