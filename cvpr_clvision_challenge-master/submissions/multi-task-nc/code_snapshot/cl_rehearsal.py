@@ -32,9 +32,9 @@ import copy  #  provides for shallow and deep copy opperations
 from core50.dataset import CORE50  #  Imports the custom module for dealing with the core50 dataset
 import torch  #  Imports the torch library 
 import numpy as np  # imports the numpy library 
-from utils.train_test import train_net, test_multitask, preprocess_imgs, train_net_ewc, on_task_update   #  custom utils in the util module inside the sub utils folder
+from utils.train_test import train_net, test_multitask, preprocess_imgs  #  custom utils in the util module inside the sub utils folder
 import torchvision.models as models  #  provides access to pytorch compatable datasets
-from utils.common import create_code_snapshot  #  custom utils in the util module inside the sub utils folder
+from utils.common import create_code_snapshot, shuffle_in_unison  #  custom utils in the util module inside the sub utils folder
 
 
 def main(args):
@@ -77,31 +77,53 @@ def main(args):
     ext_mem_sz = []
     ram_usage = []
     heads = []
+    
 
-    # Start Modification
-    ewc_lambda = 4  # should this be higher? closer to 0.01 or 0.4 or 0.8? that is what was used in other examples. What does a higher penalty do? what does a lower penatly do? 
-    # fisher_max = 0.0001
-    # variable dictionary to hold fisher values
-    fisher_dict = {}  
-    # variable dictionary to hold previous optimized weight values
-    optpar_dict = {}
-    # End Modification
 
+    # enumerate(dataset) provides itirator over all training sets and test sets 
     # loop over the training incremental batches (x, y, t)
     for i, train_batch in enumerate(dataset):
         train_x, train_y, t = train_batch
 
-        # Start Modifiction
+        # Start modification
 
-        # Make train_x and train_y smaller for testing here
-        limit_size = True  # make true to limit training size # make false to allow full training set
-        if limit_size:
-            train_size = 3200
-            # train_size = 11900
-            train_x = train_x[0:train_size]
-            train_y = train_y[0:train_size]
+        # run batch 0 and 1. Then break. 
+        # if i == 2: break
 
-        # End Modification
+        # shuffle new data
+        train_x, train_y = shuffle_in_unison((train_x, train_y), seed=0)
+
+        if i == 0: 
+            # this is the first round
+            # store data for later 
+            all_x = train_x[0:train_x.shape[0]//2]
+            all_y = train_y[0:train_y.shape[0]//2] 
+        else: 
+            # this is not the first round
+            # create hybrid training set old and new data
+            # shuffle old data
+            all_x, all_y = shuffle_in_unison((all_x, all_y), seed=0)
+
+            # create temp holder
+            temp_x = train_x
+            temp_y = train_y
+
+            # set current variables to be used for training
+            train_x = np.append(all_x, train_x, axis=0)
+            train_y = np.append(all_y, train_y)
+            train_x, train_y = shuffle_in_unison((train_x, train_y), seed=0)
+
+            # append half of old and all of new data 
+            temp_x, temp_y = shuffle_in_unison((temp_x, temp_y), seed=0)
+            keep_old = (all_x.shape[0] // (i + 1)) * i
+            keep_new = temp_x.shape[0] // (i + 1)
+            all_x = np.append(all_x[0:keep_old], temp_x[0:keep_new], axis=0)
+            all_y = np.append(all_y[0:keep_old], temp_y[0:keep_new])
+            del temp_x
+            del temp_y
+
+        # rest of code after this should be the same
+        # End modification
 
         # Print current batch number 
         print("----------- batch {0} -------------".format(i))
@@ -112,8 +134,8 @@ def main(args):
         print("Task Label: ", t)
 
         # utils.train_net: a custom function to train neural network. returns stats. 
-        _, _, stats = train_net_ewc(
-            opt, classifier, criterion, args.batch_size, train_x, train_y, t, fisher_dict, optpar_dict, ewc_lambda,
+        _, _, stats = train_net(
+            opt, classifier, criterion, args.batch_size, train_x, train_y, t,
             args.epochs, preproc=preprocess_imgs
         )
 
@@ -122,14 +144,6 @@ def main(args):
             heads.append(copy.deepcopy(classifier.fc))
         ext_mem_sz += stats['disk']
         ram_usage += stats['ram']
-
-        # Start Modifiction
-        # Calculate the Fisher matrix values given new completed task
-        on_task_update(
-            t, train_x, train_y, fisher_dict, optpar_dict, classifier, opt, criterion,
-            args.batch_size, preproc=preprocess_imgs
-        )  # training complete # compute fisher matrix values
-        # End Modification
 
         # test all nn models in list heads for performance. return stats for each.
         stats, _ = test_multitask(
@@ -214,4 +228,3 @@ if __name__ == "__main__":
     args.device = 'cuda:0' if args.cuda else 'cpu'
 
     main(args)
-

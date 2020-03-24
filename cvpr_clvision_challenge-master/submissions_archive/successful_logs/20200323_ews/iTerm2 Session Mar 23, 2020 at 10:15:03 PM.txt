@@ -1,0 +1,332 @@
+------------------------------------------ 
+Avg. acc: [0.06765432098765432] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.06765432098765432] 
+------------------------------------------ 
+----------- batch 1 ------------- 
+x shape: (5000, 128, 128, 3), y shape: (5000,) 
+Task Label:  1 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.232784, running train acc: 0.000 
+==>>> it: 100, avg. loss: 0.000064, running train acc: 0.712 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.547 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.702 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.1387654320987654] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.1387654320987654] 
+------------------------------------------ 
+----------- batch 2 ------------- 
+x shape: (5000, 128, 128, 3), y shape: (5000,) 
+Task Label:  2 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.210325, running train acc: 0.000 
+==>>> it: 100, avg. loss: 0.000094, running train acc: 0.707 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.391 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.009 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.547 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.10518518518518519] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.10518518518518519] 
+------------------------------------------ 
+----------- batch 3 ------------- 
+x shape: (5000, 128, 128, 3), y shape: (5000,) 
+Task Label:  3 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.218822, running train acc: 0.000 
+^CTraceback (most recent call last): 
+  File "cl_ewc.py", line 216, in <module> 
+    main(args) 
+  File "cl_ewc.py", line 115, in main 
+    _, _, stats = train_net_ewc( 
+  File "/Users/justinsnider/Documents/GitHub/NYU/AI/Project02/NYU-AI-Project-02/cvpr_clvision_challenge-master/utils/train_test.py", line 342, in train_net_ewc 
+    loss.backward() 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/tensor.py", line 195, in backward 
+    torch.autograd.backward(self, gradient, retain_graph, create_graph) 
+  File "/Users/justinsnider/opt/anaconda3/envs/clvision-custom/lib/python3.8/site-packages/torch/autograd/__init__.py", line 97, in backward 
+    Variable._execution_engine.run_backward( 
+KeyboardInterrupt 
+ 
+(clvision-custom) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ clear 
+(clvision-custom) Justins-Macbookpro:cvpr_clvision_challenge-master justinsnider$ python cl_ewc.py --scenario="multi-task-nc" --sub_dir="multi-task-nc" --epochs=1 --preload=True 
+Namespace(batch_size=32, classifier='ResNet18', cuda=False, device='cpu', epochs=1, input_size=[3, 128, 128], lr=0.01, n_classes=50, preload_data=True, scenario='multi-task-nc', sub_dir='multi-task-nc') 
+ 
+Loading data... 
+Loading paths... 
+Loading LUP... 
+Loading labels... 
+preparing CL benchmark... 
+Recovering validation set... 
+----------- batch 0 ------------- 
+x shape: (3200, 128, 128, 3), y shape: (3200,) 
+Task Label:  0 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.129928, running train acc: 0.031 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.653 
+TEST Acc. Task 1==>>> acc: 0.000 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.0725925925925926] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.0725925925925926] 
+------------------------------------------ 
+----------- batch 1 ------------- 
+x shape: (3200, 128, 128, 3), y shape: (3200,) 
+Task Label:  1 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.211826, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.593 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.524 
+TEST Acc. Task 2==>>> acc: 0.000 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.12419753086419755] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.12419753086419755] 
+------------------------------------------ 
+----------- batch 2 ------------- 
+x shape: (3200, 128, 128, 3), y shape: (3200,) 
+Task Label:  2 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.206094, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.393 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.169 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.476 
+TEST Acc. Task 3==>>> acc: 0.000 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.11530864197530863] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.11530864197530863] 
+------------------------------------------ 
+----------- batch 3 ------------- 
+x shape: (3200, 128, 128, 3), y shape: (3200,) 
+Task Label:  3 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.208111, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.393 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.129 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.191 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.516 
+TEST Acc. Task 4==>>> acc: 0.000 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.1365432098765432] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.1365432098765432] 
+------------------------------------------ 
+----------- batch 4 ------------- 
+x shape: (3200, 128, 128, 3), y shape: (3200,) 
+Task Label:  4 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.190343, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.304 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.089 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.027 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.160 
+Using head:  4 
+TEST Acc. Task 4==>>> acc: 0.396 
+TEST Acc. Task 5==>>> acc: 0.000 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.10839506172839507] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.10839506172839507] 
+------------------------------------------ 
+----------- batch 5 ------------- 
+x shape: (3200, 128, 128, 3), y shape: (3200,) 
+Task Label:  5 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.206780, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.176 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.022 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.004 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.004 
+Using head:  4 
+TEST Acc. Task 4==>>> acc: 0.147 
+Using head:  5 
+TEST Acc. Task 5==>>> acc: 0.560 
+TEST Acc. Task 6==>>> acc: 0.000 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.10148148148148149] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.10148148148148149] 
+------------------------------------------ 
+----------- batch 6 ------------- 
+x shape: (3200, 128, 128, 3), y shape: (3200,) 
+Task Label:  6 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.206189, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.224 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.000 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.000 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.000 
+Using head:  4 
+TEST Acc. Task 4==>>> acc: 0.044 
+Using head:  5 
+TEST Acc. Task 5==>>> acc: 0.004 
+Using head:  6 
+TEST Acc. Task 6==>>> acc: 0.436 
+TEST Acc. Task 7==>>> acc: 0.000 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.07876543209876544] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.07876543209876544] 
+------------------------------------------ 
+----------- batch 7 ------------- 
+x shape: (3200, 128, 128, 3), y shape: (3200,) 
+Task Label:  7 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.198922, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.284 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.000 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.000 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.000 
+Using head:  4 
+TEST Acc. Task 4==>>> acc: 0.004 
+Using head:  5 
+TEST Acc. Task 5==>>> acc: 0.031 
+Using head:  6 
+TEST Acc. Task 6==>>> acc: 0.120 
+Using head:  7 
+TEST Acc. Task 7==>>> acc: 0.662 
+TEST Acc. Task 8==>>> acc: 0.000 
+------------------------------------------ 
+Avg. acc: [0.12246913580246914] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.12246913580246914] 
+------------------------------------------ 
+----------- batch 8 ------------- 
+x shape: (3200, 128, 128, 3), y shape: (3200,) 
+Task Label:  8 
+training ep:  0 
+==>>> it: 0, avg. loss: 0.207790, running train acc: 0.000 
+Updating Fisher values and old parameters 
+Using head:  0 
+TEST Acc. Task 0==>>> acc: 0.191 
+Using head:  1 
+TEST Acc. Task 1==>>> acc: 0.000 
+Using head:  2 
+TEST Acc. Task 2==>>> acc: 0.000 
+Using head:  3 
+TEST Acc. Task 3==>>> acc: 0.000 
+Using head:  4 
+TEST Acc. Task 4==>>> acc: 0.000 
+Using head:  5 
+TEST Acc. Task 5==>>> acc: 0.000 
+Using head:  6 
+TEST Acc. Task 6==>>> acc: 0.067 
+Using head:  7 
+TEST Acc. Task 7==>>> acc: 0.080 
+Using head:  8 
+TEST Acc. Task 8==>>> acc: 0.644 
+------------------------------------------ 
+Avg. acc: [0.10913580246913582] 
+------------------------------------------ 
+classifier reset... 
+------------------------------------------ 
+Avg. acc: [0.10913580246913582] 
+------------------------------------------ 
+Training Time: 167.09158733288447m 
+Final inference on test set... 
+ 

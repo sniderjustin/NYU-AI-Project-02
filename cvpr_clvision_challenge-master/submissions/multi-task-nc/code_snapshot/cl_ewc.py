@@ -94,7 +94,7 @@ def main(args):
         # Start Modifiction
 
         # Make train_x and train_y smaller for testing here
-        limit_size = True  # make true to limit training size # make false to allow full training set
+        limit_size = False  # make true to limit training size # make false to allow full training set
         if limit_size:
             train_size = 3200
             # train_size = 11900

@@ -93,15 +93,45 @@ def main(args):
 
         # Start Modifiction
 
-        # Make train_x and train_y smaller for testing here
-        limit_size = True  # make true to limit training size # make false to allow full training set
-        if limit_size:
-            train_size = 3200
-            # train_size = 11900
-            train_x = train_x[0:train_size]
-            train_y = train_y[0:train_size]
+        # Start modification
 
-        # End Modification
+        # run batch 0 and 1. Then break. 
+        # if i == 2: break
+
+        # shuffle new data
+        train_x, train_y = shuffle_in_unison((train_x, train_y), seed=0)
+
+        if i == 0: 
+            # this is the first round
+            # store data for later 
+            all_x = train_x[0:train_x.shape[0]//2]
+            all_y = train_y[0:train_y.shape[0]//2] 
+        else: 
+            # this is not the first round
+            # create hybrid training set old and new data
+            # shuffle old data
+            all_x, all_y = shuffle_in_unison((all_x, all_y), seed=0)
+
+            # create temp holder
+            temp_x = train_x
+            temp_y = train_y
+
+            # set current variables to be used for training
+            train_x = np.append(all_x, train_x, axis=0)
+            train_y = np.append(all_y, train_y)
+            train_x, train_y = shuffle_in_unison((train_x, train_y), seed=0)
+
+            # append half of old and all of new data 
+            temp_x, temp_y = shuffle_in_unison((temp_x, temp_y), seed=0)
+            keep_old = (all_x.shape[0] // (i + 1)) * i
+            keep_new = temp_x.shape[0] // (i + 1)
+            all_x = np.append(all_x[0:keep_old], temp_x[0:keep_new], axis=0)
+            all_y = np.append(all_y[0:keep_old], temp_y[0:keep_new])
+            del temp_x
+            del temp_y
+
+        # rest of code after this should be the same
+        # End modification
 
         # Print current batch number 
         print("----------- batch {0} -------------".format(i))
