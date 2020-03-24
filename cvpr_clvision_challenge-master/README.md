@@ -97,28 +97,19 @@ loss += (fisher * (optpar - param).pow(2)).sum() * ewc_lambda # loss is accumula
 
 ```
 
-  
-
 **Updating single copy of Fisher values and weights:**
 
-  
-
 ```python
-
 # Update optpar_dict and fisher_dict for EWC
-
 for name, param in model.named_parameters(): # for every parameter save two values
-
-optpar = param.data.clone() # save optimized gradient value for current task i and current gradient location j
-
-fisher = param.grad.data.clone().pow(2) # save fisher value for current task i and current gradient location j
-
-if t == 0: # first task. Just save weights and fisher values for next round
-optpar_dict[name] = optpar
-fisher_dict[name] = fisher
-else:
-optpar_dict[name] = optpar # save weights for next round
-fisher_dict[name] = (((fisher_dict[name]/(t+1))*t) + (fisher / (t+1))) # average together old and new fisher values. save for use on next training round.
+	optpar = param.data.clone() # save optimized gradient value for current task i and current gradient location j
+	fisher = param.grad.data.clone().pow(2) # save fisher value for current task i and current gradient location j
+	if t == 0: # first task. Just save weights and fisher values for next round
+		optpar_dict[name] = optpar
+		fisher_dict[name] = fisher
+	else:
+		optpar_dict[name] = optpar # save weights for next round
+		fisher_dict[name] = (((fisher_dict[name]/(t+1))*t) + (fisher / (t+1))) # average together old and new fisher values. save for use on next training round.
 ```
 ... performance graphics ...
 
@@ -187,7 +178,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTMxMzQxNjMsLTYxMjQ4NTk2NCwtMT
+eyJoaXN0b3J5IjpbLTE2MDgwMjU5NjksLTYxMjQ4NTk2NCwtMT
 A2NjU2MzAsLTE2MTkzNjA4NjcsNjkwMDczODY2LDExNDM4MzA3
 NzIsLTg0ODMxNDA0MSwyMTMwOTA3NTAsLTE4MTkwOTE1NjAsLT
 MxNDU5NDczNSw0NjY5Mjg1ODAsLTg5MTM2NzE5OSwxNzMyODAx
