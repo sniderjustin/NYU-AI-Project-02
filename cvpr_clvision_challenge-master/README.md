@@ -92,7 +92,9 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 * [Overcoming catastrophic forgetting in neural networks](https://arxiv.org/abs/1612.00796)
 	* This is the first paper to propose the Elastic Weight Consolidation approach to solving Continual Learning. 
 * [Compete to Compute](https://papers.nips.cc/paper/5059-compete-to-compute)
+	* This paper describes how the order of your training data matters. 
 * [CORe50: a New Dataset and Benchmark for Continuous Object Recognition](http://proceedings.mlr.press/v78/lomonaco17a/lomonaco17a.pdf)
+	* This paper describes the CORe50 dataset. In addition, the authors 
 * [Memory Efficient Experience Replay for Streaming Learning](https://arxiv.org/abs/1809.05922)
 * 
 
@@ -103,6 +105,6 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 
 ... list link to competition with starter kit used as foundation for project... 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTE2Nzc3MzMsMTE1MDc4NzQ2LC0xMD
-k0NTE2NDNdfQ==
+eyJoaXN0b3J5IjpbNTcxOTEzOTE1LDExNTA3ODc0NiwtMTA5ND
+UxNjQzXX0=
 -->
