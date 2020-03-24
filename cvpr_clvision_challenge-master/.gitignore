@@ -107,3 +107,6 @@ venv.bak/
 
 # exclude data
 **/data/
+
+# Ignore auto generated mac file
+.DS_Store

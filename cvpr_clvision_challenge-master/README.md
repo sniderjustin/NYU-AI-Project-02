@@ -10,15 +10,17 @@ This project implements a series of continuous learning strategies using the COR
 
 ## Continual Learning
 
-... Describe Continual learning descrion here ...
+The recognition of object class types through sensor data such as pixels has important application. Machine Learning algorithms have shown themselves very capable at learning individual task. The more focused the higher the performance. However, for a more generalized artificial intelligence agent to be affective it will need to learn many tasks, not just one.
 
-...Single-Incremental-Task description here...
+Continual Learning is an area of artificial intelligence research focused on the challenge of learning multiple task.
 
- ...New Classes Description here... 
+There are several impediments to continual learning. Beyond the general limitations of computer hardware, we find that machine learning networks suffer from a problem called Catastrophic Forgetting.
+
+Single-Incremental-Tasks (SIT) is the challenge to take on different tasks. New Classes (NC) is a subcategory of SIT. For a New Classes we challenge the algorithm to learn disjoint tasks. For example our goal might be to identify if the class present in a given image.
 
 ## CORe50 Dataset
 
-For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io/core50/). The dataset is designed specifically designing and assessing Continual Learning strategies.  
+For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io/core50/). The dataset is designed specifically designing and assessing Continual Learning strategies, also called Lifelong Learning strategies.  
 
 ... Dataset description and details here... 
 
@@ -61,9 +63,8 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 ... comparison Benchmark graphics... 
 
 ## Project Structure
-... Reformat at Jupyter notebook file... 
 
-... list new file structure here including Jupyter notebook file... 
+... list new files developed and new functions developed.. 
 
 This repository is structured as follows:
 
@@ -86,10 +87,30 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 
 ## Bibliography
 
-... list papers with links here...
+Research Papers Referenced and Used:
+1. [Continuous Learning in Single-Incremental-Task Scenarios](https://arxiv.org/abs/1806.08568)
+	* This paper describes Continual Learning, Single-Incremental-Task, New Classes problem, and catastrophic forgetting. They have a great description of the Naive, Rehearsal, and Elastic Weight Consolidation approach to solving Continual Learning. 
+2. [Overcoming catastrophic forgetting in neural networks](https://arxiv.org/abs/1612.00796)
+	* This is the first paper to propose the Elastic Weight Consolidation approach to solving Continual Learning. 
+3. [Compete to Compute](https://papers.nips.cc/paper/5059-compete-to-compute)
+	* This paper describes how the order of your training data matters. 
+4. [CORe50: a New Dataset and Benchmark for Continuous Object Recognition](http://proceedings.mlr.press/v78/lomonaco17a/lomonaco17a.pdf)
+	* This paper describes the CORe50 dataset. In addition, the authors used the dataset to test several Continual Learning methods and compare their benchmarks. 
+5. [Memory Efficient Experience Replay for Streaming Learning](https://arxiv.org/abs/1809.05922)
 
-... list websites and resources here... 
 
-... list colab continual learning example GitHub link...
+Datasets Used:  
+* [CORe50 Dataset](https://vlomonaco.github.io/core50/)
+	* The dataset we use. 
 
-... list link to competition with starter kit used as foundation for project... 
+Code Used As a Starting Point: 
+* [CVPR clvision challenge](https://github.com/vlomonaco/cvpr_clvision_challenge)
+	* The starting point for the code we developed. This includes the loader for the CORe50 Dataset. Also, included is the Naive approach to continual learning that we use a baseline benchmark. 
+* [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
+	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTg0ODMxNDA0MSwyMTMwOTA3NTAsLTE4MT
+kwOTE1NjAsLTMxNDU5NDczNSw0NjY5Mjg1ODAsLTg5MTM2NzE5
+OSwxNzMyODAxMDM1LDMxNzA2MTA3OSwxMTUwNzg3NDYsLTEwOT
+Q1MTY0M119
+-->
