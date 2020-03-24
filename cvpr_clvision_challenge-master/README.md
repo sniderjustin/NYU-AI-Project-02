@@ -8,12 +8,12 @@ The authors of the project are [Justin Snider](https://github.com/aobject) and [
 ## Using Rehearsal and Elastic Weight Consolidation for Single-Incremental-Task on New Classes
 This project implements a series of continuous learning strategies using the CORe50 dataset. We have focused on implementing Rehearsal, Elastic Weight, and finally a hybrid of two strategies combined. We will explain the logic, implementation, and performance of these three strategies. 
 
-## Continual Learning
+## Continual Learning  
 
-**Continual Learning**
+**Continual Learning**  
 Continual learning is a set of techniques used to solve/mitigate catastrophic forgetting, in which algorithms learn one task, but cannot adapt and learn new tasks without forgetting the old task. In this project we focus on two CL techniques, rehearsal and elastic weight consolidation (EWC). 
 
-**Multi-Incremental-Task**
+**Multi-Incremental-Task**  
 Multi-incremental-tasks are tasks that algorithms are trained in which the labels in each task are disjoint. 𝑦1∩𝑦2=∅ , 𝑦1∩𝑦2=∅, and so on. An example of a Multi-incremental-task is splitting the MNIST data set into five isolated tasks, where each class has two labels. Class 1 = [1,2], Class 2 = [3,4], so on.
 
 **Single-Incremental-Task**  
