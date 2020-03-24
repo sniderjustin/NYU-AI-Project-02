@@ -89,6 +89,9 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 ... list papers with links here...
 * [Continuous Learning in Single-Incremental-Task Scenarios](https://arxiv.org/abs/1806.08568)
 * [Compete to Compute](https://papers.nips.cc/paper/5059-compete-to-compute)
+* [CORe50: a New Dataset and Benchmark for Continuous Object Recognition](http://proceedings.mlr.press/v78/lomonaco17a/lomonaco17a.pdf)
+* [Memory Efficient Experience Replay for Streaming Learning](https://arxiv.org/abs/1809.05922)
+* 
 
 ... list websites and resources here... 
 * [CORe50 Dataset](https://vlomonaco.github.io/core50/)
@@ -97,6 +100,6 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 
 ... list link to competition with starter kit used as foundation for project... 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDgzOTQzODMsMTE1MDc4NzQ2LC0xMD
-k0NTE2NDNdfQ==
+eyJoaXN0b3J5IjpbMTY5NDQzNzcyNiwxMTUwNzg3NDYsLTEwOT
+Q1MTY0M119
 -->
