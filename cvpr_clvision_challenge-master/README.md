@@ -87,7 +87,7 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 ## Bibliography
 
 ... list papers with links here...
-
+[Compete to Compute](https://papers.nips.cc/paper/5059-compete-to-compute)
 ... list websites and resources here... 
 * [CORe50 Dataset](https://vlomonaco.github.io/core50/)
 
@@ -95,5 +95,6 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 
 ... list link to competition with starter kit used as foundation for project... 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1MDc4NzQ2LC0xMDk0NTE2NDNdfQ==
+eyJoaXN0b3J5IjpbODEzMDQ4NDk5LDExNTA3ODc0NiwtMTA5ND
+UxNjQzXX0=
 -->
