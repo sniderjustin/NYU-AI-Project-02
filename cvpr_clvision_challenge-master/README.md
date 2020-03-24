@@ -94,7 +94,7 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 * [Compete to Compute](https://papers.nips.cc/paper/5059-compete-to-compute)
 	* This paper describes how the order of your training data matters. 
 * [CORe50: a New Dataset and Benchmark for Continuous Object Recognition](http://proceedings.mlr.press/v78/lomonaco17a/lomonaco17a.pdf)
-	* This paper describes the CORe50 dataset. In addition, the authors 
+	* This paper describes the CORe50 dataset. In addition, the authors used the dataset to test several Continual Learning methods and compare their benchmarks. 
 * [Memory Efficient Experience Replay for Streaming Learning](https://arxiv.org/abs/1809.05922)
 * 
 
@@ -105,6 +105,6 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 
 ... list link to competition with starter kit used as foundation for project... 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTcxOTEzOTE1LDExNTA3ODc0NiwtMTA5ND
+eyJoaXN0b3J5IjpbMzE3MDYxMDc5LDExNTA3ODc0NiwtMTA5ND
 UxNjQzXX0=
 -->
