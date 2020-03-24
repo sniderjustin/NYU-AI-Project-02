@@ -44,7 +44,7 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 
 ... code... 
 
-... performance graphics ... 
+### EWC
 
 
 ## Hybrid Rehearsal with Elastic Weight Consolidation
@@ -112,9 +112,9 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc0MjQ5MjI3LC0xNjE5MzYwODY3LDY5MD
-A3Mzg2NiwxMTQzODMwNzcyLC04NDgzMTQwNDEsMjEzMDkwNzUw
-LC0xODE5MDkxNTYwLC0zMTQ1OTQ3MzUsNDY2OTI4NTgwLC04OT
-EzNjcxOTksMTczMjgwMTAzNSwzMTcwNjEwNzksMTE1MDc4NzQ2
-LC0xMDk0NTE2NDNdfQ==
+eyJoaXN0b3J5IjpbLTgxMTM5NTI2OCwtMTYxOTM2MDg2Nyw2OT
+AwNzM4NjYsMTE0MzgzMDc3MiwtODQ4MzE0MDQxLDIxMzA5MDc1
+MCwtMTgxOTA5MTU2MCwtMzE0NTk0NzM1LDQ2NjkyODU4MCwtOD
+kxMzY3MTk5LDE3MzI4MDEwMzUsMzE3MDYxMDc5LDExNTA3ODc0
+NiwtMTA5NDUxNjQzXX0=
 -->
