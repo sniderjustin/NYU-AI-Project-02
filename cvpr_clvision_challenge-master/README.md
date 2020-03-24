@@ -88,8 +88,9 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 
 ... list papers with links here...
 * [Continuous Learning in Single-Incremental-Task Scenarios](https://arxiv.org/abs/1806.08568)
-	* This paper describes Coninual Learning, Single-Incremental-Task, New Classes problem, and catastrophic forgetting. They have a great description of 
+	* This paper describes Coninual Learning, Single-Incremental-Task, New Classes problem, and catastrophic forgetting. They have a great description of the Naive, Rehearsal, and Elastic Weight Consolidation approach to solving Continal Learning. 
 * [Overcoming catastrophic forgetting in neural networks](https://arxiv.org/abs/1612.00796)
+	* This is the first paper to propose the Elastic Weight Consolidation approach to solving Continual Learning. 
 * [Compete to Compute](https://papers.nips.cc/paper/5059-compete-to-compute)
 * [CORe50: a New Dataset and Benchmark for Continuous Object Recognition](http://proceedings.mlr.press/v78/lomonaco17a/lomonaco17a.pdf)
 * [Memory Efficient Experience Replay for Streaming Learning](https://arxiv.org/abs/1809.05922)
@@ -102,6 +103,6 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 
 ... list link to competition with starter kit used as foundation for project... 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkyNzM5ODE0MSwxMTUwNzg3NDYsLTEwOT
-Q1MTY0M119
+eyJoaXN0b3J5IjpbLTEyNTE2Nzc3MzMsMTE1MDc4NzQ2LC0xMD
+k0NTE2NDNdfQ==
 -->
