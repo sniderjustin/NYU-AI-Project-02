@@ -86,9 +86,9 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 ## Bibliography
 
 Research Papers Referenced and Used:
-* [Continuous Learning in Single-Incremental-Task Scenarios](https://arxiv.org/abs/1806.08568)
+1. [Continuous Learning in Single-Incremental-Task Scenarios](https://arxiv.org/abs/1806.08568)
 	* This paper describes Coninual Learning, Single-Incremental-Task, New Classes problem, and catastrophic forgetting. They have a great description of the Naive, Rehearsal, and Elastic Weight Consolidation approach to solving Continal Learning. 
-* [Overcoming catastrophic forgetting in neural networks](https://arxiv.org/abs/1612.00796)
+2. [Overcoming catastrophic forgetting in neural networks](https://arxiv.org/abs/1612.00796)
 	* This is the first paper to propose the Elastic Weight Consolidation approach to solving Continual Learning. 
 * [Compete to Compute](https://papers.nips.cc/paper/5059-compete-to-compute)
 	* This paper describes how the order of your training data matters. 
@@ -107,6 +107,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implimentation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implimentation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5MTM2NzE5OSwxNzMyODAxMDM1LDMxNz
-A2MTA3OSwxMTUwNzg3NDYsLTEwOTQ1MTY0M119
+eyJoaXN0b3J5IjpbNTk4NTA1Njk0LC04OTEzNjcxOTksMTczMj
+gwMTAzNSwzMTcwNjEwNzksMTE1MDc4NzQ2LC0xMDk0NTE2NDNd
+fQ==
 -->
