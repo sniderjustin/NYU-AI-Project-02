@@ -118,7 +118,7 @@ $$
 L(\theta)=L_B(\theta)+\sum_i \frac{\lambda}{2} F_i (\theta_i-\theta^*_{A,i})^2
 $$
 
-<img src="https://render.githubusercontent.com/render/math?math= L(\theta)=L_B(\theta)+\sum_i \frac{\lambda}{2} F_i (\theta_i-\theta^*_{A,i})^2">
+<img src="https://render.githubusercontent.com/render/math?math=(L(\theta)=L_B(\theta)+\sum_i \frac{\lambda}{2} F_i (\theta_i-\theta^*_{A,i})^2)">
 
 [https://www.pnas.org/content/pnas/114/13/3521.full.pdf](https://www.pnas.org/content/pnas/114/13/3521.full.pdf)
 
