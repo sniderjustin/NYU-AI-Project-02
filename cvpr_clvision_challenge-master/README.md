@@ -10,19 +10,18 @@ This project implements a series of continuous learning strategies using the COR
 
 ## Continual Learning
 
-... Describe Continual learning descrion here ...  
+**Continual Learning**
 Continual learning is a set of techniques used to solve/mitigate catastrophic forgetting, in which algorithms learn one task, but cannot adapt and learn new tasks without forgetting the old task. In this project we focus on two CL techniques, rehearsal and elastic weight consolidation (EWC). 
 
-...Multi-Incremental-Task description here...
-Multi-incremental-tasks are tasks that alogoritms are trained in which the labels in each task are dijoint. 𝑦1∩𝑦2=∅ , 𝑦1∩𝑦2=∅, and so on. An example of a mulit-incremental-task is splitting the MNIST data set into five isolated tasks, where each class has two labels. Class 1 = [1,2], Class 2 = [3,4], so on. 
+**Multi-Incremental-Task**
+Multi-incremental-tasks are tasks that algorithms are trained in which the labels in each task are disjoint. 𝑦1∩𝑦2=∅ , 𝑦1∩𝑦2=∅, and so on. An example of a Multi-incremental-task is splitting the MNIST data set into five isolated tasks, where each class has two labels. Class 1 = [1,2], Class 2 = [3,4], so on.
 
+**Single-Incremental-Task**  
+In Single-Incremental-Task the labels in each task are not dijoint. In other words, each training batch can have overlapping classes. This is more similar to natural learning. When we humans learn new object, we compare that object to the whole set of objects we already know, which is essentially single-incremental learning. 
 
-...Single-Incremental-Task description here...  
-In Single-Icremental-Tasks the labels in each task are not dijoint. In other words, each training batch can have overlapping classes. This is more similar to natural learning. When we humans learn new object, we compare that object to the whole set of objects we already know, which is essentially single-incremental learning. 
+It is important to note, that single-incremental-task learning is more difficult that multi-incremental-task learning. 
 
-It is important to note, that single-incremental-task learning is more diffiucult that multi-incremental-task learning. 
-
- ...New Classes Description here...   
+**New Classes Description**  
  • New Classes (NC): new training patterns belonging to different classes become available in
 subsequent batches. This coincides with class-incremental learning.
 
@@ -33,8 +32,8 @@ https://arxiv.org/pdf/1806.08568.pdf
 
 For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io/core50/). The dataset is designed specifically designing and assessing Continual Learning strategies.  
 
-... Dataset description and details here...  
-NEED TO EDIT JUST Copied/Pasted  
+**Dataset Description**
+<ins>NEED TO EDIT JUST Copied/Pasted</ins>
 
 Continual/Lifelong learning (CL) of high-dimensional data streams is a challenging research problem far from being solved. In fact, fully retraining models each time new data becomes available is infeasible, due to computational and storage issues, while naïve continual learning strategies have been shown to suffer from catastrophic forgetting. Moreover, even in the context of real-world object recognition applications (e.g. robotics), where continual learning is crucial, very few datasets and benchmarks are available to evaluate and compare emerging techniques.
 
@@ -43,28 +42,178 @@ In this page we provide a new dataset and benchmark CORe50, specifically designe
 https://vlomonaco.github.io/core50/index.html#intro
 
 ... code ... 
+[https://github.com/vlomonaco/cvpr_clvision_challenge](https://github.com/vlomonaco/cvpr_clvision_challenge)
+
 
 ... example images, example classes, formatting of data used (such as pixel size) ... 
 
+
+
+
 ## Rehearsal
 
-... Rehearsal description here... 
+... Rehearsal description here...  
+**NEED TO EDIT COPIED/PASTED**
+
+**Rehearsal Strategies**: past information is periodically replayed to the model, to strengthen connections for memories it has already learned. A simple approach is storing part of the previous training data and interleaving them with new patterns for future training. A more challenging approach is pseudo-rehearsal with generative models.
+
+[https://vlomonaco.github.io/core50/strategies.html](https://vlomonaco.github.io/core50/strategies.html)
 
 ... code ... 
+Modifications to the provided naive_baseline.py
+
+    for i, train_batch in enumerate(dataset):
+        train_x, train_y, t = train_batch
+
+        # Start modification
+
+        # run batch 0 and 1. Then break. 
+        # if i == 2: break
+
+        # shuffle new data
+        train_x, train_y = shuffle_in_unison((train_x, train_y), seed=0)
+
+        if i == 0: 
+            # this is the first round
+            # store data for later 
+            all_x = train_x[0:train_x.shape[0]//2]
+            all_y = train_y[0:train_y.shape[0]//2] 
+        else: 
+            # this is not the first round
+            # create hybrid training set old and new data
+            # shuffle old data
+            all_x, all_y = shuffle_in_unison((all_x, all_y), seed=0)
+
+            # create temp holder
+            temp_x = train_x
+            temp_y = train_y
+
+            # set current variables to be used for training
+            train_x = np.append(all_x, train_x, axis=0)
+            train_y = np.append(all_y, train_y)
+            train_x, train_y = shuffle_in_unison((train_x, train_y), seed=0)
+
+            # append half of old and all of new data 
+            temp_x, temp_y = shuffle_in_unison((temp_x, temp_y), seed=0)
+            keep_old = (all_x.shape[0] // (i + 1)) * i
+            keep_new = temp_x.shape[0] // (i + 1)
+            all_x = np.append(all_x[0:keep_old], temp_x[0:keep_new], axis=0)
+            all_y = np.append(all_y[0:keep_old], temp_y[0:keep_new])
+            del temp_x
+            del temp_y
 
 ... performance graphics ... 
+
 
 ## Elastic Weight Consolidation
 
 ... Elastic Weight Consolidation description here... 
 
+**Regularization Strategies**: the loss function is extended with terms promoting selective consolidation of the weights which are important to retain past memories. Include regularization techniques such as weight sparsification, dropout, early stopping.
+[https://vlomonaco.github.io/core50/strategies.html](https://vlomonaco.github.io/core50/strategies.html)
+
+**Elastic Weight Consolidation** 
+EWC is a regularization strategy in which the loss function is defined as: 
+$$
+L(\theta)=L_B(\theta)+\sum_i \frac{\lambda}{2} F_i (\theta_i-\theta^*_{A,i})^2
+$$
+[https://www.pnas.org/content/pnas/114/13/3521.full.pdf](https://www.pnas.org/content/pnas/114/13/3521.full.pdf)
+
+
+
+TEMPTEMPTEMPTEMP
+
+[https://www.pnas.org/content/pnas/114/13/3521.full.pdf](https://www.pnas.org/content/pnas/114/13/3521.full.pdf)
+[https://abhishekaich27.github.io/data/WriteUps/EWC_nuts_and_bolts.pdf](https://abhishekaich27.github.io/data/WriteUps/EWC_nuts_and_bolts.pdf)
 ... code... 
+Before using `loss.backward()`, in `train_test.py` to find the the gradient for each parameter. 
+
+    if t != 0:
+    for name, param in model.named_parameters(): # for each weight 
+        fisher = fisher_dict[name]  # get the fisher value for the given task and weight
+        optpar = optpar_dict[name]  # get the parameter optimized value for the given task and weight
+        loss += (fisher * (optpar - param).pow(2)).sum() * ewc_lambda  # loss is accumulator # add penalty for current task and weight
+
+Also: 
+
+    def on_task_update(t, x, y, fisher_dict, optpar_dict, model, optimizer, criterion, mb_size, use_cuda=True, mask=None, preproc=None):
+    """
+    INPUT:
+        task_id: integer representing the task number
+        x_mem:  current x_train values
+        t_mem:  current true y_train values (aka target values)
+
+    OUTPUT: 
+        The new values are added to the fisher and optpar dictionaries. 
+        fisher_dict[task_id]  
+        optpar_dict[task_id] 
+
+    """
+    cur_ep = 0
+    cur_train_t = t
+
+    if preproc:
+        x = preproc(x)
+
+    (train_x, train_y), it_x_ep = pad_data(
+        [x, y], mb_size
+    )
+
+    # shuffle_in_unison(
+    #     [train_x, train_y], 0, in_place=True
+    # )
+
+    model = maybe_cuda(model, use_cuda=use_cuda)
+    acc = None
+    ave_loss = 0
+
+    train_x = torch.from_numpy(train_x).type(torch.FloatTensor)
+    train_y = torch.from_numpy(train_y).type(torch.LongTensor)
+
+    model.active_perc_list = []
+    model.train()  # model in train mode 
+  
+    # loop through batches
+    # prepare minibatch
+    # get loss
+    print("Updating Fisher values and old parameters")
+    correct_cnt, ave_loss = 0, 0
+    for it in range(it_x_ep):
+
+        start = it * mb_size
+        end = (it + 1) * mb_size
+
+        optimizer.zero_grad()
+
+        x_mb = maybe_cuda(train_x[start:end], use_cuda=use_cuda)
+        y_mb = maybe_cuda(train_y[start:end], use_cuda=use_cuda)
+        logits = model(x_mb)
+
+        _, pred_label = torch.max(logits, 1)
+        correct_cnt += (pred_label == y_mb).sum()
+
+        loss = criterion(logits, y_mb)
+        ave_loss += loss.item()
+        loss.backward()
+
+        # Update optpar_dict and fisher_dict for EWC
+        for name, param in model.named_parameters():  # for every parameter save two values 
+            optpar = param.data.clone()  # save optimized gradient value for current task i and current gradient location j
+            fisher = param.grad.data.clone().pow(2)  # save fisher value for current task i and current gradient location j 
+            if t == 0:  # first task. Just save weights and fisher values for next round
+                optpar_dict[name] = optpar
+                fisher_dict[name] = fisher
+            else:
+                optpar_dict[name] = optpar  # save weights for next round
+                fisher_dict[name] = (((fisher_dict[name]/(t+1))*t) + (fisher / (t+1)))  # average together old and new fisher values. save for use on next training round. 
+
 
 ... performance graphics ... 
 
 ## Hybrid Rehearsal with Elastic Weight Consolidation
 
 ... description... 
+The combined strategy uses both rehearsal and EWC. 
 
 ... code ... 
 
