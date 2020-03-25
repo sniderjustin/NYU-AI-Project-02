@@ -121,7 +121,7 @@ for name, param in model.named_parameters(): # for every parameter save two valu
 
 ... performance graphics ... 
 
-## Net 
+## Net
 
 ## Performance Benchmarks
 
@@ -180,10 +180,10 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxNjc1ODIwMiwtMTYwODAyNTk2OSwtNj
-EyNDg1OTY0LC0xMDY2NTYzMCwtMTYxOTM2MDg2Nyw2OTAwNzM4
-NjYsMTE0MzgzMDc3MiwtODQ4MzE0MDQxLDIxMzA5MDc1MCwtMT
-gxOTA5MTU2MCwtMzE0NTk0NzM1LDQ2NjkyODU4MCwtODkxMzY3
-MTk5LDE3MzI4MDEwMzUsMzE3MDYxMDc5LDExNTA3ODc0NiwtMT
-A5NDUxNjQzXX0=
+eyJoaXN0b3J5IjpbLTQ2NzYxMTYzNCwtODE2NzU4MjAyLC0xNj
+A4MDI1OTY5LC02MTI0ODU5NjQsLTEwNjY1NjMwLC0xNjE5MzYw
+ODY3LDY5MDA3Mzg2NiwxMTQzODMwNzcyLC04NDgzMTQwNDEsMj
+EzMDkwNzUwLC0xODE5MDkxNTYwLC0zMTQ1OTQ3MzUsNDY2OTI4
+NTgwLC04OTEzNjcxOTksMTczMjgwMTAzNSwzMTcwNjEwNzksMT
+E1MDc4NzQ2LC0xMDk0NTE2NDNdfQ==
 -->
