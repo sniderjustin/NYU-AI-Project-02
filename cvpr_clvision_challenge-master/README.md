@@ -44,7 +44,7 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 
 ... vent diagram from paper showing how EWC works ...
 
-EWC forces different weights to learn different tasks. 
+EWC forces different weights to learn different tasks. It also promotes weights learning si
 
 ... code... 
 
@@ -199,11 +199,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyMjA3NDY4Nyw2ODE0NDUzNjgsLTQ2Nz
-YxMTYzNCwtODE2NzU4MjAyLC0xNjA4MDI1OTY5LC02MTI0ODU5
-NjQsLTEwNjY1NjMwLC0xNjE5MzYwODY3LDY5MDA3Mzg2NiwxMT
-QzODMwNzcyLC04NDgzMTQwNDEsMjEzMDkwNzUwLC0xODE5MDkx
-NTYwLC0zMTQ1OTQ3MzUsNDY2OTI4NTgwLC04OTEzNjcxOTksMT
-czMjgwMTAzNSwzMTcwNjEwNzksMTE1MDc4NzQ2LC0xMDk0NTE2
-NDNdfQ==
+eyJoaXN0b3J5IjpbLTE4NzM2MTgxOTksMTEyMjA3NDY4Nyw2OD
+E0NDUzNjgsLTQ2NzYxMTYzNCwtODE2NzU4MjAyLC0xNjA4MDI1
+OTY5LC02MTI0ODU5NjQsLTEwNjY1NjMwLC0xNjE5MzYwODY3LD
+Y5MDA3Mzg2NiwxMTQzODMwNzcyLC04NDgzMTQwNDEsMjEzMDkw
+NzUwLC0xODE5MDkxNTYwLC0zMTQ1OTQ3MzUsNDY2OTI4NTgwLC
+04OTEzNjcxOTksMTczMjgwMTAzNSwzMTcwNjEwNzksMTE1MDc4
+NzQ2XX0=
 -->
