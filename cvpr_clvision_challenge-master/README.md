@@ -40,12 +40,15 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 
 Keeping too many old samples increases memory requirements and processing time, but allows better accuracy. 
 
+... example stats and graphics ... 
 
 Keeping less old samples uses less memory and processing time, but causes a decrease in accuracy. 
 
+... example stats and graphics ... 
+
 Finding the sweet spot allows efficient use of memory and processing time. It also still provides much improved performance over the naive training model. 
 
-... performance graphics ... 
+... example stats and graphics ... 
 
 ## Elastic Weight Consolidation
 
@@ -208,11 +211,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5OTUwMjk4MSwxMTIyMDc0Njg3LDY4MT
-Q0NTM2OCwtNDY3NjExNjM0LC04MTY3NTgyMDIsLTE2MDgwMjU5
-NjksLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MTkzNjA4NjcsNj
-kwMDczODY2LDExNDM4MzA3NzIsLTg0ODMxNDA0MSwyMTMwOTA3
-NTAsLTE4MTkwOTE1NjAsLTMxNDU5NDczNSw0NjY5Mjg1ODAsLT
-g5MTM2NzE5OSwxNzMyODAxMDM1LDMxNzA2MTA3OSwxMTUwNzg3
-NDZdfQ==
+eyJoaXN0b3J5IjpbLTE1MTIzNDkyNDksMTEyMjA3NDY4Nyw2OD
+E0NDUzNjgsLTQ2NzYxMTYzNCwtODE2NzU4MjAyLC0xNjA4MDI1
+OTY5LC02MTI0ODU5NjQsLTEwNjY1NjMwLC0xNjE5MzYwODY3LD
+Y5MDA3Mzg2NiwxMTQzODMwNzcyLC04NDgzMTQwNDEsMjEzMDkw
+NzUwLC0xODE5MDkxNTYwLC0zMTQ1OTQ3MzUsNDY2OTI4NTgwLC
+04OTEzNjcxOTksMTczMjgwMTAzNSwzMTcwNjEwNzksMTE1MDc4
+NzQ2XX0=
 -->
