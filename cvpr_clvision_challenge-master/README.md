@@ -44,6 +44,9 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 
 ... code... 
 
+### EWC Parameters
+
+Value too high causes the weights to favor previous learned tasks. So learning new tasks 
 
 ### EWC Implementation 01
 
@@ -184,10 +187,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgxNDQ1MzY4LC00Njc2MTE2MzQsLTgxNj
-c1ODIwMiwtMTYwODAyNTk2OSwtNjEyNDg1OTY0LC0xMDY2NTYz
-MCwtMTYxOTM2MDg2Nyw2OTAwNzM4NjYsMTE0MzgzMDc3MiwtOD
-Q4MzE0MDQxLDIxMzA5MDc1MCwtMTgxOTA5MTU2MCwtMzE0NTk0
-NzM1LDQ2NjkyODU4MCwtODkxMzY3MTk5LDE3MzI4MDEwMzUsMz
-E3MDYxMDc5LDExNTA3ODc0NiwtMTA5NDUxNjQzXX0=
+eyJoaXN0b3J5IjpbLTEwNzc4MzM4LDY4MTQ0NTM2OCwtNDY3Nj
+ExNjM0LC04MTY3NTgyMDIsLTE2MDgwMjU5NjksLTYxMjQ4NTk2
+NCwtMTA2NjU2MzAsLTE2MTkzNjA4NjcsNjkwMDczODY2LDExND
+M4MzA3NzIsLTg0ODMxNDA0MSwyMTMwOTA3NTAsLTE4MTkwOTE1
+NjAsLTMxNDU5NDczNSw0NjY5Mjg1ODAsLTg5MTM2NzE5OSwxNz
+MyODAxMDM1LDMxNzA2MTA3OSwxMTUwNzg3NDYsLTEwOTQ1MTY0
+M119
 -->
