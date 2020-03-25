@@ -26,6 +26,9 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 
 ... Dataset description and details here... 
 
+...The size of the images is ... pixels ... 
+...There are 3 color channels ...
+
 ... code ... 
 
 ... example images, example classes, formatting of data used (such as pixel size) ... 
@@ -211,11 +214,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzNjcxNjQyMSwxMTIyMDc0Njg3LDY4MT
-Q0NTM2OCwtNDY3NjExNjM0LC04MTY3NTgyMDIsLTE2MDgwMjU5
-NjksLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MTkzNjA4NjcsNj
-kwMDczODY2LDExNDM4MzA3NzIsLTg0ODMxNDA0MSwyMTMwOTA3
-NTAsLTE4MTkwOTE1NjAsLTMxNDU5NDczNSw0NjY5Mjg1ODAsLT
-g5MTM2NzE5OSwxNzMyODAxMDM1LDMxNzA2MTA3OSwxMTUwNzg3
-NDZdfQ==
+eyJoaXN0b3J5IjpbLTQ1NTA1NzUyMiwtMzM2NzE2NDIxLDExMj
+IwNzQ2ODcsNjgxNDQ1MzY4LC00Njc2MTE2MzQsLTgxNjc1ODIw
+MiwtMTYwODAyNTk2OSwtNjEyNDg1OTY0LC0xMDY2NTYzMCwtMT
+YxOTM2MDg2Nyw2OTAwNzM4NjYsMTE0MzgzMDc3MiwtODQ4MzE0
+MDQxLDIxMzA5MDc1MCwtMTgxOTA5MTU2MCwtMzE0NTk0NzM1LD
+Q2NjkyODU4MCwtODkxMzY3MTk5LDE3MzI4MDEwMzUsMzE3MDYx
+MDc5XX0=
 -->
