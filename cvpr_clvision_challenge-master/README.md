@@ -50,11 +50,11 @@ Value too high causes the weights to favor previous learned tasks. So learning n
 
 ... example diagram showing task overlap ... 
 
-... stats and graph showing ewc while forgetting previous tasks ... 
+... stats and graph showing ewc remembering old tasks, but not learning new tasks ... 
 
 Value too low allowes the new tasked to be learned. However, old tasks are still quickly forgotten. The network is too elastic 
 
-... stats and graph showing ewc learning new ... 
+... stats and graph showing ewc learning new task but forgetting old tasks... 
 
 ### EWC Implementation 01
 
@@ -195,11 +195,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODAxMzQ0MDcsNjgxNDQ1MzY4LC00Njc2MT
-E2MzQsLTgxNjc1ODIwMiwtMTYwODAyNTk2OSwtNjEyNDg1OTY0
-LC0xMDY2NTYzMCwtMTYxOTM2MDg2Nyw2OTAwNzM4NjYsMTE0Mz
-gzMDc3MiwtODQ4MzE0MDQxLDIxMzA5MDc1MCwtMTgxOTA5MTU2
-MCwtMzE0NTk0NzM1LDQ2NjkyODU4MCwtODkxMzY3MTk5LDE3Mz
-I4MDEwMzUsMzE3MDYxMDc5LDExNTA3ODc0NiwtMTA5NDUxNjQz
-XX0=
+eyJoaXN0b3J5IjpbLTE5NjI2MzQ0MjgsNjgxNDQ1MzY4LC00Nj
+c2MTE2MzQsLTgxNjc1ODIwMiwtMTYwODAyNTk2OSwtNjEyNDg1
+OTY0LC0xMDY2NTYzMCwtMTYxOTM2MDg2Nyw2OTAwNzM4NjYsMT
+E0MzgzMDc3MiwtODQ4MzE0MDQxLDIxMzA5MDc1MCwtMTgxOTA5
+MTU2MCwtMzE0NTk0NzM1LDQ2NjkyODU4MCwtODkxMzY3MTk5LD
+E3MzI4MDEwMzUsMzE3MDYxMDc5LDExNTA3ODc0NiwtMTA5NDUx
+NjQzXX0=
 -->
