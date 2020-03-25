@@ -42,9 +42,9 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 
 ... Elastic Weight Consolidation description here... 
 
-... vent diagram from paper showing how EWC works ...
+EWC attempts to force different weights to learn different tasks. It also promotes weights learning simular tasks to optomize for both tasks. This ven diagram shows the concept visually: 
 
-EWC attempts to force different weights to learn different tasks. It also promotes weights learning simular tasks to 
+... ven diagram from paper showing how EWC works ...
 
 ... code... 
 
@@ -199,7 +199,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MDY5OTA0MywxMTIyMDc0Njg3LDY4MT
+eyJoaXN0b3J5IjpbLTU2NjEzOTY0NCwxMTIyMDc0Njg3LDY4MT
 Q0NTM2OCwtNDY3NjExNjM0LC04MTY3NTgyMDIsLTE2MDgwMjU5
 NjksLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MTkzNjA4NjcsNj
 kwMDczODY2LDExNDM4MzA3NzIsLTg0ODMxNDA0MSwyMTMwOTA3
