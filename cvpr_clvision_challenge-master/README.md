@@ -32,6 +32,8 @@ https://arxiv.org/pdf/1806.08568.pdf
 
 For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io/core50/). The dataset is designed specifically designing and assessing Continual Learning strategies.  
 
+![core50_classes](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/classes.gif)
+
 **Dataset Description**
 <ins>NEED TO EDIT JUST Copied/Pasted</ins>
 
