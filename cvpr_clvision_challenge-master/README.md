@@ -174,6 +174,8 @@ Using dropout allows the selective dropping of neurons during training to preven
 
 ... comparison Benchmark graphics... 
 
+### Performance Relative to Parameters ( possible use additional tests to show parameter impact using MNIST data beause they run fast) We can use the example MNIST notebook 
+
 ## Project Structure
 
 ... list new files developed and new functions developed.. 
@@ -221,11 +223,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTk2MDY0ODgsLTE3MDEzOTI5MCwtND
-U1MDU3NTIyLC0zMzY3MTY0MjEsMTEyMjA3NDY4Nyw2ODE0NDUz
-NjgsLTQ2NzYxMTYzNCwtODE2NzU4MjAyLC0xNjA4MDI1OTY5LC
-02MTI0ODU5NjQsLTEwNjY1NjMwLC0xNjE5MzYwODY3LDY5MDA3
-Mzg2NiwxMTQzODMwNzcyLC04NDgzMTQwNDEsMjEzMDkwNzUwLC
-0xODE5MDkxNTYwLC0zMTQ1OTQ3MzUsNDY2OTI4NTgwLC04OTEz
-NjcxOTldfQ==
+eyJoaXN0b3J5IjpbMTgxOTYzNDI3MywtMTAxOTYwNjQ4OCwtMT
+cwMTM5MjkwLC00NTUwNTc1MjIsLTMzNjcxNjQyMSwxMTIyMDc0
+Njg3LDY4MTQ0NTM2OCwtNDY3NjExNjM0LC04MTY3NTgyMDIsLT
+E2MDgwMjU5NjksLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MTkz
+NjA4NjcsNjkwMDczODY2LDExNDM4MzA3NzIsLTg0ODMxNDA0MS
+wyMTMwOTA3NTAsLTE4MTkwOTE1NjAsLTMxNDU5NDczNSw0NjY5
+Mjg1ODBdfQ==
 -->
