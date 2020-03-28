@@ -159,9 +159,7 @@ for name, param in model.named_parameters(): # for every parameter save two valu
 
 ### Dropout 
 
-... description with pros and cons..
-
-Using dropout allows the selective dropping of neurons during training to prevent overfitting. 
+Using dropout allows the selective dropping of neurons during training to prevent overfitting. This is why we implement the use of dropout in our code. 
 
 ## Performance Benchmarks
 
@@ -220,7 +218,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2MzIyNTA0MywtNDU1MDU3NTIyLC0zMz
+eyJoaXN0b3J5IjpbLTE3MDEzOTI5MCwtNDU1MDU3NTIyLC0zMz
 Y3MTY0MjEsMTEyMjA3NDY4Nyw2ODE0NDUzNjgsLTQ2NzYxMTYz
 NCwtODE2NzU4MjAyLC0xNjA4MDI1OTY5LC02MTI0ODU5NjQsLT
 EwNjY1NjMwLC0xNjE5MzYwODY3LDY5MDA3Mzg2NiwxMTQzODMw
