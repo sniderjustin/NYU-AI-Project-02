@@ -174,7 +174,7 @@ Using dropout allows the selective dropping of neurons during training to preven
 
 ... comparison Benchmark graphics... 
 
-### Performance Relative to Parameters ( possible use additional tests to show parameter impact using MNIST data beause they run fast) We can use the example MNIST notebook 
+### Performance Relative to Parameters ( possible use additional tests to show parameter impact using MNIST data beause they run fast) We can use the example MNIST notebook code that uses the same Naive, Rehearsal and EWC strategies). 
 
 ## Project Structure
 
@@ -223,7 +223,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxOTYzNDI3MywtMTAxOTYwNjQ4OCwtMT
+eyJoaXN0b3J5IjpbLTcxNDk2OTYxOCwtMTAxOTYwNjQ4OCwtMT
 cwMTM5MjkwLC00NTUwNTc1MjIsLTMzNjcxNjQyMSwxMTIyMDc0
 Njg3LDY4MTQ0NTM2OCwtNDY3NjExNjM0LC04MTY3NTgyMDIsLT
 E2MDgwMjU5NjksLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MTkz
