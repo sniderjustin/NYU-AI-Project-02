@@ -229,10 +229,7 @@ From our three implementations, as well as the naive strategy that came out of t
 <div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/all_compared.png" /></div>  
 
 Apart from test accuracy, another important metric to measure is training time. All of the code was run locally on two Macbook Pros with no more than 16 gbs of ram and no GPU usage. Because of this, training was long. Rehearsal took up to 12 hours to train. This constraint is what led us to look into less computationally and memory expensive processes, such as EWC. As you can see, EWC 02 had the fastest training time at roughly three hours. However, with our computing limited, it is recommended to use the model with this highest accuracy, because with a better computer it would run much faster.  
-<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/training_time.png" /></div>
-
-
-### Performance Relative to Parameters ( possible use additional tests to show parameter impact using MNIST data beause they run fast) We can use the example MNIST notebook code that uses the same Naive, Rehearsal and EWC strategies). 
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/training_time.png" /></div>  
 
 ## Project Structure
 
