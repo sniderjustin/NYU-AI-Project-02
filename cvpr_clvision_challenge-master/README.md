@@ -1,4 +1,5 @@
-# NYU // AI // Project 02 // Continuous Learning
+
+# <div align="center">NYU // AI // Project 02 // Continuous Learning</div>
 This repository and project was developed for the CS-GY-6613 Artificial Intelligence class at NYU. The class professor is [Pantelis Monogioudis]( https://github.com/pantelis). The Teacher’s Assistants are [Shalaka Sane]( https://github.com/Shalaka07) and [Zhihao Zhang](https://github.com/zzyrd). They have our deep graditude for all guidance they offered in the development of the project. 
 
 We would also like to thank Vincenzo Lomonaco, one of the creators of the CORe50 dataset. He generously answered our questions and provided great advice. 
@@ -8,75 +9,118 @@ The authors of the project are [Justin Snider](https://github.com/aobject) and [
 ## Using Rehearsal and Elastic Weight Consolidation for Single-Incremental-Task on New Classes
 This project implements a series of continuous learning strategies using the CORe50 dataset. We have focused on implementing Rehearsal, Elastic Weight, and finally a hybrid of two strategies combined. We will explain the logic, implementation, and performance of these three strategies. 
 
-## Continual Learning
-
+## Continual Learning  
 The recognition of object class types through sensor data such as pixels has important application. Machine Learning algorithms have shown themselves very capable at learning individual task. The more focused the higher the performance. However, for a more generalized artificial intelligence agent to be affective it will need to learn many tasks, not just one.
 
 Continual Learning is an area of artificial intelligence research focused on the challenge of learning multiple task.
 
 There are several impediments to continual learning. Beyond the general limitations of computer hardware, we find that machine learning networks suffer from a problem called Catastrophic Forgetting.
 
-Single-Incremental-Tasks (SIT) is the challenge to take on different tasks. New Classes (NC) is a subcategory of SIT. For a New Classes we challenge the algorithm to learn disjoint tasks. For example our goal might be to identify if the class present in a given image.
+Single-Incremental-Tasks (SIT) is the challenge to take on different tasks. New Classes (NC) is a subcategory of SIT. For a New Classes we challenge the algorithm to learn disjoint tasks. For example our goal might be to identify if the class is present in a given image.
 
-## CORe50 Dataset
+Many strategies have been developed to combat catastrophic forgetting. The three types of strategies are architectural, regularization and rehearsal. In this project, we focus on elastic weight consolidation (EWC), a regularization strategy, and a custom implementation of a rehearsal strategy. We also combine the two.  A diagram of different types of specific CL implementations is shown below. 
 
-For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io/core50/). The dataset is designed specifically designing and assessing Continual Learning strategies, also called Lifelong Learning strategies.  
+## <div align="center">Different Continuous Learning Strategies</div>
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/CL_strategies.png" width=75%/></div>
+
+## CORe50 Dataset  
 
 ![core50_classes](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/classes.gif)
+>>>>>>> da2e0d50aaad44948639bb197aa0e9acd575ee6b
 
-... Dataset description and details here... 
+### <ins>**Dataset Description**</ins>
 
-...The size of the images is ... pixels ... 
-...There are 3 color channels ...
+There are few available data sets that are suitable for evaluating techniques that are meant to tackle single incremental task (SIT) learning . CORe50 is an image based data set which is specifically designed to evaluate CL techniques. 
 
-... code ... 
+**CORe50**, specifically designed for (**C**)ontinual (**O**)bject (**Re**)cognition, is a collection of 50 domestic objects belonging to 10 categories: plug adapters, mobile phones, scissors, light bulbs, cans, glasses, balls, markers, cups and remote controls. Classification can be performed at object level (50 classes) or at category level (10 classes). 
 
-... example images, example classes, formatting of data used (such as pixel size) ... 
+The full dataset consists of 164,866 128×128 RGB-D images: 11 sessions × 50 objects × (around 300) frames per session. Three of the eleven sessions (#3, #7 and #10) have been selected for test and the remaining 8 sessions are used for training.
+>>>>>>> da2e0d50aaad44948639bb197aa0e9acd575ee6b
+
+The code for for loading the data set is freely available and the link to the github is provided [here]( https://github.com/vlomonaco/cvpr_clvision_challenge).  
+
+## <div align="center">Example Images</div>
+<table>
+  <tr>
+    <td><div align="center">Object 1</div></td>
+     <td><div align="center">Object 2</div></td>
+     <td><div align="center">Object 3</div></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/C_01_01_288.png" width=256 height=256></td>
+    <td><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/C_01_08_006.png" width=256 height=256></td>
+    <td><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/C_07_18_017.png" width=256 height=256></td>
+  </tr>
+ </table>
 
 ## Rehearsal
+A very simple approach to solving CL problems is rehearsal. In rehearsal, data from previous tasks is periodically appended to the training data for a new task. The goal of rehearsal is to "strengthen the connection for memories [the model] has already learned." While this approach seems simple, the practicality of it is limited.  
 
-... Rehearsal description here... 
+Some of the challenges we faced was computation and storage abilities. Given our ability to run the model only on our local machines, we found that appending all of the previous tasks data into the training of a new task was unfeasible.  To accommodate this, only half of the previous tasks' data was used. 
 
-... code ... 
+**Modifications to the provided naive_baseline.py**
+```python
+for i, train_batch in enumerate(dataset):
+    train_x, train_y, t = train_batch
 
-### Rehearsal Parameters
+    # Start modification
 
-Keeping too many old samples increases memory requirements and processing time, but allows better accuracy. 
+    # run batch 0 and 1. Then break. 
+    # if i == 2: break
 
-... example stats and graphics ... 
+    # shuffle new data
+    train_x, train_y = shuffle_in_unison((train_x, train_y), seed=0)
 
-Keeping less old samples uses less memory and processing time, but causes a decrease in accuracy. 
+    if i == 0: 
+        # this is the first round
+        # store data for later 
+        all_x = train_x[0:train_x.shape[0]//2]
+        all_y = train_y[0:train_y.shape[0]//2] 
+    else: 
+        # this is not the first round
+        # create hybrid training set old and new data
+        # shuffle old data
+        all_x, all_y = shuffle_in_unison((all_x, all_y), seed=0)
 
-... example stats and graphics ... 
+        # create temp holder
+        temp_x = train_x
+        temp_y = train_y
 
-Finding the sweet spot allows efficient use of memory and processing time. It also still provides much improved performance over the naive training model. 
+        # set current variables to be used for training
+        train_x = np.append(all_x, train_x, axis=0)
+        train_y = np.append(all_y, train_y)
+        train_x, train_y = shuffle_in_unison((train_x, train_y), seed=0)
 
-... example stats and graphics ... 
+        # append half of old and all of new data 
+        temp_x, temp_y = shuffle_in_unison((temp_x, temp_y), seed=0)
+        keep_old = (all_x.shape[0] // (i + 1)) * i
+        keep_new = temp_x.shape[0] / q/ (i + 1)
+        all_x = np.append(all_x[0:keep_old], temp_x[0:keep_new], axis=0)
+        all_y = np.append(all_y[0:keep_old], temp_y[0:keep_new])
+        del temp_x
+        del temp_y
+```
 
-## Elastic Weight Consolidation
+### Accuracy Results using Rehearsal
+![rehearsal](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/rehearsal.png)
 
-... Elastic Weight Consolidation description here... 
+## Elastic Weight Consolidation  
+Regularization is the process of adding a penalty to the loss function to control the model from overfitting. In EWC, the loss function is extended with terms promoting selective consolidation of the weights which are important to retain past memories. Just as L2 regularization adds <img src="https://render.githubusercontent.com/render/math?math=\lambda\sum_iw_i^2"> to the mean squared error for linear regression, EWC does something similar. 
 
-EWC attempts to force different weights to learn different tasks. It also promotes weights learning simular tasks to optomize for both tasks. This ven diagram shows the concept visually: 
+EWC is a regularization strategy in which the loss function as defined by [[2]](https://www.pnas.org/content/pnas/114/13/3521.full.pdf).
 
-... ven diagram from paper showing how EWC works ...
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/ewc_loss.png" width=75%/></div>
 
-... code... 
+<img src="https://render.githubusercontent.com/render/math?math=L_B(\theta)"> is the loss for task B only.  
+<img src="https://render.githubusercontent.com/render/math?math=F"> is the Fisher Information Matrix.  
+<img src="https://render.githubusercontent.com/render/math?math=\lambda"> can be considered as the importance of task A relative to task B.  
 
-### EWC Parameters
+This figure conceptually shows EWC moving weights into the intersection of low error for both task A and B. This differs from other techniques that just try to minimize the error for the new task, irrespective of the previous task.  
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/ewc_diagram.png" width=75%/></div>
 
-Value too high causes the weights to favor previous learned tasks. So learning new tasks is slowed or prevented. This is because the elastic nature of the neural network that allows learning is slowed or stopped. 
+Figure taken from [[2]](https://arxiv.org/pdf/1612.00796.pdf).
 
-... example diagram showing task overlap ... 
-
-... stats and graph showing ewc remembering old tasks, but not learning new tasks ... 
-
-Value too low allowes the new tasked to be learned. However, old tasks are still quickly forgotten. The network is too elastic 
-
-... stats and graph showing ewc learning new task but forgetting old tasks... 
-
-### EWC Implementation 01
-
+## EWC Implementation 01
 Store a dictionary of fisher matrix values and optimum weights for every unique task. More effective at finding weights that work for multiple tasks. However, this requires more memory for every task to store the fisher values and the optimum weights. In addition, we take a hit for the additional time to incorporate all the weights and fisher values into our penalty.
 
 **Finding the EWC penalty using unique Fisher values and optimum weights from all tasks:**
@@ -98,19 +142,17 @@ for task in range(t): # for each task
 for name, param in model.named_parameters(): # for every parameter save two values
 	optpar_dict[t][name] = param.data.clone()
 	fisher_dict[t][name] = param.grad.data.clone().pow(2)
-
 ```
 
-### EWC Implementation 02
+### Accuracy Results using EWC 01
+![EWC 1](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/ewc1.pmg.png)
 
+
+## EWC Implementation 02
 Store a single dictionary of fisher matrix values, the current optimum weights, and the previous cumulative optimum weights. This strategy does not tend to find the best compromise of weights between tasks when compared with the first implementation. However, it can still limit catastrophic forgetting. We also get a faster and more efficient implementation.
 
 **Finding the EWC penalty from the single copy of weights and Fisher values:**
-
-  
-
 ```python
-
 # Add EWC Penalty
 
 if t != 0:
@@ -141,39 +183,56 @@ for name, param in model.named_parameters(): # for every parameter save two valu
 		optpar_dict[name] = optpar # save weights for next round
 		fisher_dict[name] = (((fisher_dict[name]/(t+1))*t) + (fisher / (t+1))) # average together old and new fisher values. save for use on next training round.
 ```
-... performance graphics ...
+### Accuracy Results using EWC 02
+
+![EWC 2](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/ewc2.png)
 
 ## Hybrid Rehearsal with Elastic Weight Consolidation
 
-... description... 
+We combined our rehearsal strategy with EWC to see if we could improve accuracy. Given that the two strategies were relatively simple
 
-... code ... 
+Our implementation of rehearsal is the same as shown earlier in this documentation. The implementation of EWC is the same as expressed EWC Implementation 02. In  naive_baseline.py, we changed the function used to train the network. We also added a ```on_task_update()``` function to perform similarly to the online resource Professor Pantelis recommended found [here](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb).
+```python
+_, _, stats = train_net_ewc(
 
-... performance graphics ... 
+opt, classifier, criterion, args.batch_size, train_x, train_y, t, fisher_dict, optpar_dict, ewc_lambda,
+
+args.epochs, preproc=preprocess_imgs
+
+)
+```
+```python
+# Calculate the Fisher matrix values given new completed task
+
+on_task_update(
+
+t, train_x, train_y, fisher_dict, optpar_dict, classifier, opt, criterion,
+
+args.batch_size, preproc=preprocess_imgs
+
+) # training complete # compute fisher matrix values
+```
+To view our full edits to utils/train_test.py, please visit [here](https://github.com/aobject/NYU-AI-Project-02/blob/master/cvpr_clvision_challenge-master/utils/train_test.py).
+
+### Accuracy Results using Hybrid  Method
+![Combined](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/combined.png)
 
 ## ResNet18 Classifier Architecture
 
-... description with pros and cons... 
+The model provided by [CORe50](https://github.com/vlomonaco/cvpr_clvision_challenge) uses a ResNet18 neural network. As described in class, residual neural networks differ from earlier networks by the use of skip connections. The short cut connections, as represented by the black skipping arrows below, simply perform an identity mapping, where "their outputs are added to the outputs of the stacked layer." [[7]](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/) No modifications to the model has been made in this project. We solely focused on CL techniques, not model building. 
 
-... diagram of ResNet18 from internet... 
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/resnet18.png"/></div>
 
-Description halway down this page:
-[ResNet Description](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
-[class ResNet desription](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/)
+Figure taken from [[8]](https://ai.stackexchange.com/questions/13842/what-do-the-numbers-in-this-cnn-architecture-stand-for).
 
-### Dropout 
+## Performance Benchmarks  
+From our three implementations, as well as the naive strategy that came out of the box from [CORe50](https://github.com/vlomonaco/cvpr_clvision_challenge), we found that rehearsal is the best strategy to maintain test accuracy over different batches. The plot below shows our findings. It is important to point out that Rehearsal and our hybrid strategy had almost identical performance. The line for Task 1 Combined is hiding Task 1 Rehearsal, but because our individual implementations of EWC suffered dramatically, it is safe to assume that our hybrid method performed well solely because of rehearsal. 
 
-Using dropout allows the selective dropping of neurons during training to prevent overfitting. This is why we implement the use of dropout in our code. 
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/all_compared.png" /></div>  
 
-## Performance Benchmarks
+Apart from test accuracy, another important metric to measure is training time. All of the code was run locally on two Macbook Pros with no more than 16 gbs of ram and no GPU usage. Because of this, training was long. Rehearsal took up to 12 hours to train. This constraint is what led us to look into less computationally and memory expensive processes, such as EWC. As you can see, EWC 02 had the fastest training time at roughly three hours. However, with our computing limited, it is recommended to use the model with this highest accuracy, because with a better computer it would run much faster.  
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/training_time.png" /></div>
 
-... Benchmark setup and assumptions... 
-
-... summary comparison... 
-
-... comparison Benchmark results...
-
-... comparison Benchmark graphics... 
 
 ### Performance Relative to Parameters ( possible use additional tests to show parameter impact using MNIST data beause they run fast) We can use the example MNIST notebook code that uses the same Naive, Rehearsal and EWC strategies). 
 
@@ -202,7 +261,8 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 
 ## Bibliography
 
-Research Papers Referenced and Used:
+Research Papers/Online Resources:
+>>>>>>> da2e0d50aaad44948639bb197aa0e9acd575ee6b
 1. [Continuous Learning in Single-Incremental-Task Scenarios](https://arxiv.org/abs/1806.08568)
 	* This paper describes Continual Learning, Single-Incremental-Task, New Classes problem, and catastrophic forgetting. They have a great description of the Naive, Rehearsal, and Elastic Weight Consolidation approach to solving Continual Learning. 
 2. [Overcoming catastrophic forgetting in neural networks](https://arxiv.org/abs/1612.00796)
@@ -212,7 +272,10 @@ Research Papers Referenced and Used:
 4. [CORe50: a New Dataset and Benchmark for Continuous Object Recognition](http://proceedings.mlr.press/v78/lomonaco17a/lomonaco17a.pdf)
 	* This paper describes the CORe50 dataset. In addition, the authors used the dataset to test several Continual Learning methods and compare their benchmarks. 
 5. [Memory Efficient Experience Replay for Streaming Learning](https://arxiv.org/abs/1809.05922)
-
+6. [Elastic Weight Consolidation (EWC): Nuts and Bolts](https://abhishekaich27.github.io/data/WriteUps/EWC_nuts_and_bolts.pdf)
+	* Comprehensive overview of EWC.  
+7. [AI Spring 2020: Pantelis Course Notes](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/)
+8. [Stackexchange Artcle regarding ResNet18](https://ai.stackexchange.com/questions/13842/what-do-the-numbers-in-this-cnn-architecture-stand-for)
 
 Datasets Used:  
 * [CORe50 Dataset](https://vlomonaco.github.io/core50/)
@@ -223,12 +286,3 @@ Code Used As a Starting Point:
 	* The starting point for the code we developed. This includes the loader for the CORe50 Dataset. Also, included is the Naive approach to continual learning that we use a baseline benchmark. 
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNTk0MTczMDk5LC03MTQ5Njk2MTgsLTEwMT
-k2MDY0ODgsLTE3MDEzOTI5MCwtNDU1MDU3NTIyLC0zMzY3MTY0
-MjEsMTEyMjA3NDY4Nyw2ODE0NDUzNjgsLTQ2NzYxMTYzNCwtOD
-E2NzU4MjAyLC0xNjA4MDI1OTY5LC02MTI0ODU5NjQsLTEwNjY1
-NjMwLC0xNjE5MzYwODY3LDY5MDA3Mzg2NiwxMTQzODMwNzcyLC
-04NDgzMTQwNDEsMjEzMDkwNzUwLC0xODE5MDkxNTYwLC0zMTQ1
-OTQ3MzVdfQ==
--->
