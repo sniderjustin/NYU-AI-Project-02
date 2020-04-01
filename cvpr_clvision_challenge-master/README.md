@@ -226,11 +226,12 @@ The model provided by [CORe50](https://github.com/vlomonaco/cvpr_clvision_challe
 
 Figure taken from [[8]](https://ai.stackexchange.com/questions/13842/what-do-the-numbers-in-this-cnn-architecture-stand-for).
 
+## Performance Benchmarks  
 From our three implementations, as well as the naive strategy that came out of the box from [CORe50](https://github.com/vlomonaco/cvpr_clvision_challenge), we found that rehearsal is the best strategy to maintain test accuracy over different batches. The plot below shows our findings. It is important to point out that Rehearsal and our hybrid strategy had almost identical performance. The line for Task 1 Combined is hiding Task 1 Rehearsal, but because our individual implementations of EWC suffered dramatically, it is safe to assume that our hybrid method performed well solely because of rehearsal. 
 
-<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/all_compared.png" /></div>
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/all_compared.png" /></div>  
 
-Apart from test accuracy, another important metric to measure is training time. All of the code was run locally on two Macbook Pros with no more than 16 gbs of ram and no GPU usage. Because of this, training was long. Rehearsal took up to 12 hours to train. This constraint is what led us to look into less computationally and memory expensive processes, such as EWC. As you can see, EWC 02 had the fastest training time at roughly three hours. However, with our computing limited, it is recommended to use the model with this highest accuracy, because with a better computer it would run much faster. 
+Apart from test accuracy, another important metric to measure is training time. All of the code was run locally on two Macbook Pros with no more than 16 gbs of ram and no GPU usage. Because of this, training was long. Rehearsal took up to 12 hours to train. This constraint is what led us to look into less computationally and memory expensive processes, such as EWC. As you can see, EWC 02 had the fastest training time at roughly three hours. However, with our computing limited, it is recommended to use the model with this highest accuracy, because with a better computer it would run much faster.  
 <div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/training_time.png" /></div>
 
 
