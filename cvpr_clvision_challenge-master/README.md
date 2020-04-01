@@ -107,18 +107,17 @@ for i, train_batch in enumerate(dataset):
 ## Elastic Weight Consolidation  
 Regularization is the process of adding a penalty to the loss function to control the model from overfitting. In EWC, the loss function is extended with terms promoting selective consolidation of the weights which are important to retain past memories. Just as L2 regularization adds <img src="https://render.githubusercontent.com/render/math?math=\lambda\sum_iw_i^2"> to the mean squared error for linear regression, EWC does something similar. 
 
-EWC is a regularization strategy in which the loss function is defined as:  
+EWC is a regularization strategy in which the loss function as defined by [[2]](https://www.pnas.org/content/pnas/114/13/3521.full.pdf).
 
-![core50_classes](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/ewc_loss.png)
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/ewc_loss.png" width=75%/></div>
 
 <img src="https://render.githubusercontent.com/render/math?math=L_B(\theta)"> is the loss for task B only.  
 <img src="https://render.githubusercontent.com/render/math?math=F"> is the Fisher Information Matrix.  
 <img src="https://render.githubusercontent.com/render/math?math=\lambda"> can be considered as the importance of task A relative to task B.  
 
-As defined by [[2]](https://www.pnas.org/content/pnas/114/13/3521.full.pdf).
-
 This figure conceptually shows EWC moving weights into the intersection of low error for both task A and B. This differs from other techniques that just try to minimize the error for the new task, irrespective of the previous task.  
-![EWC Diagram](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/ewc_diagram.png)
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/ewc_diagram.png" width=75%/></div>
+
 Figure taken from [[2]](https://arxiv.org/pdf/1612.00796.pdf).
 
 ## EWC Implementation 01
