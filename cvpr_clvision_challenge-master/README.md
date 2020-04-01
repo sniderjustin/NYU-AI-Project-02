@@ -26,7 +26,6 @@ Many strategies have been developed to combat catastrophic forgetting. The three
 ## CORe50 Dataset  
 
 ![core50_classes](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/classes.gif)
->>>>>>> da2e0d50aaad44948639bb197aa0e9acd575ee6b
 
 ### <ins>**Dataset Description**</ins>
 
@@ -35,7 +34,6 @@ There are few available data sets that are suitable for evaluating techniques th
 **CORe50**, specifically designed for (**C**)ontinual (**O**)bject (**Re**)cognition, is a collection of 50 domestic objects belonging to 10 categories: plug adapters, mobile phones, scissors, light bulbs, cans, glasses, balls, markers, cups and remote controls. Classification can be performed at object level (50 classes) or at category level (10 classes). 
 
 The full dataset consists of 164,866 128×128 RGB-D images: 11 sessions × 50 objects × (around 300) frames per session. Three of the eleven sessions (#3, #7 and #10) have been selected for test and the remaining 8 sessions are used for training.
->>>>>>> da2e0d50aaad44948639bb197aa0e9acd575ee6b
 
 The code for for loading the data set is freely available and the link to the github is provided [here]( https://github.com/vlomonaco/cvpr_clvision_challenge).  
 
@@ -262,7 +260,6 @@ This script is based on PyTorch but you can use any framework you want. CORe50 u
 ## Bibliography
 
 Research Papers/Online Resources:
->>>>>>> da2e0d50aaad44948639bb197aa0e9acd575ee6b
 1. [Continuous Learning in Single-Incremental-Task Scenarios](https://arxiv.org/abs/1806.08568)
 	* This paper describes Continual Learning, Single-Incremental-Task, New Classes problem, and catastrophic forgetting. They have a great description of the Naive, Rehearsal, and Elastic Weight Consolidation approach to solving Continual Learning. 
 2. [Overcoming catastrophic forgetting in neural networks](https://arxiv.org/abs/1612.00796)
