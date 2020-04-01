@@ -107,13 +107,13 @@ for i, train_batch in enumerate(dataset):
 ## Elastic Weight Consolidation  
 Regularization is the process of adding a penalty to the loss function to control the model from overfitting. In EWC, the loss function is extended with terms promoting selective consolidation of the weights which are important to retain past memories. Just as L2 regularization adds <img src="https://render.githubusercontent.com/render/math?math=\lambda\sum_iw_i^2"> to the mean squared error for linear regression, EWC does something similar. 
 
-**Elastic Weight Consolidation:** 
 EWC is a regularization strategy in which the loss function is defined as:  
 
 ![core50_classes](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/ewc_loss.png)
-<img src="https://render.githubusercontent.com/render/math?math=L_B(\theta)"> is the loss for task B only.
-<img src="https://render.githubusercontent.com/render/math?math=F"> is the Fisher Information Matrix. 
-<img src="https://render.githubusercontent.com/render/math?math=\lambda"> can be considered as the importance of task A relative to task B.
+
+<img src="https://render.githubusercontent.com/render/math?math=L_B(\theta)"> is the loss for task B only.  
+<img src="https://render.githubusercontent.com/render/math?math=F"> is the Fisher Information Matrix.  
+<img src="https://render.githubusercontent.com/render/math?math=\lambda"> can be considered as the importance of task A relative to task B.  
 
 As defined by [[2]](https://www.pnas.org/content/pnas/114/13/3521.full.pdf).
 
