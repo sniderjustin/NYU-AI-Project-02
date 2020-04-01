@@ -1,5 +1,5 @@
 
-# NYU // AI // Project 02 // Continuous Learning
+# <div align="center">NYU // AI // Project 02 // Continuous Learning</div>
 This repository and project was developed for the CS-GY-6613 Artificial Intelligence class at NYU. The class professor is [Pantelis Monogioudis]( https://github.com/pantelis). The Teacher’s Assistants are [Shalaka Sane]( https://github.com/Shalaka07) and [Zhihao Zhang](https://github.com/zzyrd). They have our deep graditude for all guidance they offered in the development of the project. 
 
 We would also like to thank Vincenzo Lomonaco, one of the creators of the CORe50 dataset. He generously answered our questions and provided great advice. 
@@ -223,6 +223,7 @@ To view our full edits to utils/train_test.py, please visit [here](https://githu
 The model provided by [CORe50](https://github.com/vlomonaco/cvpr_clvision_challenge) uses a ResNet18 neural network. As described in class, residual neural networks differ from earlier networks by the use of skip connections. The short cut connections, as represented by the black skipping arrows below, simply perform an identity mapping, where "their outputs are added to the outputs of the stacked layer." [[7]](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/) No modifications to the model has been made in this project. We solely focused on CL techniques, not model building. 
 
 <div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/resnet18.png"/></div>
+
 Figure taken from [[8]](https://ai.stackexchange.com/questions/13842/what-do-the-numbers-in-this-cnn-architecture-stand-for).
 
 ## Performance Benchmarks
