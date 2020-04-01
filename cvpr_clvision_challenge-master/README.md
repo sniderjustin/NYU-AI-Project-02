@@ -222,7 +222,7 @@ To view our full edits to utils/train_test.py, please visit [here](https://githu
 
 The model provided by [CORe50](https://github.com/vlomonaco/cvpr_clvision_challenge) uses a ResNet18 neural network. As described in class, residual neural networks differ from earlier networks by the use of skip connections. The short cut connections, as represented by the black skipping arrows below, simply perform an identity mapping, where "their outputs are added to the outputs of the stacked layer." [[7]](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/) No modifications to the model has been made in this project. We solely focused on CL techniques, not model building. 
 
-![Continuous Learning Strategies](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/resnet18.png)
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/resnet18.png"/></div>
 Figure taken from [[8]](https://ai.stackexchange.com/questions/13842/what-do-the-numbers-in-this-cnn-architecture-stand-for).
 
 ## Performance Benchmarks
