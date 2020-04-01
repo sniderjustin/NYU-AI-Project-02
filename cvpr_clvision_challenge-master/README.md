@@ -21,7 +21,8 @@ Single-Incremental-Tasks (SIT) is the challenge to take on different tasks. New 
 Many strategies have been developed to combat catastrophic forgetting. The three types of strategies are architectural, regularization and rehearsal. In this project, we focus on elastic weight consolidation (EWC), a regularization strategy, and a custom implementation of a rehearsal strategy. We also combine the two.  A diagram of different types of specific CL implementations is shown below. 
 
 ## <div align="center">Different Continuous Learning Strategies</div>
-![Continuous Learning Strategies](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/CL_strategies.png)
+<div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/CL_strategies.png" width=75%/></div>
+
 Image taken from [[1]](https://arxiv.org/pdf/1806.08568.pdf).
 
 ## CORe50 Dataset  
