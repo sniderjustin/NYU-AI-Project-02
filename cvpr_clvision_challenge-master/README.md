@@ -155,10 +155,8 @@ for name, param in model.named_parameters(): # for every parameter save two valu
 
 ... description with pros and cons... 
 
-... diagram of ResNet18 from internet... 
-
-
 ![ResNet-Unit](https://raw.githubusercontent.com/aobject/NYU-AI-Project-02/master/cvpr_clvision_challenge-master/report_resources/resnet/resnet3.png?token=AEVXDAHFBLWWIURC3254QC26SG2TM)
+
 
 Description halway down this page:
 [ResNet Description](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
@@ -227,7 +225,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTMyMTQxNSw1OTQxNzMwOTksLTcxND
+eyJoaXN0b3J5IjpbMTkxMjk3NDYwOCw1OTQxNzMwOTksLTcxND
 k2OTYxOCwtMTAxOTYwNjQ4OCwtMTcwMTM5MjkwLC00NTUwNTc1
 MjIsLTMzNjcxNjQyMSwxMTIyMDc0Njg3LDY4MTQ0NTM2OCwtND
 Y3NjExNjM0LC04MTY3NTgyMDIsLTE2MDgwMjU5NjksLTYxMjQ4
