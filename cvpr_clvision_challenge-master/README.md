@@ -67,6 +67,12 @@ EWC attempts to force different weights to learn different tasks. It also promot
 
 Value too high causes the weights to favor previous learned tasks. So learning new tasks is slowed or prevented. This is because the elastic nature of the neural network that allows learning is slowed or stopped. 
 
+| EWC Lambda |Analysis|Results|
+|--|--|--|
+| 40.0 |Too High|Learning was prevented by high penalty. |
+| 4.0 |Ideal|Best combination of ability to learn new tasks and retain old tasks. |
+| 0.04 |Too Low|Old tasks were forgotten very quickly. |
+
 ... example diagram showing task overlap ... 
 
 ... stats and graph showing ewc remembering old tasks, but not learning new tasks ... 
@@ -77,11 +83,7 @@ Value too low allowes the new tasked to be learned. However, old tasks are still
 
 ### EWC Implementation 01
 
-| EWC Lambda |Analysis|Results|
-|--|--|--|
-| 40.0 |Too High|Learning was prevented by high penalty. |
-| 4.0 |Ideal|Best combination of ability to learn new tasks and retain old tasks. |
-| 0.04 |Too Low||
+
 Store a dictionary of fisher matrix values and optimum weights for every unique task. More effective at finding weights that work for multiple tasks. However, this requires more memory for every task to store the fisher values and the optimum weights. In addition, we take a hit for the additional time to incorporate all the weights and fisher values into our penalty.
 
 **Finding the EWC penalty using unique Fisher values and optimum weights from all tasks:**
@@ -231,11 +233,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0OTY0MjEzMywtMTY4NzU3NjMzOCwxMj
-c5NDMwNzM4LC0xNjk3MTEzOTc4LC0xNDUyNTA2NDk4LDU5NDE3
-MzA5OSwtNzE0OTY5NjE4LC0xMDE5NjA2NDg4LC0xNzAxMzkyOT
-AsLTQ1NTA1NzUyMiwtMzM2NzE2NDIxLDExMjIwNzQ2ODcsNjgx
-NDQ1MzY4LC00Njc2MTE2MzQsLTgxNjc1ODIwMiwtMTYwODAyNT
-k2OSwtNjEyNDg1OTY0LC0xMDY2NTYzMCwtMTYxOTM2MDg2Nyw2
-OTAwNzM4NjZdfQ==
+eyJoaXN0b3J5IjpbNTM1MzIwMDQzLC0xNjg3NTc2MzM4LDEyNz
+k0MzA3MzgsLTE2OTcxMTM5NzgsLTE0NTI1MDY0OTgsNTk0MTcz
+MDk5LC03MTQ5Njk2MTgsLTEwMTk2MDY0ODgsLTE3MDEzOTI5MC
+wtNDU1MDU3NTIyLC0zMzY3MTY0MjEsMTEyMjA3NDY4Nyw2ODE0
+NDUzNjgsLTQ2NzYxMTYzNCwtODE2NzU4MjAyLC0xNjA4MDI1OT
+Y5LC02MTI0ODU5NjQsLTEwNjY1NjMwLC0xNjE5MzYwODY3LDY5
+MDA3Mzg2Nl19
 -->
