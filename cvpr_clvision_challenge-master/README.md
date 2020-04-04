@@ -157,7 +157,7 @@ Using the ResNet architecture has huge performance benefits in many applications
 
 ![ResNet-Unit](https://raw.githubusercontent.com/aobject/NYU-AI-Project-02/master/cvpr_clvision_challenge-master/report_resources/resnet/resnet3.png?token=AEVXDAHFBLWWIURC3254QC26SG2TM)
 
-This di[here.](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/)
+This diagram of the skip connection and its ensamble effects is from the CSGY6613 website [here.](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/)
 
 Description halway down this page:
 [ResNet Description](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
@@ -226,11 +226,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1MDQ5ODI0MywtMTQ1MjUwNjQ5OCw1OT
-QxNzMwOTksLTcxNDk2OTYxOCwtMTAxOTYwNjQ4OCwtMTcwMTM5
-MjkwLC00NTUwNTc1MjIsLTMzNjcxNjQyMSwxMTIyMDc0Njg3LD
-Y4MTQ0NTM2OCwtNDY3NjExNjM0LC04MTY3NTgyMDIsLTE2MDgw
-MjU5NjksLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MTkzNjA4Nj
-csNjkwMDczODY2LDExNDM4MzA3NzIsLTg0ODMxNDA0MSwyMTMw
-OTA3NTBdfQ==
+eyJoaXN0b3J5IjpbLTE2OTcxMTM5NzgsLTE0NTI1MDY0OTgsNT
+k0MTczMDk5LC03MTQ5Njk2MTgsLTEwMTk2MDY0ODgsLTE3MDEz
+OTI5MCwtNDU1MDU3NTIyLC0zMzY3MTY0MjEsMTEyMjA3NDY4Ny
+w2ODE0NDUzNjgsLTQ2NzYxMTYzNCwtODE2NzU4MjAyLC0xNjA4
+MDI1OTY5LC02MTI0ODU5NjQsLTEwNjY1NjMwLC0xNjE5MzYwOD
+Y3LDY5MDA3Mzg2NiwxMTQzODMwNzcyLC04NDgzMTQwNDEsMjEz
+MDkwNzUwXX0=
 -->
