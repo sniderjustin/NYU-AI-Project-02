@@ -99,6 +99,26 @@ for i, train_batch in enumerate(dataset):
         del temp_y
 ```
 
+### Rehearsal Parameters
+
+Keeping too many old samples increases memory requirements and processing time, but allows better accuracy. 
+
+Here are the optimal hyperparameters. 
+|Old Data Per Batch| New Data Per Batch |
+|--|--|
+| Equal proportion of all tasks retained to use for next round. About 11,990 old tasks saved for use in next round throughout process. | About 11,990 new task observations used in each round.  |
+
+
+Here are the pros and cons of changing the hyperparameters. 
+|| Increase Observations | Decrease Observations |
+|--|--|--|
+|**Pros** | Increase in accuracy. | Increase in speed and efficiency.|
+| **Cons** | High memory use and slow runtimes.| Decrease in performance. |
+
+Keeping less old samples uses less memory and processing time, but causes a decrease in accuracy. 
+
+Finding the sweet spot allows efficient use of memory and processing time. It also still provides much improved performance over the naive training model. 
+
 ### Accuracy Results using Rehearsal
 ![rehearsal](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/rehearsal.png)
 
@@ -117,6 +137,18 @@ This figure conceptually shows EWC moving weights into the intersection of low e
 <div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/ewc_diagram.png" width=75%/></div>
 
 Figure taken from [[2]](https://arxiv.org/pdf/1612.00796.pdf).
+
+### EWC Parameters
+
+Value too high causes the weights to favor previous learned tasks. So learning new tasks is slowed or prevented. This is because the elastic nature of the neural network that allows learning is slowed or stopped. 
+
+| EWC Lambda |Analysis|Results|
+|--|--|--|
+| 40.0 |Too High|Learning was prevented by high penalty. |
+| 4.0 |Ideal|Best combination of ability to learn new tasks and retain old tasks. |
+| 0.04 |Too Low|Old tasks were forgotten very quickly. |
+
+
 
 ## EWC Implementation 01
 Store a dictionary of fisher matrix values and optimum weights for every unique task. More effective at finding weights that work for multiple tasks. However, this requires more memory for every task to store the fisher values and the optimum weights. In addition, we take a hit for the additional time to incorporate all the weights and fisher values into our penalty.
@@ -223,6 +255,15 @@ The model provided by [CORe50](https://github.com/vlomonaco/cvpr_clvision_challe
 
 Figure taken from [[8]](https://ai.stackexchange.com/questions/13842/what-do-the-numbers-in-this-cnn-architecture-stand-for).
 
+Using the ResNet architecture has huge performance benefits in many deep learning applications. Adding many layers to a neural network can potentially increase performance. However, all those layers can prevent a signal from making through the network. The ResNet unit allows the signal to skip ahead. The skip connection allows the signal strength to remain useful. In addition, research has shown the performance is equivalent to an ensemble of neural networks. All this benefit is gained with minimal usage of resources, since we only need our one neural network.
+
+![ResNet-Unit](https://raw.githubusercontent.com/aobject/NYU-AI-Project-02/master/cvpr_clvision_challenge-master/report_resources/resnet/resnet3.png?token=AEVXDAHFBLWWIURC3254QC26SG2TM)
+
+This diagram of the skip connection and its ensamble effects is from the CSGY6613 website [[7]](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/)
+
+![performance-diagram](https://raw.githubusercontent.com/aobject/NYU-AI-Project-02/master/cvpr_clvision_challenge-master/report_resources/resnet/resnet6.png?token=AEVXDAAMG7OLWZZPEQFUX3S6SG4P6)
+Figure from Neural Network Architectures with a comparison between many of the top performaing neural network architectures by Eugenio Culurciello. You can find his full article and paper on Medium. [[9]](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
+
 ## Performance Benchmarks  
 From our three implementations, as well as the naive strategy that came out of the box from [CORe50](https://github.com/vlomonaco/cvpr_clvision_challenge), we found that rehearsal is the best strategy to maintain test accuracy over different batches. The plot below shows our findings. It is important to point out that Rehearsal and our hybrid strategy had almost identical performance. The line for Task 1 Combined is hiding Task 1 Rehearsal, but because our individual implementations of EWC suffered dramatically, it is safe to assume that our hybrid method performed well solely because of rehearsal. 
 
@@ -233,26 +274,32 @@ Apart from test accuracy, another important metric to measure is training time. 
 
 ## Project Structure
 
-... list new files developed and new functions developed.. 
+The changes we made are in the following files: 
+
+* [`README.md`](README.md): This instructions file.
+
+* [`/cvpr_clvision_challenge-master/cl_ewc.py`](/cvpr_clvision_challenge-master/cl_ewc.py): This code is a developed using the naive_baseline.py competition file as a starting point. Running this file implement an EWC implementation 01 continual learning strategy. 
+* [`/cvpr_clvision_challenge-master/cl_rehearsal.py`](/cvpr_clvision_challenge-master/cl_rehearsal.py): This code is a developed using the naive_baseline.py competition file as a starting point. Running this file implements the rehearsal continual learning strategy. 
+* [`/cvpr_clvision_challenge-master/cl_ewc_rehearsal.py`](/cvpr_clvision_challenge-master/cl_ewc_rehearsal.py): This code is a developed using the naive_baseline.py competition file as a starting point. Running this file implements a hybrid solution using both the rehearsal continual learning strategy. 
+* [`/cvpr_clvision_challenge-master/utils/train_test.py`](/cvpr_clvision_challenge-master/utils/train_test.py): This code is a developed using the train_test.py naive solution competition file as a starting point. The train_net function is used for the naive and rehearsal solution strategies. The train_net_ewc has been added to train using the EWC implementation 01 strategy. The on_task_update function has been added to store the optimal weights and fisher values after training each new task. 
+* [`/cvpr_clvision_challenge-master/utils/train_test_alt_ewc.py`](/cvpr_clvision_challenge-master/utils/train_test_alt_ewc.py): This file contains the second implementation of the ewc with alternative version of the both the train_net_ewc and on_task_update functions. You can see the implementation uses much less memory and time to run. In addition, using this strategy the number of fisher values and calculations does not increase with the number of tasks. However, the accuracy is not as high. 
+* [`/cvpr_clvision_challenge-master/submissions_archive/`](/cvpr_clvision_challenge-master/submissions_archive/): This directory contains logs. You can find the detailed stats on successful and not so successful experimentation. In addition, there is an archive of the exact code with exact parameters used for the most successful runs. 
+* [`/cvpr_clvision_challenge-master/report_resources/`](/cvpr_clvision_challenge-master/report_resources/): This directory images used in the readme files. See the sources for images by others in the readme text and bibliography. 
+* [`/cvpr_clvision_challenge-master/create_submission.sh`](/cvpr_clvision_challenge-master/create_submission.sh): Basic bash script to run the various continual learning strategies and create the zip submission file. Simply uncomment any strategies you would like to run and comment the ones you don't want to run. 
 
 This repository is structured as follows:
 
-* [`cl_ewc.py`](cl_ewc.py): <<<ALL NEW FILES AND DESC HERE>>>
-
-- [`core50/`](core50): Root directory for the CORe50  benchmark, the main dataset of the challenge.
-- [`utils/`](core): Directory containing a few utilities methods.
-- [`cl_ext_mem/`](cl_ext_mem): It will be generated after the repository setup (you need to store here eventual 
+- [`/cvpr_clvision_challenge-master/core50/`](core50): Root directory for the CORe50  benchmark, the main dataset of the challenge.
+- [`/cvpr_clvision_challenge-master/utils/`](/cvpr_clvision_challenge-master/utils/): Directory containing a few utilities methods.
+- [`/cvpr_clvision_challenge-master/cl_ext_mem/`](/cvpr_clvision_challenge-master/cl_ext_mem): It will be generated after the repository setup (you need to store here eventual 
 memory replay patterns and other data needed during training by your CL algorithm)  
-- [`submissions/`](submissions): It will be generated after the repository setup. It is where the submissions directory
+- [`/cvpr_clvision_challenge-master/submissions/`](/cvpr_clvision_challenge-master/submissions): It will be generated after the repository setup. It is where the submissions directory
 will be created.
-- [`fetch_data_and_setup.sh`](fetch_data_and_setup.sh): Basic bash script to download data and other utilities.
-- [`create_submission.sh`](create_submission.sh): Basic bash script to run the baseline and create the zip submission
-file.
-- [`naive_baseline.py`](naive_baseline.py): Basic script to run a naive algorithm on the tree challenge categories. 
+- [`/cvpr_clvision_challenge-master/fetch_data_and_setup.sh`](/cvpr_clvision_challenge-master/fetch_data_and_setup.sh): Basic bash script to download data and other utilities.
+- [`/cvpr_clvision_challenge-master/naive_baseline.py`](/cvpr_clvision_challenge-master/naive_baseline.py): Basic script to run a naive algorithm on the tree challenge categories. 
 This script is based on PyTorch but you can use any framework you want. CORe50 utilities are framework independent.
-- [`environment.yml`](environment.yml): Basic conda environment to run the baselines.
-- [`LICENSE`](LICENSE): Standard Creative Commons Attribution 4.0 International License.
-- [`README.md`](README.md): This instructions file.
+- [`/cvpr_clvision_challenge-master/environment.yml`](/cvpr_clvision_challenge-master/environment.yml): Basic conda environment to run the baselines.
+- [`/cvpr_clvision_challenge-master/LICENSE`](/cvpr_clvision_challenge-master/LICENSE): Standard Creative Commons Attribution 4.0 International License.
 
 ## Bibliography
 
@@ -270,6 +317,8 @@ Research Papers/Online Resources:
 	* Comprehensive overview of EWC.  
 7. [AI Spring 2020: Pantelis Course Notes](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/)
 8. [Stackexchange Artcle regarding ResNet18](https://ai.stackexchange.com/questions/13842/what-do-the-numbers-in-this-cnn-architecture-stand-for)
+9. [Neural Network Architectures](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
+   * Article and paper on Medimum by Eugenio Culurciello. Great comparison of top performing Neural Network Architectures. 
 
 Datasets Used:  
 * [CORe50 Dataset](https://vlomonaco.github.io/core50/)
