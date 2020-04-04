@@ -153,11 +153,11 @@ for name, param in model.named_parameters(): # for every parameter save two valu
 
 ## ResNet18 Classifier Architecture
 
-... description with pros and cons... 
+Using the ResNet architecture has huge performance benefits in many applications. Adding many layers to a neural network can potentially increase performance. However, all those layers can prevent a signal from making through the network. The ResNet unit allows the signal to skip ahead. The skip connection allows the signal strength to remain useful. In addition, research has shown the performance is equivalent to an ensemble of neural networks. All this benefit is gained with minimal usage of resources, since we only need our one neural network.
 
 ![ResNet-Unit](https://raw.githubusercontent.com/aobject/NYU-AI-Project-02/master/cvpr_clvision_challenge-master/report_resources/resnet/resnet3.png?token=AEVXDAHFBLWWIURC3254QC26SG2TM)
 
-
+This di[here.](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/)
 
 Description halway down this page:
 [ResNet Description](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
@@ -226,11 +226,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTI1MDY0OTgsNTk0MTczMDk5LC03MT
-Q5Njk2MTgsLTEwMTk2MDY0ODgsLTE3MDEzOTI5MCwtNDU1MDU3
-NTIyLC0zMzY3MTY0MjEsMTEyMjA3NDY4Nyw2ODE0NDUzNjgsLT
-Q2NzYxMTYzNCwtODE2NzU4MjAyLC0xNjA4MDI1OTY5LC02MTI0
-ODU5NjQsLTEwNjY1NjMwLC0xNjE5MzYwODY3LDY5MDA3Mzg2Ni
-wxMTQzODMwNzcyLC04NDgzMTQwNDEsMjEzMDkwNzUwLC0xODE5
-MDkxNTYwXX0=
+eyJoaXN0b3J5IjpbLTc1MDQ5ODI0MywtMTQ1MjUwNjQ5OCw1OT
+QxNzMwOTksLTcxNDk2OTYxOCwtMTAxOTYwNjQ4OCwtMTcwMTM5
+MjkwLC00NTUwNTc1MjIsLTMzNjcxNjQyMSwxMTIyMDc0Njg3LD
+Y4MTQ0NTM2OCwtNDY3NjExNjM0LC04MTY3NTgyMDIsLTE2MDgw
+MjU5NjksLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MTkzNjA4Nj
+csNjkwMDczODY2LDExNDM4MzA3NzIsLTg0ODMxNDA0MSwyMTMw
+OTA3NTBdfQ==
 -->
