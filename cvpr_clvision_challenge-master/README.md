@@ -48,8 +48,8 @@ Keeping too many old samples increases memory requirements and processing time, 
 
 || Increase Observations | Decrease Obersvations |
 |--|--|--|
-|**Pros** | Increase in accuracy. | Increase  |
-|**Cons** |
+|**Pros** | Increase in accuracy. | Increase in speed and efficiency.|
+|**Cons** | High memory use and slow p| 
 
 
 ... example stats and graphics ... 
@@ -242,7 +242,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3Mzc0MTk0LC0xNjg3NTc2MzM4LDEyNz
+eyJoaXN0b3J5IjpbNDc1MTIwNDA4LC0xNjg3NTc2MzM4LDEyNz
 k0MzA3MzgsLTE2OTcxMTM5NzgsLTE0NTI1MDY0OTgsNTk0MTcz
 MDk5LC03MTQ5Njk2MTgsLTEwMTk2MDY0ODgsLTE3MDEzOTI5MC
 wtNDU1MDU3NTIyLC0zMzY3MTY0MjEsMTEyMjA3NDY4Nyw2ODE0
