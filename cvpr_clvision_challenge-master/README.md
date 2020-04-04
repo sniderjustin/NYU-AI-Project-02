@@ -160,13 +160,12 @@ Using the ResNet architecture has huge performance benefits in many applications
 This diagram of the skip connection and its ensamble effects is from the CSGY6613 website [here.](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/)
 
 ![performance-diagram](https://raw.githubusercontent.com/aobject/NYU-AI-Project-02/master/cvpr_clvision_challenge-master/report_resources/resnet/resnet6.png?token=AEVXDAAMG7OLWZZPEQFUX3S6SG4P6)
-Here we have a comparison between many of the top performaing neural network architectures by Eugenio Culurciello. You can find 
-[ResNet Description](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
+Here we have a comparison between many of the top performaing neural network architectures by Eugenio Culurciello. You can find his full article and paper on Medium [here.](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
 
 
 ### Dropout 
 
-Using dropout allows the selective dropping of neurons during training to prevent overfitting. This is why we implement the use of dropout in our code. 
+The code also impliments the use of dropout in PyTorch. Using dropout allows the selective dropping of neurons during training to prevent overfitting. It has been show This is why we implement the use of dropout in our code. 
 
 ## Performance Benchmarks
 
@@ -227,11 +226,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzMjQyMDA3OSwtMTY5NzExMzk3OCwtMT
-Q1MjUwNjQ5OCw1OTQxNzMwOTksLTcxNDk2OTYxOCwtMTAxOTYw
-NjQ4OCwtMTcwMTM5MjkwLC00NTUwNTc1MjIsLTMzNjcxNjQyMS
-wxMTIyMDc0Njg3LDY4MTQ0NTM2OCwtNDY3NjExNjM0LC04MTY3
-NTgyMDIsLTE2MDgwMjU5NjksLTYxMjQ4NTk2NCwtMTA2NjU2Mz
-AsLTE2MTkzNjA4NjcsNjkwMDczODY2LDExNDM4MzA3NzIsLTg0
-ODMxNDA0MV19
+eyJoaXN0b3J5IjpbLTM4MDg5OTE1LC0xNjk3MTEzOTc4LC0xND
+UyNTA2NDk4LDU5NDE3MzA5OSwtNzE0OTY5NjE4LC0xMDE5NjA2
+NDg4LC0xNzAxMzkyOTAsLTQ1NTA1NzUyMiwtMzM2NzE2NDIxLD
+ExMjIwNzQ2ODcsNjgxNDQ1MzY4LC00Njc2MTE2MzQsLTgxNjc1
+ODIwMiwtMTYwODAyNTk2OSwtNjEyNDg1OTY0LC0xMDY2NTYzMC
+wtMTYxOTM2MDg2Nyw2OTAwNzM4NjYsMTE0MzgzMDc3MiwtODQ4
+MzE0MDQxXX0=
 -->
