@@ -42,6 +42,9 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 ### Rehearsal Parameters
 
 Keeping too many old samples increases memory requirements and processing time, but allows better accuracy. 
+|Data Retained|  |
+|--|--|
+|  |  |
 
 ... example stats and graphics ... 
 
@@ -233,7 +236,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM1MzIwMDQzLC0xNjg3NTc2MzM4LDEyNz
+eyJoaXN0b3J5IjpbNjE2NTE1MTk1LC0xNjg3NTc2MzM4LDEyNz
 k0MzA3MzgsLTE2OTcxMTM5NzgsLTE0NTI1MDY0OTgsNTk0MTcz
 MDk5LC03MTQ5Njk2MTgsLTEwMTk2MDY0ODgsLTE3MDEzOTI5MC
 wtNDU1MDU3NTIyLC0zMzY3MTY0MjEsMTEyMjA3NDY4Nyw2ODE0
