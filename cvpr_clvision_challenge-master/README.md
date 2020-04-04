@@ -165,7 +165,7 @@ Here we have a comparison between many of the top performaing neural network arc
 
 ### Dropout 
 
-The code also impliments the use of dropout in PyTorch. Using dropout allows the selective dropping of neurons during training to prevent overfitting. It has been show This is why we implement the use of dropout in our code. 
+The code also impliments the use of dropout in PyTorch. Using dropout allows the selective dropping of neurons during training to prevent overfitting. It has been show dropout often offers a huge improvement on performance without using much resources at all. It also has an ensamble effect as if we were to usThis is why we implement the use of dropout in our code. 
 
 ## Performance Benchmarks
 
@@ -226,7 +226,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4MDg5OTE1LC0xNjk3MTEzOTc4LC0xND
+eyJoaXN0b3J5IjpbNzg5NDM1NDg4LC0xNjk3MTEzOTc4LC0xND
 UyNTA2NDk4LDU5NDE3MzA5OSwtNzE0OTY5NjE4LC0xMDE5NjA2
 NDg4LC0xNzAxMzkyOTAsLTQ1NTA1NzUyMiwtMzM2NzE2NDIxLD
 ExMjIwNzQ2ODcsNjgxNDQ1MzY4LC00Njc2MTE2MzQsLTgxNjc1
