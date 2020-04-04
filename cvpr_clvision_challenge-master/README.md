@@ -43,26 +43,21 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 
 Keeping too many old samples increases memory requirements and processing time, but allows better accuracy. 
 
-Here are the optimal hyperperameters. 
+Here are the optimal hyperparameters. 
 |Old Data Per Batch| New Data Per Batch |
 |--|--|
 | Equal proportion of all tasks retained to use for next round. About 11,990 old tasks saved for use in next round throughout process. | About 11,990 new task observations used in each round.  |
 
+
+Here are the pros and cons of changing the hyperparameters. 
 || Increase Observations | Decrease Obersvations |
 |--|--|--|
 |**Pros** | Increase in accuracy. | Increase in speed and efficiency.|
 |**Cons** | High memory use and slow runtimes.| Decrease in performance.  
 
-
-... example stats and graphics ... 
-
 Keeping less old samples uses less memory and processing time, but causes a decrease in accuracy. 
 
-... example stats and graphics ... 
-
 Finding the sweet spot allows efficient use of memory and processing time. It also still provides much improved performance over the naive training model. 
-
-... example stats and graphics ... 
 
 ## Elastic Weight Consolidation
 
@@ -244,11 +239,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwOTYyNDMxMSwtMTY4NzU3NjMzOCwxMj
-c5NDMwNzM4LC0xNjk3MTEzOTc4LC0xNDUyNTA2NDk4LDU5NDE3
-MzA5OSwtNzE0OTY5NjE4LC0xMDE5NjA2NDg4LC0xNzAxMzkyOT
-AsLTQ1NTA1NzUyMiwtMzM2NzE2NDIxLDExMjIwNzQ2ODcsNjgx
-NDQ1MzY4LC00Njc2MTE2MzQsLTgxNjc1ODIwMiwtMTYwODAyNT
-k2OSwtNjEyNDg1OTY0LC0xMDY2NTYzMCwtMTYxOTM2MDg2Nyw2
-OTAwNzM4NjZdfQ==
+eyJoaXN0b3J5IjpbLTEzNTM3MDA5MjQsLTE2ODc1NzYzMzgsMT
+I3OTQzMDczOCwtMTY5NzExMzk3OCwtMTQ1MjUwNjQ5OCw1OTQx
+NzMwOTksLTcxNDk2OTYxOCwtMTAxOTYwNjQ4OCwtMTcwMTM5Mj
+kwLC00NTUwNTc1MjIsLTMzNjcxNjQyMSwxMTIyMDc0Njg3LDY4
+MTQ0NTM2OCwtNDY3NjExNjM0LC04MTY3NTgyMDIsLTE2MDgwMj
+U5NjksLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MTkzNjA4Njcs
+NjkwMDczODY2XX0=
 -->
