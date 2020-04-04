@@ -77,6 +77,11 @@ Value too low allowes the new tasked to be learned. However, old tasks are still
 
 ### EWC Implementation 01
 
+|  |  |
+|--|--|
+|  |  |
+
+
 Store a dictionary of fisher matrix values and optimum weights for every unique task. More effective at finding weights that work for multiple tasks. However, this requires more memory for every task to store the fisher values and the optimum weights. In addition, we take a hit for the additional time to incorporate all the weights and fisher values into our penalty.
 
 **Finding the EWC penalty using unique Fisher values and optimum weights from all tasks:**
@@ -226,11 +231,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3OTQzMDczOCwtMTY5NzExMzk3OCwtMT
-Q1MjUwNjQ5OCw1OTQxNzMwOTksLTcxNDk2OTYxOCwtMTAxOTYw
-NjQ4OCwtMTcwMTM5MjkwLC00NTUwNTc1MjIsLTMzNjcxNjQyMS
-wxMTIyMDc0Njg3LDY4MTQ0NTM2OCwtNDY3NjExNjM0LC04MTY3
-NTgyMDIsLTE2MDgwMjU5NjksLTYxMjQ4NTk2NCwtMTA2NjU2Mz
-AsLTE2MTkzNjA4NjcsNjkwMDczODY2LDExNDM4MzA3NzIsLTg0
-ODMxNDA0MV19
+eyJoaXN0b3J5IjpbLTE2ODc1NzYzMzgsMTI3OTQzMDczOCwtMT
+Y5NzExMzk3OCwtMTQ1MjUwNjQ5OCw1OTQxNzMwOTksLTcxNDk2
+OTYxOCwtMTAxOTYwNjQ4OCwtMTcwMTM5MjkwLC00NTUwNTc1Mj
+IsLTMzNjcxNjQyMSwxMTIyMDc0Njg3LDY4MTQ0NTM2OCwtNDY3
+NjExNjM0LC04MTY3NTgyMDIsLTE2MDgwMjU5NjksLTYxMjQ4NT
+k2NCwtMTA2NjU2MzAsLTE2MTkzNjA4NjcsNjkwMDczODY2LDEx
+NDM4MzA3NzJdfQ==
 -->
