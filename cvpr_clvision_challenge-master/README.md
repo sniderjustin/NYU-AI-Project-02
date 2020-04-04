@@ -46,6 +46,11 @@ Keeping too many old samples increases memory requirements and processing time, 
 |--|--|
 | Equal proportion of all tasks retained to use for next round. About 11,990 old tasks saved for use in next round throughout process. | About 11,990 new task observations used in each round.  |
 
+| Increase Observations | Decrease Obersvations |
+--|--|--|
+Pr| Increasing the number of observations. |  |
+
+
 ... example stats and graphics ... 
 
 Keeping less old samples uses less memory and processing time, but causes a decrease in accuracy. 
@@ -236,7 +241,7 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0MzMyNjY5NywtMTY4NzU3NjMzOCwxMj
+eyJoaXN0b3J5IjpbMTU2ODU3NzI4MCwtMTY4NzU3NjMzOCwxMj
 c5NDMwNzM4LC0xNjk3MTEzOTc4LC0xNDUyNTA2NDk4LDU5NDE3
 MzA5OSwtNzE0OTY5NjE4LC0xMDE5NjA2NDg4LC0xNzAxMzkyOT
 AsLTQ1NTA1NzUyMiwtMzM2NzE2NDIxLDExMjIwNzQ2ODcsNjgx
