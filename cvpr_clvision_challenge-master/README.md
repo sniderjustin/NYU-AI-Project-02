@@ -44,7 +44,7 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 Keeping too many old samples increases memory requirements and processing time, but allows better accuracy. 
 |Data Retained|  |
 |--|--|
-| 1/2 |  |
+|  |  |
 
 ... example stats and graphics ... 
 
@@ -236,11 +236,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTk4MzAxNTcsLTE2ODc1NzYzMzgsMT
-I3OTQzMDczOCwtMTY5NzExMzk3OCwtMTQ1MjUwNjQ5OCw1OTQx
-NzMwOTksLTcxNDk2OTYxOCwtMTAxOTYwNjQ4OCwtMTcwMTM5Mj
-kwLC00NTUwNTc1MjIsLTMzNjcxNjQyMSwxMTIyMDc0Njg3LDY4
-MTQ0NTM2OCwtNDY3NjExNjM0LC04MTY3NTgyMDIsLTE2MDgwMj
-U5NjksLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MTkzNjA4Njcs
-NjkwMDczODY2XX0=
+eyJoaXN0b3J5IjpbNjE2NTE1MTk1LC0xNjg3NTc2MzM4LDEyNz
+k0MzA3MzgsLTE2OTcxMTM5NzgsLTE0NTI1MDY0OTgsNTk0MTcz
+MDk5LC03MTQ5Njk2MTgsLTEwMTk2MDY0ODgsLTE3MDEzOTI5MC
+wtNDU1MDU3NTIyLC0zMzY3MTY0MjEsMTEyMjA3NDY4Nyw2ODE0
+NDUzNjgsLTQ2NzYxMTYzNCwtODE2NzU4MjAyLC0xNjA4MDI1OT
+Y5LC02MTI0ODU5NjQsLTEwNjY1NjMwLC0xNjE5MzYwODY3LDY5
+MDA3Mzg2Nl19
 -->
