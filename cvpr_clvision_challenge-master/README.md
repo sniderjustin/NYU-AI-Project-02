@@ -26,6 +26,9 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 
 ... Dataset description and details here... 
 
+...The size of the images is ... pixels ... 
+...There are 3 color channels ...
+
 ... code ... 
 
 ... example images, example classes, formatting of data used (such as pixel size) ... 
@@ -36,25 +39,109 @@ For the dataset we use CORe50 that is [online here]( https://vlomonaco.github.io
 
 ... code ... 
 
-... performance graphics ... 
+### Rehearsal Parameters
+
+Keeping too many old samples increases memory requirements and processing time, but allows better accuracy. 
+
+... example stats and graphics ... 
+
+Keeping less old samples uses less memory and processing time, but causes a decrease in accuracy. 
+
+... example stats and graphics ... 
+
+Finding the sweet spot allows efficient use of memory and processing time. It also still provides much improved performance over the naive training model. 
+
+... example stats and graphics ... 
 
 ## Elastic Weight Consolidation
 
 ... Elastic Weight Consolidation description here... 
 
+EWC attempts to force different weights to learn different tasks. It also promotes weights learning simular tasks to optomize for both tasks. This ven diagram shows the concept visually: 
+
+... ven diagram from paper showing how EWC works ...
+
 ... code... 
 
+### EWC Parameters
+
+Value too high causes the weights to favor previous learned tasks. So learning new tasks is slowed or prevented. This is because the elastic nature of the neural network that allows learning is slowed or stopped. 
+
+... example diagram showing task overlap ... 
+
+... stats and graph showing ewc remembering old tasks, but not learning new tasks ... 
+
+Value too low allowes the new tasked to be learned. However, old tasks are still quickly forgotten. The network is too elastic 
+
+... stats and graph showing ewc learning new task but forgetting old tasks... 
 
 ### EWC Implementation 01
 
 Store a dictionary of fisher matrix values and optimum weights for every unique task. More effective at finding weights that work for multiple tasks. However, this requires more memory for every task to store the fisher values and the optimum weights. In addition, we take a hit for the additional time to incorporate all the weights and fisher values into our penalty.
 
-    enter code here
+**Finding the EWC penalty using unique Fisher values and optimum weights from all tasks:**
+
+```python
+# Add EWC Penalty
+for task in range(t): # for each task
+	# use EWC
+	for name, param in model.named_parameters(): # for each weight
+	fisher = fisher_dict[task][name] # get the fisher value for the given task and weight
+	optpar = optpar_dict[task][name] # get the parameter optimized value for the given task and weight
+	loss += (fisher * (optpar - param).pow(2)).sum() * ewc_lambda # loss is accumulator # add penalty for current task and weight
+```
+
+**Storing unique set of optimum weights and fisher values for each task:**
+
+```python
+# Update optpar_dict and fisher_dict for EWC
+for name, param in model.named_parameters(): # for every parameter save two values
+	optpar_dict[t][name] = param.data.clone()
+	fisher_dict[t][name] = param.grad.data.clone().pow(2)
+
+```
 
 ### EWC Implementation 02
 
 Store a single dictionary of fisher matrix values, the current optimum weights, and the previous cumulative optimum weights. This strategy does not tend to find the best compromise of weights between tasks when compared with the first implementation. However, it can still limit catastrophic forgetting. We also get a faster and more efficient implementation.
 
+**Finding the EWC penalty from the single copy of weights and Fisher values:**
+
+  
+
+```python
+
+# Add EWC Penalty
+
+if t != 0:
+
+# use EWC
+
+for name, param in model.named_parameters(): # for each weight
+
+fisher = fisher_dict[name] # get the fisher value for the given task and weight
+
+optpar = optpar_dict[name] # get the parameter optimized value for the given task and weight
+
+loss += (fisher * (optpar - param).pow(2)).sum() * ewc_lambda # loss is accumulator # add penalty for current task and weight
+
+```
+
+**Updating single copy of Fisher values and weights:**
+
+```python
+# Update optpar_dict and fisher_dict for EWC
+for name, param in model.named_parameters(): # for every parameter save two values
+	optpar = param.data.clone() # save optimized gradient value for current task i and current gradient location j
+	fisher = param.grad.data.clone().pow(2) # save fisher value for current task i and current gradient location j
+	if t == 0: # first task. Just save weights and fisher values for next round
+		optpar_dict[name] = optpar
+		fisher_dict[name] = fisher
+	else:
+		optpar_dict[name] = optpar # save weights for next round
+		fisher_dict[name] = (((fisher_dict[name]/(t+1))*t) + (fisher / (t+1))) # average together old and new fisher values. save for use on next training round.
+```
+... performance graphics ...
 
 ## Hybrid Rehearsal with Elastic Weight Consolidation
 
@@ -63,6 +150,20 @@ Store a single dictionary of fisher matrix values, the current optimum weights, 
 ... code ... 
 
 ... performance graphics ... 
+
+## ResNet18 Classifier Architecture
+
+... description with pros and cons... 
+
+... diagram of ResNet18 from internet... 
+
+Description halway down this page:
+[ResNet Description](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
+[class ResNet desription](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/)
+
+### Dropout 
+
+Using dropout allows the selective dropping of neurons during training to prevent overfitting. This is why we implement the use of dropout in our code. 
 
 ## Performance Benchmarks
 
@@ -73,6 +174,8 @@ Store a single dictionary of fisher matrix values, the current optimum weights, 
 ... comparison Benchmark results...
 
 ... comparison Benchmark graphics... 
+
+### Performance Relative to Parameters ( possible use additional tests to show parameter impact using MNIST data beause they run fast) We can use the example MNIST notebook code that uses the same Naive, Rehearsal and EWC strategies). 
 
 ## Project Structure
 
@@ -121,9 +224,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxMjQ4NTk2NCwtMTA2NjU2MzAsLTE2MT
-kzNjA4NjcsNjkwMDczODY2LDExNDM4MzA3NzIsLTg0ODMxNDA0
-MSwyMTMwOTA3NTAsLTE4MTkwOTE1NjAsLTMxNDU5NDczNSw0Nj
-Y5Mjg1ODAsLTg5MTM2NzE5OSwxNzMyODAxMDM1LDMxNzA2MTA3
-OSwxMTUwNzg3NDYsLTEwOTQ1MTY0M119
+eyJoaXN0b3J5IjpbNTk0MTczMDk5LC03MTQ5Njk2MTgsLTEwMT
+k2MDY0ODgsLTE3MDEzOTI5MCwtNDU1MDU3NTIyLC0zMzY3MTY0
+MjEsMTEyMjA3NDY4Nyw2ODE0NDUzNjgsLTQ2NzYxMTYzNCwtOD
+E2NzU4MjAyLC0xNjA4MDI1OTY5LC02MTI0ODU5NjQsLTEwNjY1
+NjMwLC0xNjE5MzYwODY3LDY5MDA3Mzg2NiwxMTQzODMwNzcyLC
+04NDgzMTQwNDEsMjEzMDkwNzUwLC0xODE5MDkxNTYwLC0zMTQ1
+OTQ3MzVdfQ==
 -->
