@@ -157,6 +157,7 @@ for name, param in model.named_parameters(): # for every parameter save two valu
 
 ... diagram of ResNet18 from internet... 
 
+
 Description halway down this page:
 [ResNet Description](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
 [class ResNet desription](https://pantelis.github.io/cs-gy-6613-spring-2020/docs/lectures/scene-understanding/feature-extraction-resnet/)
@@ -224,11 +225,11 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTk0MTczMDk5LC03MTQ5Njk2MTgsLTEwMT
-k2MDY0ODgsLTE3MDEzOTI5MCwtNDU1MDU3NTIyLC0zMzY3MTY0
-MjEsMTEyMjA3NDY4Nyw2ODE0NDUzNjgsLTQ2NzYxMTYzNCwtOD
-E2NzU4MjAyLC0xNjA4MDI1OTY5LC02MTI0ODU5NjQsLTEwNjY1
-NjMwLC0xNjE5MzYwODY3LDY5MDA3Mzg2NiwxMTQzODMwNzcyLC
-04NDgzMTQwNDEsMjEzMDkwNzUwLC0xODE5MDkxNTYwLC0zMTQ1
-OTQ3MzVdfQ==
+eyJoaXN0b3J5IjpbLTE4MDU0MDQzMjcsNTk0MTczMDk5LC03MT
+Q5Njk2MTgsLTEwMTk2MDY0ODgsLTE3MDEzOTI5MCwtNDU1MDU3
+NTIyLC0zMzY3MTY0MjEsMTEyMjA3NDY4Nyw2ODE0NDUzNjgsLT
+Q2NzYxMTYzNCwtODE2NzU4MjAyLC0xNjA4MDI1OTY5LC02MTI0
+ODU5NjQsLTEwNjY1NjMwLC0xNjE5MzYwODY3LDY5MDA3Mzg2Ni
+wxMTQzODMwNzcyLC04NDgzMTQwNDEsMjEzMDkwNzUwLC0xODE5
+MDkxNTYwXX0=
 -->
