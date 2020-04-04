@@ -110,7 +110,7 @@ Keeping too many old samples increases memory requirements and processing time, 
 Here are the optimal hyperparameters. 
 |Old Data Per Batch| New Data Per Batch |
 |--|--|
-| Equal proportion of all tasks retained to use for next round. About 11,990 old tasks saved for use in next round throughout process. | About 11,990 new task observations used in each round.  |
+| Equal proportion of all tasks retained to use for next round. About 11,990 old observations saved for use in next round throughout process. | About 11,990 new task observations used in each round.  |
 
 
 Here are the pros and cons of changing the hyperparameters. 
