@@ -79,14 +79,6 @@ Value too high causes the weights to favor previous learned tasks. So learning n
 | 4.0 |Ideal|Best combination of ability to learn new tasks and retain old tasks. |
 | 0.04 |Too Low|Old tasks were forgotten very quickly. |
 
-... example diagram showing task overlap ... 
-
-... stats and graph showing ewc remembering old tasks, but not learning new tasks ... 
-
-Value too low allowes the new tasked to be learned. However, old tasks are still quickly forgotten. The network is too elastic 
-
-... stats and graph showing ewc learning new task but forgetting old tasks... 
-
 ### EWC Implementation 01
 
 
@@ -239,5 +231,5 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTM3MDA5MjRdfQ==
+eyJoaXN0b3J5IjpbMTg2Nzc1MTcxNSwtMTM1MzcwMDkyNF19
 -->
