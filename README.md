@@ -23,9 +23,13 @@ Many strategies have been developed to combat catastrophic forgetting. The three
 ## <div align="center">Different Continuous Learning Strategies</div>
 <div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/CL_strategies.png" width=75%/></div>
 
+Figure from [[1]](https://arxiv.org/abs/1806.08568).
+
 ## CORe50 Dataset  
 
 ![core50_classes](https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/classes.gif)
+
+Image from [[4]](http://proceedings.mlr.press/v78/lomonaco17a/lomonaco17a.pdf).
 
 ### <ins>**Dataset Description**</ins>
 
