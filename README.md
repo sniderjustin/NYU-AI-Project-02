@@ -337,3 +337,6 @@ Code Used As a Starting Point:
 	* The starting point for the code we developed. This includes the loader for the CORe50 Dataset. Also, included is the Naive approach to continual learning that we use a baseline benchmark. 
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTU1OTQxNTQxMl19
+-->
