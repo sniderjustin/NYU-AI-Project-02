@@ -271,11 +271,12 @@ Figure from Neural Network Architectures with a comparison between many of the t
 ## Performance Benchmarks  
 From our three implementations, as well as the naive strategy that came out of the box from [CORe50](https://github.com/vlomonaco/cvpr_clvision_challenge), we found that rehearsal is the best strategy to maintain test accuracy over different batches. The plot below shows our findings. We focus on test accuracy on task zero, in particular, because the goal of continuous learning is to remember tasks over time. It is important to point out that Rehearsal and our hybrid strategy had almost identical performance. Rehearsal and hybrid are combined because our implementations of EWC suffered dramatically, so it is safe to assume that our hybrid method performed well solely because of rehearsal. 
 
-<div>
+&nbsp;
 
 <div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/all_compared.png" /></div>  
 
 The above line graph highlights the difficulty of continuous learning, retaining ability to predict well over time. However, the overall accuracy of the model is also very important, and our findings can be found in the figure below. It shows that the accuracy for naive and EWC do not increase throughout the batches. However, rehearsal and our hybrid method increase average accuracy throughout the batches. 
+&nbsp;  
 
 <div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/all_average_accuracy.png"/></div>  
 
@@ -340,5 +341,5 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MzEyNTYzMV19
+eyJoaXN0b3J5IjpbLTEyOTc5NzAyMzRdfQ==
 -->
