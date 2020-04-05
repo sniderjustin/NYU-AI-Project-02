@@ -276,11 +276,19 @@ From our three implementations, as well as the naive strategy that came out of t
 
 <div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/all_compared.png" /></div>  
 
+<br/>
+
 The above line graph highlights the difficulty of continuous learning, retaining ability to predict well over time. However, the overall accuracy of the model is also very important, and our findings can be found in the figure below. It shows that the accuracy for naive and EWC do not increase throughout the batches. However, rehearsal and our hybrid method increase average accuracy throughout the batches. 
+
+<br/>
 
 <div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/all_average_accuracy.png"/></div>  
 
+<br/>
+
 Apart from test accuracy, another important metric to measure is training time. All of the code was run locally on two Macbook Pros with no more than 16 gbs of ram and no GPU usage. Because of this, training was long. Rehearsal took up to 12 hours to train. This constraint is what led us to look into less computationally and memory expensive processes, such as EWC. As you can see, EWC 02 had the fastest training time at roughly three hours. However, with our computing limited, it is recommended to use the model with this highest accuracy, because with a better computer it would run much faster.  
+
+<br/>
 
 <div align="center"><img src="https://github.com/aobject/NYU-AI-Project-02/raw/master/cvpr_clvision_challenge-master/report_resources/core50/training_time.png" /></div>  
 
@@ -342,5 +350,5 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMjg5MDM1OF19
+eyJoaXN0b3J5IjpbMTE2ODM1NTkxMl19
 -->
