@@ -269,11 +269,7 @@ This diagram of the skip connection and its ensamble effects is from the CSGY661
 Figure from Neural Network Architectures with a comparison between many of the top performaing neural network architectures by Eugenio Culurciello. You can find his full article and paper on Medium. [[9]](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba)
 
 ## Performance Benchmarks  
-<br/>
-From our three implementations, as well as the naive strategy that came out of the box from 
-[[9]](https://github.com/vlomonaco/cvpr_clvision_challenge)
-
-, we found that rehearsal is the best strategy to maintain test accuracy over different batches. The plot below shows our findings. We focus on test accuracy on task zero, in particular, because the goal of continuous learning is to remember tasks over time. It is important to point out that Rehearsal and our hybrid strategy had almost identical performance. Rehearsal and hybrid are combined because our implementations of EWC suffered dramatically, so it is safe to assume that our hybrid method performed well solely because of rehearsal. 
+From our three implementations, as well as the naive strategy that came out of the box from [CORe50](https://github.com/vlomonaco/cvpr_clvision_challenge), we found that rehearsal is the best strategy to maintain test accuracy over different batches. The plot below shows our findings. We focus on test accuracy on task zero, in particular, because the goal of continuous learning is to remember tasks over time. It is important to point out that Rehearsal and our hybrid strategy had almost identical performance. Rehearsal and hybrid are combined because our implementations of EWC suffered dramatically, so it is safe to assume that our hybrid method performed well solely because of rehearsal. 
 
 <br/>
 
@@ -353,5 +349,5 @@ Code Used As a Starting Point:
 * [Intro To Continual Learning](https://github.com/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 	* Provided a model for the implementation of Naive, Rehearsal, and Elastic Weight Consolidation. We used this code in the development of our implementation. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM3MTgwODcxXX0=
+eyJoaXN0b3J5IjpbMTc2OTEyMjc1M119
 -->
